@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cttx80rt51g08"]
+
+[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/Jhonatan.png" id="1_67bck"]
+[ext_resource type="Texture2D" uid="uid://bs56h85mck6a0" path="res://escenas/EscenaOficina (1).jpg" id="2_hdjqb"]
+[ext_resource type="Texture2D" uid="uid://bok3l8eyeem20" path="res://escenas/EscenaInicioFinDia (1).jpg" id="3_hdjqb"]
+
+[node name="UI" type="Node2D" unique_id=985150822]
+
+[node name="Personajes" type="Node2D" parent="." unique_id=1800109079]
+
+[node name="Jhonatan" type="Sprite2D" parent="Personajes" unique_id=239992127]
+position = Vector2(627, 447)
+scale = Vector2(0.4331942, 0.43421552)
+texture = ExtResource("1_67bck")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personajes" unique_id=619168018]
+visible = false
+texture = ExtResource("1_67bck")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1200936244]
+
+[node name="EscenaOficina(1)" type="Sprite2D" parent="CanvasLayer" unique_id=1003880911]
+position = Vector2(608, 345)
+scale = Vector2(0.418, 0.418)
+texture = ExtResource("2_hdjqb")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1595251902]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=395174894]
+
+[node name="EscenaInicioFinDia(1)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1008711572]
+visible = false
+position = Vector2(608.00006, 343.00003)
+scale = Vector2(0.20704679, 0.20704679)
+texture = ExtResource("3_hdjqb")
+
+[node name="Dialogos_base" type="Node2D" parent="." unique_id=704704172]
+
+[node name="TextEdit" type="TextEdit" parent="Dialogos_base" unique_id=113035441]
+offset_left = 184.0
+offset_top = 52.0
+offset_right = 1031.0
+offset_bottom = 187.0
+
+[node name="Dialogos_personajes" type="Control" parent="." unique_id=144733706]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogos_personajes" unique_id=1823820956]
+modulate = Color(0.101960786, 0.09019608, 0.14901961, 1)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 496.0
+offset_right = 487.00732
+offset_bottom = 552.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Texto de prueba"
+
+[node name="Audios" type="Node2D" parent="." unique_id=1589200767]
+position = Vector2(-29, -67)

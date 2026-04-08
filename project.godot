@@ -11,8 +11,21 @@ config_version=5
 [application]
 
 config/name="Habilidades blandas"
+run/main_scene="uid://cthqm8sj5slv5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=700
+
+[layer_names]
+
+2d_physics/layer_1="Solido"
+2d_physics/layer_2="Daño"
+2d_physics/layer_3="Jugador"
+2d_physics/layer_4="Recolectable"
 
 [physics]
 
