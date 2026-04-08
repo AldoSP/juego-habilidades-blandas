@@ -1,0 +1,37 @@
+extends Node
+
+#Aquí está la logica con la que se calcula una tarea dado un personaje y su tipo de tarea
+
+func calculate_task(character, task_type):
+	var base = 5
+	var multiplier = 1.0
+
+	if task_type == character.strength:
+		multiplier = 1.5
+	elif task_type == character.weakness:
+		multiplier = 0.5
+
+	if character.energy < 30:
+		multiplier *= 0.5
+	
+	print(character.name, " energía: ", character.energy)
+
+	return int(base * multiplier)
+
+func resolve_all(characters):
+	var results = {
+		"programming": 0,
+		"design": 0,
+		"testing": 0
+	}
+
+	for c in characters:
+		if c.assigned_task == null:
+			continue
+
+		var value = calculate_task(c, c.assigned_task)
+		results[c.assigned_task] += value
+		c.energy -= 10
+		
+
+	return results
