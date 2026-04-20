@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Habilidades blandas"
-run/main_scene="uid://m0hh6rklk3ap"
+<<<<<<< Updated upstream
+run/main_scene="uid://b1umsqf306db5"
+=======
+run/main_scene="uid://cthqm8sj5slv5"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

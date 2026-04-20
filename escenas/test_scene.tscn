@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dn635lti37ui3" path="res://scripts/TeamSystem.gd" id="2_diyva"]
 [ext_resource type="Script" uid="uid://vnvucfsymf2v" path="res://scripts/TaskSystem.gd" id="3_7r6a7"]
 [ext_resource type="Script" uid="uid://cks40g1ujek8t" path="res://scripts/ProjectSystem.gd" id="4_ff1hb"]
+[ext_resource type="PackedScene" uid="uid://b1umsqf306db5" path="res://escenas/test_scenes/AssignmentTest.tscn" id="5_diyva"]
 
 [node name="TestScene" type="Node2D" unique_id=153880106]
 
@@ -18,3 +19,5 @@ script = ExtResource("3_7r6a7")
 
 [node name="ProjectSystem" type="Node" parent="GameManager" unique_id=1784535613]
 script = ExtResource("4_ff1hb")
+
+[node name="AssignmentTest" parent="GameManager" unique_id=1235367926 instance=ExtResource("5_diyva")]

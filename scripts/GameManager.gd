@@ -2,9 +2,11 @@ extends Node
 
 #Este es el orquestrador de todo el juego
 
+@onready var ui = $"../UIController"
 @onready var team = $TeamSystem
 @onready var tasks = $TaskSystem
 @onready var project = $ProjectSystem
+
 
 var day = 1
 var max_days = 3
