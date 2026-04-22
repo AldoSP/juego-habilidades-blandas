@@ -16,10 +16,7 @@ func calculate_task(character, task_type):
 	
 	print(character.name, " energía: ", character.energy)
 
-	var score = int(base * multiplier) + character.event_modifier
-	if score < 0:
-		score = 0
-	return score
+	return int(base * multiplier)
 
 func resolve_all(characters):
 	var results = {
@@ -35,6 +32,6 @@ func resolve_all(characters):
 		var value = calculate_task(c, c.assigned_task)
 		results[c.assigned_task] += value
 		c.energy -= 10
-		c.event_modifier = 0
-	
+		
+
 	return results
