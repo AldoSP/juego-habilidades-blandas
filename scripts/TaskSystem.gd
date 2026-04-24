@@ -32,6 +32,12 @@ func resolve_all(characters):
 		if c.assigned_task == null:
 			continue
 
+		if c.assigned_task == "rest":
+			# Rest no contribuye puntos al proyecto, pero restaura energía
+			c.energy += 20  # Restaurar más energía que lo que se pierde
+			c.event_modifier = 0
+			continue
+
 		var value = calculate_task(c, c.assigned_task)
 		results[c.assigned_task] += value
 		c.energy -= 10

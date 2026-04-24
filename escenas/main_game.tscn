@@ -1,0 +1,333 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg8rh4rwds15"]
+
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_5x4as"]
+[ext_resource type="Script" path="res://scripts/TeamSystem.gd" id="2_3h1g8"]
+[ext_resource type="Script" path="res://scripts/TaskSystem.gd" id="3_q8yk7"]
+[ext_resource type="Script" path="res://scripts/ProjectSystem.gd" id="4_p2tg3"]
+[ext_resource type="Script" path="res://scripts/UIController.gd" id="5_b4yst"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="." node_paths=["ui"]]
+script = ExtResource("1_5x4as")
+ui = NodePath("../CanvasLayer/UIController")
+
+[node name="TeamSystem" type="Node" parent="GameManager"]
+script = ExtResource("2_3h1g8")
+
+[node name="TaskSystem" type="Node" parent="GameManager"]
+script = ExtResource("3_q8yk7")
+
+[node name="ProjectSystem" type="Node" parent="GameManager"]
+script = ExtResource("4_p2tg3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIController" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_b4yst")
+
+[node name="AssignmentPanel" type="Control" parent="CanvasLayer/UIController"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/AssignmentPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/UIController/AssignmentPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 100.0
+text = "Asigna tareas a tu equipo"
+horizontal_alignment = 1
+
+[node name="CharactersContainer" type="HBoxContainer" parent="CanvasLayer/UIController/AssignmentPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 130.0
+offset_right = 300.0
+offset_bottom = 200.0
+theme_override_constants/separation = 20
+
+[node name="Character_A" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "Ana"
+
+[node name="Character_B" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "Mateo"
+
+[node name="Character_C" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "Sofia"
+
+[node name="TaskLabel" type="Label" parent="CanvasLayer/UIController/AssignmentPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 220.0
+offset_right = 200.0
+offset_bottom = 250.0
+text = "Selecciona tarea:"
+horizontal_alignment = 1
+
+[node name="TasksContainer" type="HBoxContainer" parent="CanvasLayer/UIController/AssignmentPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 260.0
+offset_right = 450.0
+offset_bottom = 350.0
+theme_override_constants/separation = 10
+
+[node name="ProgrammingButton" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/TasksContainer"]
+custom_minimum_size = Vector2(85, 80)
+layout_mode = 2
+text = "Programming"
+
+[node name="DesignButton" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/TasksContainer"]
+custom_minimum_size = Vector2(85, 80)
+layout_mode = 2
+text = "Design"
+
+[node name="TestingButton" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/TasksContainer"]
+custom_minimum_size = Vector2(85, 80)
+layout_mode = 2
+text = "Testing"
+
+[node name="RestButton" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/TasksContainer"]
+custom_minimum_size = Vector2(85, 80)
+layout_mode = 2
+text = "Rest"
+
+[node name="ConfirmButton" type="Button" parent="CanvasLayer/UIController/AssignmentPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 430.0
+text = "Confirmar Asignaciones"
+custom_minimum_size = Vector2(150, 50)
+
+[node name="EventPanel" type="Control" parent="CanvasLayer/UIController"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/EventPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.15, 0.2, 1)
+
+[node name="EventTitle" type="Label" parent="CanvasLayer/UIController/EventPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 750.0
+offset_bottom = 100.0
+text = "Evento"
+horizontal_alignment = 1
+
+[node name="EventDescription" type="Label" parent="CanvasLayer/UIController/EventPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 120.0
+offset_right = 750.0
+offset_bottom = 220.0
+text = "Descripción del evento"
+horizontal_alignment = 1
+autowrap_mode = 2
+custom_minimum_size = Vector2(700, 100)
+
+[node name="YesButton" type="Button" parent="CanvasLayer/UIController/EventPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 270.0
+offset_right = 350.0
+offset_bottom = 330.0
+text = "Sí"
+custom_minimum_size = Vector2(250, 60)
+
+[node name="NoButton" type="Button" parent="CanvasLayer/UIController/EventPanel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 270.0
+offset_right = 650.0
+offset_bottom = 330.0
+text = "No"
+custom_minimum_size = Vector2(250, 60)
+
+[node name="ResultsPanel" type="Control" parent="CanvasLayer/UIController"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/ResultsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.15, 1)
+
+[node name="ResultsTitle" type="Label" parent="CanvasLayer/UIController/ResultsPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 750.0
+offset_bottom = 100.0
+text = "Resultados del día"
+horizontal_alignment = 1
+
+[node name="ProgrammingResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 400.0
+offset_bottom = 200.0
+text = "Programming: 0"
+horizontal_alignment = 1
+
+[node name="DesignResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 220.0
+offset_right = 400.0
+offset_bottom = 270.0
+text = "Design: 0"
+horizontal_alignment = 1
+
+[node name="TestingResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 290.0
+offset_right = 400.0
+offset_bottom = 340.0
+text = "Testing: 0"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/UIController/ResultsPanel"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 430.0
+text = "Continuar"
+custom_minimum_size = Vector2(200, 50)
+
+[node name="GameOverPanel" type="Control" parent="CanvasLayer/UIController"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.2, 1)
+
+[node name="GameOverTitle" type="Label" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 750.0
+offset_bottom = 100.0
+text = "¡FIN DEL JUEGO!"
+horizontal_alignment = 1
+
+[node name="ProgrammingFinal" type="Label" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 400.0
+offset_bottom = 200.0
+text = "Programming: 0"
+horizontal_alignment = 1
+
+[node name="DesignFinal" type="Label" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 220.0
+offset_right = 400.0
+offset_bottom = 270.0
+text = "Design: 0"
+horizontal_alignment = 1
+
+[node name="TestingFinal" type="Label" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 290.0
+offset_right = 400.0
+offset_bottom = 340.0
+text = "Testing: 0"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 300.0
+offset_bottom = 430.0
+text = "Reiniciar"
+custom_minimum_size = Vector2(150, 50)
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/UIController/GameOverPanel"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 380.0
+offset_right = 500.0
+offset_bottom = 430.0
+text = "Salir"
+custom_minimum_size = Vector2(150, 50)
+
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_A" to="CanvasLayer/UIController" method="_on_character_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_B" to="CanvasLayer/UIController" method="_on_character_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_C" to="CanvasLayer/UIController" method="_on_character_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/ProgrammingButton" to="CanvasLayer/UIController" method="_on_programming_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/DesignButton" to="CanvasLayer/UIController" method="_on_design_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/TestingButton" to="CanvasLayer/UIController" method="_on_testing_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/RestButton" to="CanvasLayer/UIController" method="_on_rest_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/ConfirmButton" to="CanvasLayer/UIController" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/EventPanel/YesButton" to="CanvasLayer/UIController" method="_on_event_yes_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/EventPanel/NoButton" to="CanvasLayer/UIController" method="_on_event_no_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/ResultsPanel/ContinueButton" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/QuitButton" to="CanvasLayer/UIController" method="_on_quit_button_pressed"]
