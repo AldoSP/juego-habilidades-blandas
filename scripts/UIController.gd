@@ -23,6 +23,8 @@ var game_manager
 var selected_character = null
 var characters = {}
 var character_names = ["Ana", "Mateo", "Sofia"]
+@export var container: Node
+var character_card_scene = preload("res://escenas/character_card.tscn")
 
 # Referencia a los paneles
 var assignment_panel
@@ -58,6 +60,14 @@ func assign_task(task_name):
 		return
 	characters[selected_character]["task"] = task_name
 	print(selected_character, " asignado a ", task_name)
+
+func load_characters(characters):
+	print("Llamando load_characters")
+	for c in characters:
+		print("Creando card para: ", c.name)
+		var card = character_card_scene.instantiate()
+		card.set_character(c)
+		container.add_child(card)
 
 func _on_character_pressed():
 	var button = get_viewport().gui_get_focus_owner()

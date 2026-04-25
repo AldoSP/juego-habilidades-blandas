@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cttx80rt51g08"]
 
-[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/Jhonatan.png" id="1_67bck"]
-[ext_resource type="Texture2D" uid="uid://bs56h85mck6a0" path="res://escenas/EscenaOficina (1).jpg" id="2_hdjqb"]
-[ext_resource type="Texture2D" uid="uid://bok3l8eyeem20" path="res://escenas/EscenaInicioFinDia (1).jpg" id="3_hdjqb"]
+[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/sprites/Jhonatan.png" id="1_67bck"]
+[ext_resource type="Texture2D" uid="uid://bs56h85mck6a0" path="res://assets/EscenaOficina (1).jpg" id="2_hdjqb"]
+[ext_resource type="Texture2D" uid="uid://bok3l8eyeem20" path="res://assets/EscenaInicioFinDia (1).jpg" id="3_hdjqb"]
 
 [node name="UI" type="Node2D" unique_id=985150822]
 

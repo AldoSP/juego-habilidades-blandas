@@ -40,7 +40,8 @@ func resolve_all(characters):
 
 		var value = calculate_task(c, c.assigned_task)
 		results[c.assigned_task] += value
-		c.energy -= 10
+		c.set_energy(c.energy - 10)
+		#c.energy -= 10
 		c.event_modifier = 0
 	
 	return results

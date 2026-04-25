@@ -36,6 +36,7 @@ func _ready():
 		ui.setup(team, tasks, event_system, project, self)
 		ui.connect("tasks_assigned", Callable(self, "_on_tasks_assigned"))
 		ui.connect("event_decision_made", Callable(self, "_on_event_decision_made"))
+		ui.load_characters(team.characters)
 	
 	start_day()
 
