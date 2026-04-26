@@ -2,16 +2,6 @@ extends Control
 
 # Señales del flujo principal
 signal tasks_assigned
-signal task_calculation_started
-signal event_processing_started
-signal day_finished
-signal game_finished
-
-signal start_project_requested
-signal continue_to_tasks_requested
-signal continue_to_calculation_requested
-signal continue_to_events_requested
-signal continue_to_finish_day_requested
 signal event_decision_made(character_index, decision)
 
 var team_system
@@ -23,29 +13,51 @@ var game_manager
 var selected_character = null
 var characters = {}
 var character_names = ["Ana", "Mateo", "Sofia"]
-@export var container: Node
-var character_card_scene = preload("res://escenas/character_card.tscn")
+var assignments = {}  # task_name -> character_name
 
 # Referencia a los paneles
 var assignment_panel
 var event_panel
 var results_panel
 var game_over_panel
+var characters_container
+var tasks_container
+var floating_layer  # Contenedor para botones animados
 
 # Estado del evento actual
 var current_event_data = null
 var current_event_index = 0
+
+# Almacenar botones asignados para restaurarlos
+var assigned_buttons = {}  # task_name -> {button, original_pos}
+var animated_buttons = []  # Lista de botones animados activos
 
 func _ready():
 	# Inicializamos personajes
 	for name in character_names:
 		characters[name] = {"task": null}
 	
+	# Inicializar asignaciones por tarea
+	var tasks = ["programming", "design", "testing", "rest"]
+	for task in tasks:
+		assignments[task] = null
+	
 	# Obtener referencias a los paneles
 	assignment_panel = $AssignmentPanel
 	event_panel = $EventPanel
 	results_panel = $ResultsPanel
 	game_over_panel = $GameOverPanel
+	characters_container = $AssignmentPanel/VBoxContainer/CharactersContainer
+	tasks_container = $AssignmentPanel/VBoxContainer/TasksContainer
+	
+	# Crear un contenedor flotante para los botones asignados
+	floating_layer = Control.new()
+	floating_layer.name = "FloatingLayer"
+	floating_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	floating_layer.anchors_preset = Control.PRESET_FULL_RECT
+	floating_layer.anchor_right = 1.0
+	floating_layer.anchor_bottom = 1.0
+	add_child(floating_layer)
 
 func setup(team, task_sys, event_sys, project_sys, gm):
 	team_system = team
@@ -53,40 +65,171 @@ func setup(team, task_sys, event_sys, project_sys, gm):
 	event_system = event_sys
 	project_system = project_sys
 	game_manager = gm
+	
+	# Esperar un frame para asegurar que _ready() ha completado
+	await get_tree().process_frame
+	
+	# Crear botones visuales para personajes
+	create_character_buttons()
+	create_task_buttons()
 
-func assign_task(task_name):
+func create_character_buttons():
+	"""Crea botones visuales para cada personaje"""
+	for char_name in character_names:
+		var button = Button.new()
+		button.text = char_name
+		button.custom_minimum_size = Vector2(100, 80)
+		button.modulate = Color.from_string("6ba3ffff", Color.WHITE)  # Azul
+		button.pressed.connect(_on_character_button_pressed.bindv([char_name]))
+		characters_container.add_child(button)
+
+func create_task_buttons():
+	"""Crea botones interactivos para cada tarea"""
+	var tasks = ["programming", "design", "testing", "rest"]
+	for task in tasks:
+		var area = tasks_container.find_child(task.capitalize() + "_Area", true, false)
+		if area:
+			var button = Button.new()
+			button.text = "→ Asignar"
+			button.custom_minimum_size = Vector2(160, 40)
+			var task_vbox = area.get_child(0)
+			if task_vbox:
+				task_vbox.add_child(button)
+				button.pressed.connect(_on_task_button_pressed.bindv([task]))
+
+func _on_character_button_pressed(char_name: String):
+	"""Se llama cuando se hace click en un personaje"""
+	if selected_character == char_name:
+		# Deseleccionar
+		selected_character = null
+		_update_character_button_appearance()
+		print("Deseleccionado: ", char_name)
+	else:
+		# Seleccionar nuevo personaje
+		selected_character = char_name
+		_update_character_button_appearance()
+		print("Seleccionado: ", char_name)
+
+func _on_task_button_pressed(task_name: String):
+	"""Se llama cuando se hace click en una tarea"""
 	if selected_character == null:
 		print("Selecciona un personaje primero")
 		return
-	characters[selected_character]["task"] = task_name
-	print(selected_character, " asignado a ", task_name)
-
-func load_characters(characters):
-	print("Llamando load_characters")
-	for c in characters:
-		print("Creando card para: ", c.name)
-		var card = character_card_scene.instantiate()
-		card.set_character(c)
-		container.add_child(card)
-
-func _on_character_pressed():
-	var button = get_viewport().gui_get_focus_owner()
-	selected_character = button.text
-	print("Seleccionado: ", selected_character)
-
-func _on_programming_pressed():
-	assign_task("programming")
-
-func _on_design_pressed():
-	assign_task("design")
-
-func _on_testing_pressed():
-	assign_task("testing")
-
-func _on_rest_pressed():
-	assign_task("rest")
 	
+	assign_character_to_task(selected_character, task_name)
+
+func assign_character_to_task(char_name: String, task_name: String):
+	"""Asigna un personaje a una tarea con animación que se mantiene"""
+	print("Asignando ", char_name, " a ", task_name)
+	
+	# Si el personaje ya estaba asignado a otra tarea, desasignarlo primero
+	var old_task = characters[char_name]["task"]
+	if old_task != null and old_task != task_name:
+		# Desasignar de la tarea anterior
+		if old_task in assigned_buttons:
+			assigned_buttons[old_task]["button"].queue_free()
+			assigned_buttons.erase(old_task)
+		
+		# Limpiar etiqueta de la tarea anterior
+		var old_area = tasks_container.find_child(old_task.capitalize() + "_Area", true, false)
+		if old_area:
+			var old_assigned_label = old_area.get_node("VBoxContainer/AssignedCharacter")
+			if old_assigned_label:
+				old_assigned_label.text = "(Sin asignar)"
+				old_assigned_label.modulate = Color.WHITE
+		
+		assignments[old_task] = null
+	
+	# Si ya hay otro personaje asignado en esta tarea, desasignarlo
+	if task_name in assignments and assignments[task_name] != null:
+		var previous_char = assignments[task_name]
+		characters[previous_char]["task"] = null
+		
+		if task_name in assigned_buttons:
+			assigned_buttons[task_name]["button"].queue_free()
+			assigned_buttons.erase(task_name)
+	
+	# Actualizar el registro de asignaciones
+	characters[char_name]["task"] = task_name
+	assignments[task_name] = char_name
+	
+	# Obtener referencias
+	var char_button = characters_container.get_child(character_names.find(char_name))
+	var area = tasks_container.find_child(task_name.capitalize() + "_Area", true, false)
+	
+	if char_button and area:
+		# Obtener posiciones globales
+		var start_pos = char_button.global_position
+		
+		# Calcular el centro del VBoxContainer dentro del área (posición más precisa)
+		var vbox = area.get_node("VBoxContainer")
+		var area_rect = area.get_global_rect()
+		var vbox_rect = vbox.get_global_rect() if vbox else area_rect
+		var end_pos = vbox_rect.get_center()
+		
+		# Crear un botón permanente que se quedará en la tarea
+		var assigned_button = Button.new()
+		assigned_button.text = char_name
+		assigned_button.custom_minimum_size = Vector2(100, 80)
+		assigned_button.modulate = Color.from_string("6ba3ffff", Color.WHITE)
+		assigned_button.global_position = start_pos
+		assigned_button.mouse_filter = Control.MOUSE_FILTER_IGNORE  # No interfiera con clics
+		floating_layer.add_child(assigned_button)
+		
+		# Guardar referencia para restaurarlo después
+		assigned_buttons[task_name] = {
+			"button": assigned_button,
+			"original_pos": start_pos,
+			"final_pos": end_pos
+		}
+		
+		# Ocultar el botón original
+		char_button.visible = false
+		
+		# Animar el movimiento
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_QUAD)
+		tween.set_ease(Tween.EASE_OUT)
+		tween.tween_property(assigned_button, "global_position", end_pos, 0.6)
+		
+		# Esperar a que termine la animación
+		await tween.finished
+		
+		# Actualizar etiqueta de la tarea
+		var assigned_label = area.get_node("VBoxContainer/AssignedCharacter")
+		if assigned_label:
+			assigned_label.text = char_name
+			assigned_label.modulate = Color.from_string("a8ff69ff", Color.WHITE)  # Verde
+		
+		# Actualizar apariencia del botón original
+		char_button.modulate = Color.from_string("a8ff69ff", Color.WHITE)  # Verde
+		char_button.text = char_name + " ✓"
+		# NO mostrar el botón original si está asignado
+		# char_button.visible = true
+	
+	selected_character = null
+	_update_character_button_appearance()
+
+func _update_character_button_appearance():
+	"""Actualiza el aspecto de los botones de personaje según selección"""
+	for i in range(character_names.size()):
+		var char_name = character_names[i]
+		var button = characters_container.get_child(i)
+		
+		if characters[char_name]["task"] != null:
+			# Personaje asignado: ocultar botón
+			button.visible = false
+		elif char_name == selected_character:
+			# Personaje seleccionado: mostrar en blanco
+			button.visible = true
+			button.modulate = Color.WHITE
+		else:
+			# Personaje disponible: mostrar en azul
+			button.visible = true
+			button.modulate = Color.from_string("6ba3ffff", Color.WHITE)  # Azul
+
 func _on_confirm_button_pressed():
+	"""Se llama cuando se confirman las asignaciones"""
 	print("Asignaciones finales:")
 	print(characters)
 	
@@ -98,7 +241,7 @@ func _on_confirm_button_pressed():
 				character.assigned_task = characters[character.name]["task"]
 				print("Aplicado: ", character.name, " -> ", character.assigned_task)
 	
-	# Ocultar panel de asignación y mostrar evento (si hay)
+	# Ocultar panel de asignación
 	_show_assignment_panel(false)
 	
 	emit_signal("tasks_assigned")
@@ -131,12 +274,10 @@ func show_event_decision(character, event, event_index):
 func _on_event_yes_pressed():
 	if current_event_data:
 		emit_signal("event_decision_made", current_event_index, true)
-		# No ocultar el panel inmediatamente, dejar que GameManager lo maneje
 
 func _on_event_no_pressed():
 	if current_event_data:
 		emit_signal("event_decision_made", current_event_index, false)
-		# No ocultar el panel inmediatamente, dejar que GameManager lo maneje
 
 func show_results(results):
 	"""Muestra los resultados del día"""
@@ -159,9 +300,50 @@ func _on_continue_button_pressed():
 	_show_results_panel(false)
 	_show_assignment_panel(true)
 	
+	# Restaurar todos los botones asignados a su posición original
+	for task_name in assigned_buttons.keys():
+		var button_data = assigned_buttons[task_name]
+		var button = button_data["button"]
+		var original_pos = button_data["original_pos"]
+		
+		# Animar de vuelta a la posición original
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_QUAD)
+		tween.set_ease(Tween.EASE_OUT)
+		tween.tween_property(button, "global_position", original_pos, 0.6)
+		await tween.finished
+		button.queue_free()
+	
 	# Limpiar asignaciones para el nuevo día
+	assigned_buttons.clear()
+	animated_buttons.clear()
+	
 	for name in character_names:
 		characters[name]["task"] = null
+	
+	# Reinicializar assignments
+	var tasks = ["programming", "design", "testing", "rest"]
+	for task in tasks:
+		assignments[task] = null
+	
+	# Limpiar etiquetas de tareas
+	tasks = ["programming", "design", "testing", "rest"]
+	for task in tasks:
+		var area = tasks_container.find_child(task.capitalize() + "_Area", true, false)
+		if area:
+			var assigned_label = area.get_node("VBoxContainer/AssignedCharacter")
+			if assigned_label:
+				assigned_label.text = "(Sin asignar)"
+				assigned_label.modulate = Color.WHITE
+	
+	# Restaurar apariencia de botones
+	for i in range(character_names.size()):
+		var button = characters_container.get_child(i)
+		button.modulate = Color.from_string("6ba3ffff", Color.WHITE)
+		button.text = character_names[i]
+		button.visible = true  # Restaurar visibilidad
+	
+	selected_character = null
 	
 	# Reiniciar el siguiente día
 	if game_manager:
@@ -200,6 +382,7 @@ func _on_quit_button_pressed():
 func _show_assignment_panel(visible: bool):
 	if assignment_panel:
 		assignment_panel.visible = visible
+		floating_layer.visible = visible
 
 func _show_event_panel(visible: bool):
 	if event_panel:
