@@ -69,17 +69,22 @@ theme_override_constants/separation = 20
 [node name="Character_A" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=409371778]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-text = "Ana"
+text = "David"
 
 [node name="Character_B" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=445450660]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-text = "Mateo"
+text = "Erick"
 
 [node name="Character_C" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=1602212189]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-text = "Sofia"
+text = "Jhonatan"
+
+[node name="Character_D" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=1786294232]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "Karol"
 
 [node name="TaskLabel" type="Label" parent="CanvasLayer/UIController/AssignmentPanel" unique_id=94693352]
 layout_mode = 0
@@ -168,19 +173,19 @@ autowrap_mode = 2
 [node name="YesButton" type="Button" parent="CanvasLayer/UIController/EventPanel" unique_id=1971156310]
 custom_minimum_size = Vector2(250, 60)
 layout_mode = 0
-offset_left = 100.0
-offset_top = 270.0
-offset_right = 350.0
-offset_bottom = 330.0
+offset_left = 270.0
+offset_top = 490.0
+offset_right = 520.0
+offset_bottom = 550.0
 text = "Sí"
 
 [node name="NoButton" type="Button" parent="CanvasLayer/UIController/EventPanel" unique_id=1042862615]
 custom_minimum_size = Vector2(250, 60)
 layout_mode = 0
-offset_left = 400.0
-offset_top = 270.0
-offset_right = 650.0
-offset_bottom = 330.0
+offset_left = 271.0
+offset_top = 576.0
+offset_right = 521.0
+offset_bottom = 636.0
 text = "No"
 
 [node name="ResultsPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1827847448]
@@ -338,6 +343,7 @@ columns = 2
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_A" to="CanvasLayer/UIController" method="_on_character_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_B" to="CanvasLayer/UIController" method="_on_character_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_C" to="CanvasLayer/UIController" method="_on_character_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_D" to="CanvasLayer/UIController" method="_on_character_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/ProgrammingButton" to="CanvasLayer/UIController" method="_on_programming_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/DesignButton" to="CanvasLayer/UIController" method="_on_design_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/TestingButton" to="CanvasLayer/UIController" method="_on_testing_pressed"]

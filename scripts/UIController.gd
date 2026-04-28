@@ -22,7 +22,7 @@ var game_manager
 
 var selected_character = null
 var characters = {}
-var character_names = ["Ana", "Mateo", "Sofia"]
+var character_names = ["David", "Erick", "Jhonatan", "Karol"]
 @export var container: Node
 var character_card_scene = preload("res://escenas/character_card.tscn")
 
@@ -212,3 +212,7 @@ func _show_results_panel(visible: bool):
 func _show_game_over_panel(visible: bool):
 	if game_over_panel:
 		game_over_panel.visible = visible
+
+
+func _on_character_d_pressed() -> void:
+	pass # Replace with function body.

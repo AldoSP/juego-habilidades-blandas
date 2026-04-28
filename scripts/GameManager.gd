@@ -57,7 +57,7 @@ func process_events():
 	# Generar eventos para cada personaje
 	for c in team.characters:
 		c.event_modifier = 0
-		var event = event_system.maybe_trigger_random_event(c, c.assigned_task)
+		var event = event_system.maybe_trigger_random_event(c, c.assigned_task, team.characters)
 		if event:
 			pending_events.append({
 				"character": c,
@@ -170,3 +170,7 @@ func _on_event_resolved(_character, _event, accepted, score_delta):
 	if accepted:
 		decision_text = "sí"
 	print(_character.name, " eligió ", decision_text, " y el puntaje cambia en ", score_delta)
+
+
+func _on_character_pressed() -> void:
+	pass # Replace with function body.
