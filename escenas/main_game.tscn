@@ -162,6 +162,13 @@ layout_mode = 2
 size_flags_horizontal = 2
 text = "Confirmar Asignaciones"
 
+[node name="ResetButton" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/VBoxContainer/ControlsContainer" unique_id=1609032394]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Limpiar Selección"
+modulate = Color(1, 0.6, 0.42, 1)
+
 [node name="EventPanel" type="Control" parent="CanvasLayer/UIController" unique_id=161836319]
 visible = false
 layout_mode = 1

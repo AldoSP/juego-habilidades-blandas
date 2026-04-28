@@ -69,6 +69,27 @@ func setup(team, task_sys, event_sys, project_sys, gm):
 	# Esperar un frame para asegurar que _ready() ha completado
 	await get_tree().process_frame
 	
+	# Conectar botones que existen en la escena
+	var confirm_button = assignment_panel.get_node_or_null("VBoxContainer/ControlsContainer/ConfirmButton")
+	if confirm_button:
+		confirm_button.pressed.connect(_on_confirm_button_pressed)
+	
+	var reset_button = assignment_panel.get_node_or_null("VBoxContainer/ControlsContainer/ResetButton")
+	if reset_button:
+		reset_button.pressed.connect(_on_reset_button_pressed)
+	
+	var yes_button = event_panel.get_node_or_null("YesButton")
+	if yes_button:
+		yes_button.pressed.connect(_on_event_yes_pressed)
+	
+	var no_button = event_panel.get_node_or_null("NoButton")
+	if no_button:
+		no_button.pressed.connect(_on_event_no_pressed)
+	
+	var continue_button = results_panel.get_node_or_null("ContinueButton")
+	if continue_button:
+		continue_button.pressed.connect(_on_continue_button_pressed)
+	
 	# Crear botones visuales para personajes
 	create_character_buttons()
 	create_task_buttons()
@@ -295,10 +316,9 @@ func show_results(results):
 	# Mostrar panel de resultados
 	_show_results_panel(true)
 
-func _on_continue_button_pressed():
-	print("Continuando a próximo día")
-	_show_results_panel(false)
-	_show_assignment_panel(true)
+func reset_assignments():
+	"""Limpia todas las asignaciones y restaura los botones a su posición original"""
+	print("Reasignando personajes...")
 	
 	# Restaurar todos los botones asignados a su posición original
 	for task_name in assigned_buttons.keys():
@@ -314,7 +334,7 @@ func _on_continue_button_pressed():
 		await tween.finished
 		button.queue_free()
 	
-	# Limpiar asignaciones para el nuevo día
+	# Limpiar asignaciones
 	assigned_buttons.clear()
 	animated_buttons.clear()
 	
@@ -327,7 +347,6 @@ func _on_continue_button_pressed():
 		assignments[task] = null
 	
 	# Limpiar etiquetas de tareas
-	tasks = ["programming", "design", "testing", "rest"]
 	for task in tasks:
 		var area = tasks_container.find_child(task.capitalize() + "_Area", true, false)
 		if area:
@@ -344,6 +363,20 @@ func _on_continue_button_pressed():
 		button.visible = true  # Restaurar visibilidad
 	
 	selected_character = null
+
+func _on_reset_button_pressed():
+	"""Se llama cuando se presiona el botón de limpiar selección"""
+	print("Botón de reasignación presionado")
+	await reset_assignments()
+	_update_character_button_appearance()
+
+func _on_continue_button_pressed():
+	print("Continuando a próximo día")
+	_show_results_panel(false)
+	_show_assignment_panel(true)
+	
+	# Usar el método de limpieza
+	await reset_assignments()
 	
 	# Reiniciar el siguiente día
 	if game_manager:
