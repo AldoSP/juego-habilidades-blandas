@@ -1,6 +1,0 @@
-join testcharacter (KarolDefault) left [mirrored="true"]
-testcharacter (KarolDefault): Hola. Esto es una prueba tecnica del plugin Dialogic.
-testcharacter (KarolHappy): Si ves esto, es porque funciona. ¡Yay!
-testcharacter (KarolPreocupada): Esperemos que implementarlo sea... sencillo?
-join godoticon rightmost
-godoticon: I am the Godot Icon

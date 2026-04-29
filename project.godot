@@ -22,11 +22,10 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"godoticon": "res://dialogic/godoticon.dch",
-"testcharacter": "res://testcharacter.dch"
+"Karol": "res://dialogic/characters/Karol.dch"
 }
 directories/dtl_directory={
-"testtimeline": "res://dialogic/testtimeline.dtl"
+"client_change": "res://dialogic/timelines/client_change.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
