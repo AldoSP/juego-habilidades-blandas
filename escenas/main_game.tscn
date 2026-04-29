@@ -69,17 +69,22 @@ theme_override_constants/separation = 20
 [node name="Character_A" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=409371778]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-text = "Ana"
+text = "David"
 
 [node name="Character_B" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=445450660]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-text = "Mateo"
+text = "Erick"
 
 [node name="Character_C" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=1602212189]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-text = "Sofia"
+text = "Jhonatan"
+
+[node name="Character_D" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/CharactersContainer" unique_id=1786294232]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "Karol"
 
 [node name="TaskLabel" type="Label" parent="CanvasLayer/UIController/AssignmentPanel" unique_id=94693352]
 layout_mode = 0
@@ -135,53 +140,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/EventPanel" unique_id=1184452763]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.2, 0.15, 0.2, 1)
-
-[node name="EventTitle" type="Label" parent="CanvasLayer/UIController/EventPanel" unique_id=691646086]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 750.0
-offset_bottom = 100.0
-text = "Evento"
-horizontal_alignment = 1
-
-[node name="EventDescription" type="Label" parent="CanvasLayer/UIController/EventPanel" unique_id=1843715629]
-custom_minimum_size = Vector2(700, 100)
-layout_mode = 0
-offset_left = 50.0
-offset_top = 120.0
-offset_right = 750.0
-offset_bottom = 220.0
-text = "Descripción del evento"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="YesButton" type="Button" parent="CanvasLayer/UIController/EventPanel" unique_id=1971156310]
-custom_minimum_size = Vector2(250, 60)
-layout_mode = 0
-offset_left = 100.0
-offset_top = 270.0
-offset_right = 350.0
-offset_bottom = 330.0
-text = "Sí"
-
-[node name="NoButton" type="Button" parent="CanvasLayer/UIController/EventPanel" unique_id=1042862615]
-custom_minimum_size = Vector2(250, 60)
-layout_mode = 0
-offset_left = 400.0
-offset_top = 270.0
-offset_right = 650.0
-offset_bottom = 330.0
-text = "No"
 
 [node name="ResultsPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1827847448]
 visible = false
@@ -338,13 +296,12 @@ columns = 2
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_A" to="CanvasLayer/UIController" method="_on_character_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_B" to="CanvasLayer/UIController" method="_on_character_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_C" to="CanvasLayer/UIController" method="_on_character_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/CharactersContainer/Character_D" to="CanvasLayer/UIController" method="_on_character_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/ProgrammingButton" to="CanvasLayer/UIController" method="_on_programming_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/DesignButton" to="CanvasLayer/UIController" method="_on_design_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/TestingButton" to="CanvasLayer/UIController" method="_on_testing_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/TasksContainer/RestButton" to="CanvasLayer/UIController" method="_on_rest_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/AssignmentPanel/ConfirmButton" to="CanvasLayer/UIController" method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/UIController/EventPanel/YesButton" to="CanvasLayer/UIController" method="_on_event_yes_pressed"]
-[connection signal="pressed" from="CanvasLayer/UIController/EventPanel/NoButton" to="CanvasLayer/UIController" method="_on_event_no_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/ResultsPanel/ContinueButton" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/QuitButton" to="CanvasLayer/UIController" method="_on_quit_button_pressed"]
