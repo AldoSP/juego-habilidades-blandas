@@ -12,7 +12,6 @@ var game_manager
 
 var selected_character = null
 var characters = {}
-var character_names = ["Ana", "Mateo", "Sofia"]
 var assignments = {}  # task_name -> character_name
 
 # Referencia a los paneles
@@ -24,6 +23,9 @@ var characters_container
 var tasks_container
 var floating_layer  # Contenedor para botones animados
 
+# Almacenar referencia de botones por nombre de personaje
+var character_buttons = {}  # char_name -> button_node
+
 # Estado del evento actual
 var current_event_data = null
 var current_event_index = 0
@@ -33,10 +35,6 @@ var assigned_buttons = {}  # task_name -> {button, original_pos}
 var animated_buttons = []  # Lista de botones animados activos
 
 func _ready():
-	# Inicializamos personajes
-	for name in character_names:
-		characters[name] = {"task": null}
-	
 	# Inicializar asignaciones por tarea
 	var tasks = ["programming", "design", "testing", "rest"]
 	for task in tasks:
@@ -90,19 +88,36 @@ func setup(team, task_sys, event_sys, project_sys, gm):
 	if continue_button:
 		continue_button.pressed.connect(_on_continue_button_pressed)
 	
+	# Inicializar diccionario de personajes desde team_system
+	if team_system and team_system.characters:
+		for char in team_system.characters:
+			characters[char.name] = {"task": null}
+	
 	# Crear botones visuales para personajes
 	create_character_buttons()
 	create_task_buttons()
 
 func create_character_buttons():
-	"""Crea botones visuales para cada personaje"""
-	for char_name in character_names:
-		var button = Button.new()
-		button.text = char_name
-		button.custom_minimum_size = Vector2(100, 80)
-		button.modulate = Color.from_string("6ba3ffff", Color.WHITE)  # Azul
-		button.pressed.connect(_on_character_button_pressed.bindv([char_name]))
-		characters_container.add_child(button)
+	"""Obtiene botones existentes del TSCN y asigna nombres dinámicamente"""
+	if not team_system or not team_system.characters:
+		print("Error: team_system o characters no disponibles")
+		return
+	
+	# Obtener los botones que ya existen en el TSCN
+	var existing_buttons = characters_container.get_children()
+	
+	var i = 0
+	for char in team_system.characters:
+		if i < existing_buttons.size():
+			var button = existing_buttons[i]
+			# Cambiar el nombre del botón al del personaje
+			button.text = char.name
+			button.modulate = Color.from_string("6ba3ffff", Color.WHITE)  # Azul
+			# Conectar al manejador de eventos
+			button.pressed.connect(_on_character_button_pressed.bindv([char.name]))
+			# Guardar referencia al botón
+			character_buttons[char.name] = button
+			i += 1
 
 func create_task_buttons():
 	"""Crea botones interactivos para cada tarea"""
@@ -175,7 +190,7 @@ func assign_character_to_task(char_name: String, task_name: String):
 	assignments[task_name] = char_name
 	
 	# Obtener referencias
-	var char_button = characters_container.get_child(character_names.find(char_name))
+	var char_button = character_buttons.get(char_name)
 	var area = tasks_container.find_child(task_name.capitalize() + "_Area", true, false)
 	
 	if char_button and area:
@@ -233,8 +248,11 @@ func assign_character_to_task(char_name: String, task_name: String):
 
 func _update_character_button_appearance():
 	"""Actualiza el aspecto de los botones de personaje según selección"""
-	for i in range(character_names.size()):
-		var char_name = character_names[i]
+	if not team_system or not team_system.characters:
+		return
+	
+	for i in range(team_system.characters.size()):
+		var char_name = team_system.characters[i].name
 		var button = characters_container.get_child(i)
 		
 		if characters[char_name]["task"] != null:
@@ -338,8 +356,9 @@ func reset_assignments():
 	assigned_buttons.clear()
 	animated_buttons.clear()
 	
-	for name in character_names:
-		characters[name]["task"] = null
+	if team_system and team_system.characters:
+		for char in team_system.characters:
+			characters[char.name]["task"] = null
 	
 	# Reinicializar assignments
 	var tasks = ["programming", "design", "testing", "rest"]
@@ -356,11 +375,14 @@ func reset_assignments():
 				assigned_label.modulate = Color.WHITE
 	
 	# Restaurar apariencia de botones
-	for i in range(character_names.size()):
-		var button = characters_container.get_child(i)
-		button.modulate = Color.from_string("6ba3ffff", Color.WHITE)
-		button.text = character_names[i]
-		button.visible = true  # Restaurar visibilidad
+	if team_system and team_system.characters:
+		for char in team_system.characters:
+			var char_name = char.name
+			var button = character_buttons.get(char_name)
+			if button:
+				button.modulate = Color.from_string("6ba3ffff", Color.WHITE)
+				button.text = char_name
+				button.visible = true  # Restaurar visibilidad
 	
 	selected_character = null
 

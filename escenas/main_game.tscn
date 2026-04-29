@@ -74,6 +74,21 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_constants/separation = 20
 
+[node name="Character1Button" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/VBoxContainer/CharactersContainer" unique_id=1809032395]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+text = "NombrePersonaje"
+
+[node name="Character2Button" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/VBoxContainer/CharactersContainer" unique_id=1809032396]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+text = "NombrePersonaje"
+
+[node name="Character3Button" type="Button" parent="CanvasLayer/UIController/AssignmentPanel/VBoxContainer/CharactersContainer" unique_id=1809032397]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+text = "NombrePersonaje"
+
 [node name="TasksLabel" type="Label" parent="CanvasLayer/UIController/AssignmentPanel/VBoxContainer" unique_id=1039234223]
 layout_mode = 2
 text = "Tareas:"
