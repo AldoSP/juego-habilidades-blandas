@@ -35,7 +35,6 @@ func _ready():
 	if ui:
 		ui.setup(team, tasks, event_system, project, self)
 		ui.connect("tasks_assigned", Callable(self, "_on_tasks_assigned"))
-		ui.load_characters(team.characters)
 	
 	start_day()
 

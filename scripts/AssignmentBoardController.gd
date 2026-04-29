@@ -2,25 +2,73 @@ extends Control
 
 var selected_character = null
 
+const CharacterButtonScene = preload("res://escenas/character_button.tscn")
+const CategoryContainerScene = preload("res://escenas/category_container.tscn")
+
 @onready var start_area = $MarginContainer/VBoxContainer/StartArea
 @onready var categories_container = $MarginContainer/VBoxContainer/Categories
 @onready var confirm_button = $MarginContainer/VBoxContainer/TopBar/HBoxContainer/ConfirmButton
 @onready var reset_button = $MarginContainer/VBoxContainer/TopBar/HBoxContainer/ResetButton
 
+
+
+@export var characters_data = [
+
+]
+
+@export var categories_data = [
+
+]
+
 signal assignments_confirmed(assignments)
+
+func setup_board(characters, categories):
+	characters_data = characters
+	categories_data = categories
+	AssignmentManager.reset()
+
+	load_categories()
+	load_characters()
+
+
+func load_categories():
+	# Clear existing (in case of reload)
+	for child in categories_container.get_children():
+		child.queue_free()
+
+	for data in categories_data:
+		var category = CategoryContainerScene.instantiate()
+		
+		category.category_id = data["id"]
+		
+		
+		category.set_label(data["label"])
+
+		categories_container.add_child(category)
+
+		# Connect signal
+		category.connect("category_clicked", _on_category_clicked)
+		
+
+func load_characters():
+	for child in start_area.get_children():
+		child.queue_free()
+
+	for data in characters_data:
+		var button = CharacterButtonScene.instantiate()
+		
+		button.character_id = data["id"]
+		button.text = data["name"]
+
+		start_area.add_child(button)
+
+		# Connect signal
+		button.connect("pressed_character", _on_character_selected)
 
 func _ready():
 	# Connect reset button
 	reset_button.pressed.connect(_on_reset_pressed)
 	confirm_button.pressed.connect(_on_confirm_pressed)
-
-	# Connect all character buttons
-	for button in get_tree().get_nodes_in_group("character_buttons"):
-		button.connect("pressed_character", _on_character_selected)
-
-	# Connect all category containers
-	for category in get_tree().get_nodes_in_group("categories"):
-		category.connect("category_clicked", _on_category_clicked)
 
 func _on_character_selected(button):
 	if selected_character and selected_character != button:
@@ -62,15 +110,16 @@ func _on_category_clicked(category):
 func _on_reset_pressed():
 	AssignmentManager.reset()
 
-	# Move all buttons back to start area
+	# 🔹 Remove ALL existing character buttons (no matter where they are)
 	for button in get_tree().get_nodes_in_group("character_buttons"):
-		button.get_parent().remove_child(button)
-		start_area.add_child(button)
+		button.queue_free()
 
-	# Clear selection if any
+	# 🔹 Clear selection safely
 	if selected_character:
-		selected_character.modulate = Color.WHITE
 		selected_character = null
+
+	# 🔹 Reload fresh
+	load_characters()
 
 func _on_confirm_pressed():
 	# Duplicate so external systems don’t accidentally modify it
