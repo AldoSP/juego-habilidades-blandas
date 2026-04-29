@@ -26,40 +26,40 @@ La escena contiene:
 │ Inicio del Día                                          │
 │ - Mostrar panel de asignación de tareas               │
 └──────────────────┬──────────────────────────────────────┘
-				   │
-				   ▼
+                   │
+                   ▼
 ┌─────────────────────────────────────────────────────────┐
 │ Asignar Tareas                                          │
 │ - Jugador selecciona personaje                         │
 │ - Jugador selecciona tarea (Programming/Design/Testing)│
 │ - Jugador confirma asignaciones                        │
 └──────────────────┬──────────────────────────────────────┘
-				   │
-				   ▼
+                   │
+                   ▼
 ┌─────────────────────────────────────────────────────────┐
 │ Procesar Eventos Aleatorios                             │
 │ - Para cada personaje: 50% de probabilidad de evento   │
 │ - Mostrar evento y opciones (Sí/No)                    │
 │ - Aplicar modificadores según la decisión             │
 └──────────────────┬──────────────────────────────────────┘
-				   │
-				   ▼
+                   │
+                   ▼
 ┌─────────────────────────────────────────────────────────┐
 │ Calcular Tareas                                         │
 │ - TaskSystem calcula puntuación de cada personaje      │
 │ - Se aplican modificadores de eventos                  │
 │ - Se reduce energía de cada personaje                  │
 └──────────────────┬──────────────────────────────────────┘
-				   │
-				   ▼
+                   │
+                   ▼
 ┌─────────────────────────────────────────────────────────┐
 │ Mostrar Resultados                                      │
 │ - Programming: XXX                                      │
 │ - Design: XXX                                           │
 │ - Testing: XXX                                          │
 └──────────────────┬──────────────────────────────────────┘
-				   │
-				   ▼
+                   │
+                   ▼
 ┌─────────────────────────────────────────────────────────┐
 │ Fin del Día / Inicio del Siguiente                     │
 │ - Si día < max_days: volver al inicio                  │
@@ -125,16 +125,16 @@ base = 5
 multiplier = 1.0
 
 Si task_type == strength:
-	multiplier = 1.5
+    multiplier = 1.5
 Si task_type == weakness:
-	multiplier = 0.5
+    multiplier = 0.5
 
 Si energy < 30:
-	multiplier *= 0.5
+    multiplier *= 0.5
 
 score = int(base * multiplier) + event_modifier
 si score < 0:
-	score = 0
+    score = 0
 ```
 
 ## Eventos Disponibles
@@ -174,13 +174,13 @@ var max_days = 3  # Cambia este número
 En `EventSystem.gd`, en el array `events`, agrega un nuevo diccionario:
 ```gdscript
 {
-	"id": "event_id",
-	"description": "Descripción del evento",
-	"task": "programming",  # o "design", "testing", "any"
-	"yes_delta": 3,
-	"no_delta": -1,
-	"yes_text": "Aceptas...",
-	"no_text": "Rechazas..."
+    "id": "event_id",
+    "description": "Descripción del evento",
+    "task": "programming",  # o "design", "testing", "any"
+    "yes_delta": 3,
+    "no_delta": -1,
+    "yes_text": "Aceptas...",
+    "no_text": "Rechazas..."
 }
 ```
 
@@ -188,7 +188,7 @@ En `EventSystem.gd`, en el array `events`, agrega un nuevo diccionario:
 En `TeamSystem.gd`, línea 14:
 ```gdscript
 func _ready():
-	characters.append(Character.new("Nombre", "fortaleza", "debilidad"))
+    characters.append(Character.new("Nombre", "fortaleza", "debilidad"))
 ```
 
 ## Señales Disponibles

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cva5nnb3b1n1h"]
 
-[ext_resource type="Texture2D" uid="uid://cbwnb03uguqyp" path="res://assets/backgrounds/EscenaOficinaTrabajo.jpg" id="1_5l4rs"]
-[ext_resource type="Texture2D" uid="uid://b16tvob31p2ke" path="res://assets/sprites/characters/Karol/MiniKarol.png" id="1_mnnyy"]
+[ext_resource type="Texture2D" uid="uid://cbwnb03uguqyp" path="res://assets/EscenaOficinaTrabajo.jpg" id="1_5l4rs"]
+[ext_resource type="Texture2D" uid="uid://b16tvob31p2ke" path="res://assets/sprites/MiniKarol.png" id="1_mnnyy"]
 [ext_resource type="Script" uid="uid://b51mtcwu2lnqt" path="res://escenas/personaje.gd" id="2_qufif"]
 
 [node name="EscenaTrabajo" type="Node2D" unique_id=1769141888]
