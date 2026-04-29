@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cttx80rt51g08"]
 
 [ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/sprites/Jhonatan.png" id="1_67bck"]
-[ext_resource type="Texture2D" uid="uid://bs56h85mck6a0" path="res://assets/EscenaOficina (1).jpg" id="2_hdjqb"]
-[ext_resource type="Texture2D" uid="uid://bok3l8eyeem20" path="res://assets/EscenaInicioFinDia (1).jpg" id="3_hdjqb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ac00"]
+load_path = "res://.godot/imported/EscenaOficina (1).jpg-d7ac5326044a1a233124d0676a5bcf6e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_weykm"]
+load_path = "res://.godot/imported/EscenaInicioFinDia (1).jpg-edd3f9f6292b9e415aee4a492b11d2dd.ctex"
 
 [node name="UI" type="Node2D" unique_id=985150822]
 
@@ -22,7 +26,7 @@ texture = ExtResource("1_67bck")
 [node name="EscenaOficina(1)" type="Sprite2D" parent="CanvasLayer" unique_id=1003880911]
 position = Vector2(608, 345)
 scale = Vector2(0.418, 0.418)
-texture = ExtResource("2_hdjqb")
+texture = SubResource("CompressedTexture2D_1ac00")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1595251902]
 
@@ -32,7 +36,7 @@ texture = ExtResource("2_hdjqb")
 visible = false
 position = Vector2(608.00006, 343.00003)
 scale = Vector2(0.20704679, 0.20704679)
-texture = ExtResource("3_hdjqb")
+texture = SubResource("CompressedTexture2D_weykm")
 
 [node name="Dialogos_base" type="Node2D" parent="." unique_id=704704172]
 

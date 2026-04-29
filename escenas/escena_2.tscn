@@ -1,15 +1,26 @@
 [gd_scene format=3 uid="uid://bb7mi6sp6upk4"]
 
-[ext_resource type="Script" uid="uid://cqvc5qloe56gi" path="res://escenas/escena_2.gd" id="1_0afbk"]
-[ext_resource type="Texture2D" uid="uid://bok3l8eyeem20" path="res://assets/EscenaInicioFinDia (1).jpg" id="1_weykm"]
+[sub_resource type="GDScript" id="GDScript_ja5nc"]
+script/source = "extends Node2D
+
+func _input(event):
+	if event.is_action_pressed(\"ui_accept\"):
+		cambiar_escena()
+
+func cambiar_escena():
+	get_tree().change_scene_to_file(\"res://escenas/escena_trabajo.tscn\")
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_weykm"]
+load_path = "res://.godot/imported/EscenaInicioFinDia (1).jpg-edd3f9f6292b9e415aee4a492b11d2dd.ctex"
 
 [node name="Escena2" type="Node2D" unique_id=1886407383]
-script = ExtResource("1_0afbk")
+script = SubResource("GDScript_ja5nc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=13101992]
 position = Vector2(597, 301)
 scale = Vector2(0.19863519, 0.19863516)
-texture = ExtResource("1_weykm")
+texture = SubResource("CompressedTexture2D_weykm")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=311878828]
 

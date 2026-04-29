@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs56h85mck6a0"
-path="res://.godot/imported/EscenaOficina (1).jpg-d7ac5326044a1a233124d0676a5bcf6e.ctex"
+uid="uid://cm7sndpdbc24u"
+path="res://.godot/imported/BtnEntiende.png-1b12f4575787bf2c72e8aade23f2bf5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/EscenaOficina (1).jpg"
-dest_files=["res://.godot/imported/EscenaOficina (1).jpg-d7ac5326044a1a233124d0676a5bcf6e.ctex"]
+source_file="res://assets/sprites/BtnEntiende.png"
+dest_files=["res://.godot/imported/BtnEntiende.png-1b12f4575787bf2c72e8aade23f2bf5c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bok3l8eyeem20"
-path="res://.godot/imported/EscenaInicioFinDia (1).jpg-edd3f9f6292b9e415aee4a492b11d2dd.ctex"
+uid="uid://b6jjx7b8wt1fl"
+path="res://.godot/imported/BtnAzul.png-b04f1e24e2b355ba39907893790d460c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/EscenaInicioFinDia (1).jpg"
-dest_files=["res://.godot/imported/EscenaInicioFinDia (1).jpg-edd3f9f6292b9e415aee4a492b11d2dd.ctex"]
+source_file="res://assets/sprites/BtnAzul.png"
+dest_files=["res://.godot/imported/BtnAzul.png-b04f1e24e2b355ba39907893790d460c.ctex"]
 
 [params]
 
