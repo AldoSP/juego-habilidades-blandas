@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cthqm8sj5slv5"]
 
 [ext_resource type="Script" uid="uid://b0r11la4xwt3s" path="res://scripts/escena.gd" id="1_0mg33"]
-[ext_resource type="Texture2D" uid="uid://bs56h85mck6a0" path="res://assets/EscenaOficina (1).jpg" id="2_rjdl1"]
-[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/sprites/Jhonatan.png" id="3_meahv"]
+[ext_resource type="Texture2D" uid="uid://bs56h85mck6a0" path="res://assets/backgrounds/EscenaOficina (1).jpg" id="2_rjdl1"]
+[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/sprites/characters/Jhonatan/Jhonatan.png" id="3_meahv"]
 
 [node name="Escena1" type="Node2D" unique_id=161524590]
 script = ExtResource("1_0mg33")
