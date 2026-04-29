@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://br8lxt7tlvyya"]
+
+[ext_resource type="Script" uid="uid://7ath2nbnmku5" path="res://scripts/AssignmentBoardController.gd" id="1_52lnx"]
+[ext_resource type="PackedScene" uid="uid://ca4vsju06uecd" path="res://escenas/character_button.tscn" id="2_pmxrn"]
+[ext_resource type="PackedScene" uid="uid://b0bd41vrkeoye" path="res://escenas/category_container.tscn" id="3_2tplo"]
+
+[node name="AssignmentBoard" type="Control" unique_id=272709185]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_52lnx")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1823803830]
+layout_mode = 1
+offset_right = 900.0
+offset_bottom = 600.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1749835899]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 62
+
+[node name="TopBar" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1220468720]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TopBar" unique_id=170522255]
+layout_mode = 2
+text = "Assing your characters"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TopBar" unique_id=24392531]
+layout_mode = 2
+theme_override_constants/separation = 42
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=1614482727]
+layout_mode = 2
+text = "Confirm"
+
+[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=2071139685]
+layout_mode = 2
+text = "Reset"
+
+[node name="StartArea" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=176924919]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 125
+
+[node name="CharacterButton" parent="MarginContainer/VBoxContainer/StartArea" unique_id=1533464207 instance=ExtResource("2_pmxrn")]
+layout_mode = 2
+
+[node name="CharacterButton2" parent="MarginContainer/VBoxContainer/StartArea" unique_id=1897301215 instance=ExtResource("2_pmxrn")]
+layout_mode = 2
+
+[node name="Categories" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=882472609]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 156
+
+[node name="CategoryContainer" parent="MarginContainer/VBoxContainer/Categories" unique_id=609147361 instance=ExtResource("3_2tplo")]
+layout_mode = 2
+
+[node name="CategoryContainer2" parent="MarginContainer/VBoxContainer/Categories" unique_id=1477932699 instance=ExtResource("3_2tplo")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopBar/HBoxContainer/ConfirmButton" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopBar/HBoxContainer/ResetButton" to="." method="_on_reset_pressed"]

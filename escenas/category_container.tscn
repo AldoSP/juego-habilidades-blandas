@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b0bd41vrkeoye"]
+
+[ext_resource type="Script" uid="uid://dcej5yevr03pr" path="res://scripts/CategoryContainer.gd" id="1_2t2xy"]
+
+[node name="CategoryContainer" type="Control" unique_id=609147361]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1356486134]
+layout_mode = 1
+offset_right = 124.0
+offset_bottom = 307.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2096347782]
+layout_mode = 2
+text = "CATEGORY TEXT"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1344784452]
+layout_mode = 2
+script = ExtResource("1_2t2xy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1324727812]
+custom_minimum_size = Vector2(70, 280)
+layout_mode = 2
+
+[connection signal="gui_input" from="VBoxContainer/PanelContainer" to="." method="_gui_input"]

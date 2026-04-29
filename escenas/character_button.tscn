@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ca4vsju06uecd"]
+
+[ext_resource type="Script" uid="uid://derx2l4wgynl6" path="res://scripts/CharacterButton.gd" id="1_dcwj0"]
+
+[node name="CharacterButton" type="Control" unique_id=1533464207]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1868915162]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterButton" type="Button" parent="MarginContainer" unique_id=1744811693]
+layout_mode = 2
+text = "DEMO TEXT"
+script = ExtResource("1_dcwj0")
+
+[connection signal="mouse_entered" from="MarginContainer/CharacterButton" to="MarginContainer/CharacterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/CharacterButton" to="MarginContainer/CharacterButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/CharacterButton" to="MarginContainer/CharacterButton" method="_pressed"]
