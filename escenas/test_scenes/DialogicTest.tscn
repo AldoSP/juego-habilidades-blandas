@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://qdx0v4w5ju5"]
-
-[ext_resource type="Script" uid="uid://im68uu4ssrvb" path="res://escenas/test_scenes/dialogic_test.gd" id="1_pjt81"]
-
-[node name="DialogicTest" type="Node2D" unique_id=1285121845]
-script = ExtResource("1_pjt81")
