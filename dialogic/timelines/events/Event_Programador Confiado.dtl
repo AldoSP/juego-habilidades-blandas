@@ -1,0 +1,11 @@
+join David (David Feliz) center
+David: ¡Buenas! Ya casi termino una funcionalidad importante.
+David (David Preocupado): Pero... no hay tiempo para probarla antes de entregarla.
+David (David Feliz): No pasa nada, seguro funciona perfecto.
+David: Propongo que la enviemos así.
+- Confiar en David y entregar sin pruebas
+	David: ...Ok, enviado.
+	David (David Preocupado): Uh... hay varios bugs reportados.
+- Pedirle que haga pruebas básicas antes de entregar
+	David (David Preocupado): Hmm... supongo que tienes razón.
+	David (David Feliz): Encontré varios errores. Bien visto.

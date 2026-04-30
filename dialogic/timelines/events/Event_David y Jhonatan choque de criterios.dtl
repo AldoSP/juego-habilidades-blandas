@@ -1,0 +1,11 @@
+join David (David Preocupado) left
+join Jhonatan (Jhonatan Preocupado) right
+David: Tengo una optimizacion que acelera todo.
+Jhonatan: Pero cambia comportamiento en casos borde y necesito nuevas pruebas.
+David (David): Podemos subirla ya y probar despues.
+- Publicar optimizacion sin pruebas nuevas
+	Jhonatan (Jhonatan Preocupado): No me convence...
+	David (David Preocupado): Hubo regresiones en escenarios criticos.
+- Hacer prueba dirigida con Jhonatan antes de publicar
+	Jhonatan (Jhonatan): Dame 20 minutos y validamos riesgo.
+	David (David Feliz): Salio bien y sin romper casos borde.
