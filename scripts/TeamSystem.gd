@@ -34,7 +34,7 @@ func _ready():
 	}
 	characters.append(Jhonatan)
 
-	var Karol = Character.new("Karol", "management", "programming")
+	var Karol = Character.new("Karol", "management", "management")
 	Karol.sprites = {
 		"": preload("res://assets/sprites/characters/Karol/Karol.png"),
 		"Feliz": preload("res://assets/sprites/characters/Karol/KarolFeliz.png"),

@@ -43,6 +43,33 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
+},
+"M_Karol": {
+"export_overrides": {
+"image": "\"res://assets/sprites/characters/Karol/Karol.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"M_Karol Feliz": {
+"export_overrides": {
+"image": "\"res://assets/sprites/characters/Karol/KarolFeliz.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"M_Karol Preocupada": {
+"export_overrides": {
+"image": "\"res://assets/sprites/characters/Karol/KarolPreocupada.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 &"scale": 1.0

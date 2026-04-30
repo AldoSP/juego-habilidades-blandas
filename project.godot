@@ -23,12 +23,14 @@ AssignmentManager="*uid://dsxkfv46ogqk"
 [dialogic]
 
 directories/dch_directory={
-"Karol": "res://dialogic/characters/Karol.dch",
-"Xcharacter": "res://dialogic/characters/Xcharacter.dch"
+"David": "res://dialogic/characters/David.dch",
+"Erick": "res://dialogic/characters/Erick.dch",
+"Jhonatan": "res://dialogic/characters/Jhonatan.dch",
+"Karol": "res://dialogic/characters/Karol.dch"
 }
 directories/dtl_directory={
-"client_change": "res://dialogic/timelines/client_change.dtl",
-"timeline": "res://dialogic/timelines/timeline.dtl"
+"Introduction": "res://dialogic/timelines/Introduction.dtl",
+"client_change": "res://dialogic/timelines/client_change.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
