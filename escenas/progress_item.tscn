@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://w5cxs4yedpmd"]
+
+[ext_resource type="Script" uid="uid://bwie4j6slsh05" path="res://scripts/ProgressItem.gd" id="1_s4ujy"]
+
+[node name="ProgressItem" type="HBoxContainer" unique_id=1107010984]
+script = ExtResource("1_s4ujy")
+
+[node name="icon" type="TextureRect" parent="." unique_id=1729916646]
+layout_mode = 2
+
+[node name="progress text" type="Label" parent="." unique_id=304774773]
+layout_mode = 2

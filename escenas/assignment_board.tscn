@@ -48,14 +48,14 @@ text = "Reset"
 
 [node name="StartArea" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=176924919]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_constants/separation = 125
+size_flags_horizontal = 4
+theme_override_constants/separation = 38
 
 [node name="Categories" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=882472609]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 71
+theme_override_constants/separation = 29
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopBar/HBoxContainer/ConfirmButton" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopBar/HBoxContainer/ResetButton" to="." method="_on_reset_pressed"]

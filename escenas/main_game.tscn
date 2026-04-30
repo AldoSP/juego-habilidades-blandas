@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cks40g1ujek8t" path="res://scripts/ProjectSystem.gd" id="4_p2tg3"]
 [ext_resource type="Script" uid="uid://4151bfcf22i8" path="res://scripts/UIController.gd" id="5_b4yst"]
 [ext_resource type="PackedScene" uid="uid://br8lxt7tlvyya" path="res://escenas/assignment_board.tscn" id="6_abrd1"]
+[ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
+[ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
 
 [node name="MainGame" type="Node2D" unique_id=136111819]
 
@@ -31,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_b4yst")
-container = NodePath("CharacterPanel/GridContainer")
+container = NodePath("VBoxContainer/CharacterPanel/GridContainer")
 
 [node name="AssignmentBoard" parent="CanvasLayer/UIController" unique_id=388412001 instance=ExtResource("6_abrd1")]
 layout_mode = 1
@@ -182,16 +184,25 @@ offset_right = 500.0
 offset_bottom = 430.0
 text = "Salir"
 
-[node name="CharacterPanel" type="Control" parent="CanvasLayer/UIController" unique_id=302294349]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIController" unique_id=1901257787]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -496.0
-offset_bottom = 277.0
+offset_left = -40.0
+offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIController/CharacterPanel" unique_id=426727849]
+[node name="DeadlineUi" parent="CanvasLayer/UIController/VBoxContainer" unique_id=1733592942 instance=ExtResource("7_a23o7")]
+layout_mode = 2
+
+[node name="ProjectProgressUI" parent="CanvasLayer/UIController/VBoxContainer" unique_id=1193582838 instance=ExtResource("7_7xn8u")]
+layout_mode = 2
+
+[node name="CharacterPanel" type="Control" parent="CanvasLayer/UIController/VBoxContainer" unique_id=302294349]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIController/VBoxContainer/CharacterPanel" unique_id=426727849]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

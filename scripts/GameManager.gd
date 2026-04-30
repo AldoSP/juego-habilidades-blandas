@@ -8,6 +8,8 @@ var ui: Control
 var team: Node
 var tasks: Node
 var project: Node
+var project_progress_ui: Node
+var deadline_ui: Node
 
 var event_system
 var current_day = 1
@@ -27,6 +29,11 @@ func _ready():
 	if not ui:
 		ui = get_node_or_null("../CanvasLayer/UIController")
 	
+	project_progress_ui = get_tree().root.find_child("ProjectProgressUI", true, false)
+	deadline_ui = get_tree().root.find_child("DeadlineUi", true, false)
+	if deadline_ui == null:
+		deadline_ui = get_tree().root.find_child("DeadlineUI", true, false)
+
 	event_system = EventSystem.new()
 	add_child(event_system)
 	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
@@ -36,6 +43,14 @@ func _ready():
 		ui.setup(team, tasks, event_system, project, self)
 		ui.connect("tasks_assigned", Callable(self, "_on_tasks_assigned"))
 		ui.load_characters(team.characters)
+
+	if project_progress_ui:
+		project_progress_ui.call_deferred("setup", project.get_completion_summary())
+
+	if deadline_ui:
+		deadline_ui.call_deferred("setup", max_days - current_day + 1)
+		if deadline_ui.has_signal("deadline_reached") and not deadline_ui.deadline_reached.is_connected(_on_deadline_reached):
+			deadline_ui.deadline_reached.connect(_on_deadline_reached)
 	
 	start_day()
 
@@ -99,9 +114,9 @@ func calculate_tasks():
 	# Aplicar resultados al proyecto
 	project.apply_results(results)
 	
-	end_day()
+	if project_progress_ui:
+		project_progress_ui.setup(project.get_completion_summary())
 
-func end_day():
 	"""Finaliza el día"""
 	print("\nFin del día ", current_day)
 	print("Estado del proyecto:")
@@ -110,6 +125,9 @@ func end_day():
 	print("  Testing: ", project.testing)
 	
 	current_day += 1
+
+	if deadline_ui:
+		deadline_ui.advance_day(1)
 	
 	if current_day <= max_days:
 		# Iniciar el siguiente día
@@ -130,6 +148,16 @@ func end_day():
 				"testing": project.testing
 			}
 			ui.show_game_over(final_stats)
+
+func _on_deadline_reached() -> void:
+	print("[Deadline] Se alcanzó la fecha límite")
+	if ui:
+		var final_stats = {
+			"programming": project.programming,
+			"design": project.design,
+			"testing": project.testing
+		}
+		ui.show_game_over(final_stats)
 
 func _on_dialogic_timeline_ended() -> void:
 	if active_event_data.is_empty():
