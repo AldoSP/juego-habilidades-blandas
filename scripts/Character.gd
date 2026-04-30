@@ -10,12 +10,20 @@ var energy = 100
 var assigned_task = null
 var event_modifier = 0
 var event_description = ""
+var sprites: Dictionary = {}
 signal energy_changed
 	
 func _init(_name, _strength, _weakness):
 	name = _name
 	strength = _strength
 	weakness = _weakness
+
+func get_sprite(state: String = "") -> Texture2D:
+	if sprites.has(state):
+		return sprites[state]
+	if sprites.has(""):
+		return sprites[""]
+	return null
 
 func set_energy(value):
 	energy = value
