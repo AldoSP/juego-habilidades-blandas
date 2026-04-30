@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cks40g1ujek8t" path="res://scripts/ProjectSystem.gd" id="4_p2tg3"]
 [ext_resource type="Script" uid="uid://4151bfcf22i8" path="res://scripts/UIController.gd" id="5_b4yst"]
 [ext_resource type="PackedScene" uid="uid://br8lxt7tlvyya" path="res://escenas/assignment_board.tscn" id="6_abrd1"]
+[ext_resource type="Texture2D" uid="uid://c3vn5sacqwfkw" path="res://assets/backgrounds/Office background.png" id="6_bdk3j"]
 [ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
 [ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
 
@@ -34,6 +35,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_b4yst")
 container = NodePath("VBoxContainer/CharacterPanel/GridContainer")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UIController" unique_id=2053402991]
+visible = false
+layout_mode = 0
+offset_left = -196.0
+offset_top = -203.0
+offset_right = 1446.0
+offset_bottom = 755.0
+texture = ExtResource("6_bdk3j")
 
 [node name="AssignmentBoard" parent="CanvasLayer/UIController" unique_id=388412001 instance=ExtResource("6_abrd1")]
 layout_mode = 1

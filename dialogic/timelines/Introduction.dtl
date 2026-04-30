@@ -1,0 +1,30 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (M_Karol) center
+Karol: ¡Hola!
+Karol (M_Karol Feliz): ¡Bienvenido a la demo de Artes Molles (Nombre por decidir)!
+Karol (M_Karol): En este juego tendrás que manejar a los miembros de tu equipo para cumplir un proyecto.
+Karol (M_Karol Feliz): Vamos a conocer al equipo
+update Karol (M_Karol) left
+join Jhonatan right
+Jhonatan: ¡Hola! Soy Jhonatan. No me gusta mucho programar, pero soy muy bueno haciendo testing.
+Jhonatan: ¡Espero que nos llevemos bien!
+leave Jhonatan
+join Erick right
+Erick: Hey, ¿que onda? Soy Erick
+Erick: ...
+Karol (M_Karol Preocupada): ¡Erick, presentate bien!
+Erick: Ugh, está bien. Soy Erick, me gusta diseñar cosas, pero odio tener que probarlas. Prefiero dejarselo a los testers.
+Erick: En fin, adios.
+leave Erick
+update Karol center
+Karol (M_Karol): Sigh... Disculpa, Erick no es muy bueno socializando.
+Karol (M_Karol Feliz): En fin, ¡conozcamos al ultimo integrante!
+update Karol left
+join David right
+David (David Feliz): Hola, mi nombre es David. ¡Soy el mejor programador del equipo!
+David (David Preocupado): Aunque... no soy nada bueno diseñando cosas. Tenlo en cuenta
+David (David): Te veré en el trabajo, hasta pronto.
+leave David
+update Karol (Karol) center
+Karol: Ya has conocido a la mayoría del equipo.
+Karol (Karol Feliz): Es hora de empezar el proyecto. ¡Buena suerte!
