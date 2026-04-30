@@ -26,7 +26,8 @@ directories/dch_directory={
 "David": "res://dialogic/characters/David.dch",
 "Erick": "res://dialogic/characters/Erick.dch",
 "Jhonatan": "res://dialogic/characters/Jhonatan.dch",
-"Karol": "res://dialogic/characters/Karol.dch"
+"Karol": "res://dialogic/characters/Karol.dch",
+"Narrator": "res://dialogic/characters/Narrator.dch"
 }
 directories/dtl_directory={
 "Event_David deuda tecnica oculta": "res://dialogic/timelines/events/Event_David deuda tecnica oculta.dtl",
@@ -43,7 +44,10 @@ directories/dtl_directory={
 "Introduction": "res://dialogic/timelines/Introduction.dtl",
 "client_change": "res://dialogic/timelines/client_change.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialogic/styles/Test.tres",
+"Test": "res://dialogic/styles/Test.tres"
+}
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -77,6 +81,11 @@ audio/channel_defaults={
 "loop": true,
 "volume": 0.0
 }
+}
+layout/style_list=["res://dialogic/styles/Test.tres"]
+layout/default_style="res://dialogic/styles/Test.tres"
+variables={
+"TestVar": ""
 }
 
 [display]

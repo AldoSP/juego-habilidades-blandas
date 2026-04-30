@@ -24,7 +24,8 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "",
+"sound_mood": "Mood 1"
 },
 "Karol Feliz": {
 "export_overrides": {
@@ -51,7 +52,8 @@
 "mirror": true,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "",
+"sound_mood": "Mood 1"
 },
 "M_Karol Feliz": {
 "export_overrides": {
@@ -60,7 +62,8 @@
 "mirror": true,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "",
+"sound_mood": "Mood 1"
 },
 "M_Karol Preocupada": {
 "export_overrides": {
