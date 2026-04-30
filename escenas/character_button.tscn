@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ca4vsju06uecd"]
+
+[ext_resource type="Script" uid="uid://derx2l4wgynl6" path="res://scripts/CharacterButton.gd" id="1_dcwj0"]
+
+[node name="CharacterButton" type="Button" unique_id=2142265197]
+offset_right = 98.0
+offset_bottom = 40.0
+text = "DEMO TEXT"
+script = ExtResource("1_dcwj0")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_pressed"]
