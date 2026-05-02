@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dv1yfdxifyp1s"]
+
+[ext_resource type="PackedScene" uid="uid://br8lxt7tlvyya" path="res://escenas/assignment_board.tscn" id="1_xgm2x"]
+
+[node name="TestRevampedAssignmentPanel" type="Node2D" unique_id=1358226576]
+
+[node name="AssignmentBoard" parent="." unique_id=272709185 instance=ExtResource("1_xgm2x")]

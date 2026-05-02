@@ -12,7 +12,6 @@ signal continue_to_tasks_requested
 signal continue_to_calculation_requested
 signal continue_to_events_requested
 signal continue_to_finish_day_requested
-signal event_decision_made(character_index, decision)
 
 var team_system
 var task_system
@@ -22,19 +21,26 @@ var game_manager
 
 var selected_character = null
 var characters = {}
-var character_names = ["Ana", "Mateo", "Sofia"]
+var character_names = ["David", "Erick", "Jhonatan", "Karol"]
 @export var container: Node
 var character_card_scene = preload("res://escenas/character_card.tscn")
+var assignment_board_scene = preload("res://escenas/assignment_board.tscn")
+
+const ASSIGNMENT_CATEGORIES = [
+	{ "id": "programming", "label": "Programming" },
+	{ "id": "design", "label": "Design" },
+	{ "id": "testing", "label": "Testing" },
+	{ "id": "rest", "label": "Rest" }
+]
 
 # Referencia a los paneles
 var assignment_panel
 var event_panel
 var results_panel
 var game_over_panel
+var assignment_board
 
-# Estado del evento actual
-var current_event_data = null
-var current_event_index = 0
+# Estado del evento actual ya no es necesario; Dialogic maneja las decisiones
 
 func _ready():
 	# Inicializamos personajes
@@ -46,6 +52,7 @@ func _ready():
 	event_panel = $EventPanel
 	results_panel = $ResultsPanel
 	game_over_panel = $GameOverPanel
+	_initialize_assignment_board()
 
 func setup(team, task_sys, event_sys, project_sys, gm):
 	team_system = team
@@ -53,6 +60,84 @@ func setup(team, task_sys, event_sys, project_sys, gm):
 	event_system = event_sys
 	project_system = project_sys
 	game_manager = gm
+	_ensure_assignment_board_initialized()
+	call_deferred("load_assignment_board", team_system.characters)
+
+func _initialize_assignment_board():
+	if assignment_board == null:
+		assignment_board = get_node_or_null("AssignmentBoard")
+
+	if assignment_board != null:
+		if not assignment_board.assignments_confirmed.is_connected(_on_assignment_board_confirmed):
+			assignment_board.assignments_confirmed.connect(_on_assignment_board_confirmed)
+		return
+
+	if assignment_panel == null:
+		return
+	if assignment_board != null:
+		return
+
+	assignment_board = assignment_board_scene.instantiate()
+	assignment_board.name = "AssignmentBoard"
+	assignment_board.set_anchors_preset(Control.PRESET_FULL_RECT)
+	assignment_board.offset_left = 0
+	assignment_board.offset_top = 0
+	assignment_board.offset_right = 0
+	assignment_board.offset_bottom = 0
+	assignment_panel.add_child(assignment_board)
+
+	assignment_board.assignments_confirmed.connect(_on_assignment_board_confirmed)
+
+func _ensure_assignment_board_initialized():
+	if assignment_panel == null:
+		assignment_panel = get_node_or_null("AssignmentPanel")
+	_initialize_assignment_board()
+
+func load_assignment_board(team_characters):
+	_ensure_assignment_board_initialized()
+	if assignment_board == null:
+		print("No se pudo inicializar AssignmentBoard")
+		return
+
+	var board_characters = []
+	for c in team_characters:
+		var char_name = _get_character_name(c)
+		if char_name == "":
+			continue
+		board_characters.append({
+			"id": char_name,
+			"name": char_name
+		})
+
+	print("Cargando AssignmentBoard con ", board_characters.size(), " personajes")
+	assignment_board.setup_board(board_characters, ASSIGNMENT_CATEGORIES)
+
+func _get_character_name(character_data) -> String:
+	if typeof(character_data) == TYPE_DICTIONARY:
+		if character_data.has("name"):
+			return str(character_data["name"])
+		return ""
+
+	if character_data == null:
+		return ""
+
+	if typeof(character_data) != TYPE_OBJECT:
+		return str(character_data)
+
+	if character_data.get("name") == null:
+		return ""
+
+	return str(character_data.get("name"))
+
+func _on_assignment_board_confirmed(assignments):
+	if team_system:
+		for character in team_system.characters:
+			if assignments.has(character.name):
+				character.assigned_task = assignments[character.name]
+				print("Aplicado: ", character.name, " -> ", character.assigned_task)
+
+	_show_assignment_panel(false)
+	emit_signal("tasks_assigned")
 
 func assign_task(task_name):
 	if selected_character == null:
@@ -89,7 +174,6 @@ func _on_rest_pressed():
 func _on_confirm_button_pressed():
 	print("Asignaciones finales:")
 	print(characters)
-	
 	# Aplicar asignaciones a los personajes del team_system
 	if team_system:
 		for i in range(team_system.characters.size()):
@@ -102,41 +186,6 @@ func _on_confirm_button_pressed():
 	_show_assignment_panel(false)
 	
 	emit_signal("tasks_assigned")
-
-func show_event_decision(character, event, event_index):
-	"""Muestra una UI con la decisión del evento"""
-	current_event_data = {
-		"character": character,
-		"event": event,
-		"index": event_index
-	}
-	current_event_index = event_index
-	
-	print("Mostrando evento para ", character.name, ": ", event.description)
-	
-	# Actualizar UI del evento
-	var event_title = event_panel.get_node("EventTitle")
-	var event_description = event_panel.get_node("EventDescription")
-	var yes_button = event_panel.get_node("YesButton")
-	var no_button = event_panel.get_node("NoButton")
-	
-	event_title.text = character.name + " - " + event.id
-	event_description.text = event.description
-	yes_button.text = event.yes_text + " (+%d)" % event.yes_delta
-	no_button.text = event.no_text + " (%d)" % event.no_delta
-	
-	# Mostrar panel de evento
-	_show_event_panel(true)
-
-func _on_event_yes_pressed():
-	if current_event_data:
-		emit_signal("event_decision_made", current_event_index, true)
-		# No ocultar el panel inmediatamente, dejar que GameManager lo maneje
-
-func _on_event_no_pressed():
-	if current_event_data:
-		emit_signal("event_decision_made", current_event_index, false)
-		# No ocultar el panel inmediatamente, dejar que GameManager lo maneje
 
 func show_results(results):
 	"""Muestra los resultados del día"""
@@ -212,3 +261,7 @@ func _show_results_panel(visible: bool):
 func _show_game_over_panel(visible: bool):
 	if game_over_panel:
 		game_over_panel.visible = visible
+
+
+func _on_character_d_pressed() -> void:
+	pass # Replace with function body.

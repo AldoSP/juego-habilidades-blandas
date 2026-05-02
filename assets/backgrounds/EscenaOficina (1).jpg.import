@@ -1,0 +1,50 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/sprites/BtnAzul.png.import
+uid="uid://b6jjx7b8wt1fl"
+path="res://.godot/imported/BtnAzul.png-b04f1e24e2b355ba39907893790d460c.ctex"
+========
+uid="uid://bs56h85mck6a0"
+path="res://.godot/imported/EscenaOficina (1).jpg-610b00946f9ebf83c05c260de5fc76e3.ctex"
+>>>>>>>> baa50a7e51241454de9336837c2b427a81cb2a0b:assets/backgrounds/EscenaOficina (1).jpg.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<<< HEAD:assets/sprites/BtnAzul.png.import
+source_file="res://assets/sprites/BtnAzul.png"
+dest_files=["res://.godot/imported/BtnAzul.png-b04f1e24e2b355ba39907893790d460c.ctex"]
+========
+source_file="res://assets/backgrounds/EscenaOficina (1).jpg"
+dest_files=["res://.godot/imported/EscenaOficina (1).jpg-610b00946f9ebf83c05c260de5fc76e3.ctex"]
+>>>>>>>> baa50a7e51241454de9336837c2b427a81cb2a0b:assets/backgrounds/EscenaOficina (1).jpg.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

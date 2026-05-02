@@ -8,12 +8,15 @@ var ui: Control
 var team: Node
 var tasks: Node
 var project: Node
+var project_progress_ui: Node
+var deadline_ui: Node
 
 var event_system
 var current_day = 1
 var max_days = 3
 var current_event_index = 0
 var pending_events = []
+var active_event_data: Dictionary = {}
 
 func _ready():
 	# Obtener referencias a los sistemas
@@ -26,17 +29,28 @@ func _ready():
 	if not ui:
 		ui = get_node_or_null("../CanvasLayer/UIController")
 	
+	project_progress_ui = get_tree().root.find_child("ProjectProgressUI", true, false)
+	deadline_ui = get_tree().root.find_child("DeadlineUi", true, false)
+	if deadline_ui == null:
+		deadline_ui = get_tree().root.find_child("DeadlineUI", true, false)
+
 	event_system = EventSystem.new()
 	add_child(event_system)
-	event_system.connect("event_requested", Callable(self, "_on_event_requested"))
-	event_system.connect("event_resolved", Callable(self, "_on_event_resolved"))
+	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
 	
 	# Conectar señales de UI
 	if ui:
 		ui.setup(team, tasks, event_system, project, self)
 		ui.connect("tasks_assigned", Callable(self, "_on_tasks_assigned"))
-		ui.connect("event_decision_made", Callable(self, "_on_event_decision_made"))
 		ui.load_characters(team.characters)
+
+	if project_progress_ui:
+		project_progress_ui.call_deferred("setup", project.get_completion_summary())
+
+	if deadline_ui:
+		deadline_ui.call_deferred("setup", max_days - current_day + 1)
+		if deadline_ui.has_signal("deadline_reached") and not deadline_ui.deadline_reached.is_connected(_on_deadline_reached):
+			deadline_ui.deadline_reached.connect(_on_deadline_reached)
 	
 	start_day()
 
@@ -57,8 +71,11 @@ func process_events():
 	# Generar eventos para cada personaje
 	for c in team.characters:
 		c.event_modifier = 0
-		var event = event_system.maybe_trigger_random_event(c, c.assigned_task)
-		if event:
+		if c.assigned_task == null:
+			print("[Eventos] ", c.name, " no tiene tarea asignada; se omite la selección de evento.")
+			continue
+		var event = event_system.maybe_pick_event(c, c.assigned_task, team.characters)
+		if not event.is_empty():
 			pending_events.append({
 				"character": c,
 				"event": event
@@ -72,52 +89,19 @@ func process_events():
 	else:
 		# Mostrar el primer evento
 		current_event_index = 0
-		show_next_event()
+		launch_next_event()
 
-func show_next_event():
-	"""Muestra el siguiente evento o termina el procesamiento"""
+func launch_next_event() -> void:
+	"""Lanza el siguiente timeline de Dialogic, o termina si no quedan eventos."""
 	if current_event_index >= pending_events.size():
-		# Ya se procesaron todos los eventos
 		calculate_tasks()
 		return
 	
-	var event_data = pending_events[current_event_index]
-	var character = event_data["character"]
-	var event = event_data["event"]
-	
-	print("\nEvento para ", character.name, ": ", event.description)
-	print("  Sí: ", event.yes_text)
-	print("  No: ", event.no_text)
-	
-	# Mostrar en UI si está disponible
-	if ui:
-		ui.show_event_decision(character, event, current_event_index)
-	else:
-		# Si no hay UI, simular una decisión
-		var decision = randf() > 0.5
-		_on_event_decision_made(current_event_index, decision)
-
-func _on_event_decision_made(event_index, decision):
-	"""Se llamó cuando el jugador tomó una decisión sobre un evento"""
-	if event_index != current_event_index:
-		return
-	
-	var event_data = pending_events[current_event_index]
-	var character = event_data["character"]
-	var event = event_data["event"]
-	
-	event_system.resolve_event(character, event, decision)
-	print(character.name, " decidió: ", "Sí" if decision else "No")
-	
-	# Ocultar panel de evento
-	if ui:
-		ui._show_event_panel(false)
-	
-	current_event_index += 1
-	
-	# Pequeño delay para evitar problemas de UI cuando hay eventos consecutivos
-	await get_tree().process_frame
-	show_next_event()
+	active_event_data = pending_events[current_event_index]
+	var character = active_event_data["character"]
+	var event = active_event_data["event"]
+	print("[Evento iniciado] ", character.name, " - ", event.id)
+	Dialogic.start(event.id)
 
 func calculate_tasks():
 	"""Calcula los resultados de las tareas del día"""
@@ -130,9 +114,9 @@ func calculate_tasks():
 	# Aplicar resultados al proyecto
 	project.apply_results(results)
 	
-	end_day()
+	if project_progress_ui:
+		project_progress_ui.setup(project.get_completion_summary())
 
-func end_day():
 	"""Finaliza el día"""
 	print("\nFin del día ", current_day)
 	print("Estado del proyecto:")
@@ -141,6 +125,9 @@ func end_day():
 	print("  Testing: ", project.testing)
 	
 	current_day += 1
+
+	if deadline_ui:
+		deadline_ui.advance_day(1)
 	
 	if current_day <= max_days:
 		# Iniciar el siguiente día
@@ -162,11 +149,27 @@ func end_day():
 			}
 			ui.show_game_over(final_stats)
 
-func _on_event_requested(character, _event):
-	print("[Evento solicitado] ", character.name)
+func _on_deadline_reached() -> void:
+	print("[Deadline] Se alcanzó la fecha límite")
+	if ui:
+		var final_stats = {
+			"programming": project.programming,
+			"design": project.design,
+			"testing": project.testing
+		}
+		ui.show_game_over(final_stats)
 
-func _on_event_resolved(_character, _event, accepted, score_delta):
-	var decision_text = "no"
-	if accepted:
-		decision_text = "sí"
-	print(_character.name, " eligió ", decision_text, " y el puntaje cambia en ", score_delta)
+func _on_dialogic_timeline_ended() -> void:
+	if active_event_data.is_empty():
+		return
+	var character = active_event_data["character"]
+	var event = active_event_data["event"]
+	print("[Evento terminado] ", character.name, " - ", event.id)
+	active_event_data = {}
+	current_event_index += 1
+	await get_tree().process_frame
+	launch_next_event()
+
+
+func _on_character_pressed() -> void:
+	pass # Replace with function body.
