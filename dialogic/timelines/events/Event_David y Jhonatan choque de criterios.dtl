@@ -1,0 +1,14 @@
+join David (David Preocupado) left
+join Jhonatan (Jhonatan Preocupado) right
+join Narrator center
+David: Tengo una optimizacion que acelera todo.
+Jhonatan: Pero cambia comportamiento en casos borde y necesito nuevas pruebas.
+David (David): Podemos subirla ya y probar despues.
+- Publicar optimizacion sin pruebas nuevas
+	Jhonatan (Jhonatan Preocupado): No me convence...
+	audio "res://assets/sfx/Failure.mp3"
+	Narrator: Hubo regresiones en escenarios criticos.
+- Hacer prueba dirigida con Jhonatan antes de publicar
+	Jhonatan (Jhonatan): Dame 20 minutos y validamos riesgo.
+	audio "res://assets/sfx/Success.mp3"
+	Narrator: Salio bien y sin romper casos borde.

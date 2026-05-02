@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c3vn5sacqwfkw" path="res://assets/backgrounds/Office background.png" id="6_bdk3j"]
 [ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
 [ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
+[ext_resource type="Texture2D" uid="uid://crp0w33d57n2x" path="res://assets/textures/exclamation.png" id="9_fj8ea"]
 
 [node name="MainGame" type="Node2D" unique_id=136111819]
 
@@ -35,15 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_b4yst")
 container = NodePath("VBoxContainer/CharacterPanel/GridContainer")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UIController" unique_id=2053402991]
-visible = false
-layout_mode = 0
-offset_left = -196.0
-offset_top = -203.0
-offset_right = 1446.0
-offset_bottom = 755.0
-texture = ExtResource("6_bdk3j")
 
 [node name="AssignmentBoard" parent="CanvasLayer/UIController" unique_id=388412001 instance=ExtResource("6_abrd1")]
 layout_mode = 1
@@ -219,6 +211,25 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 columns = 2
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/UIController" unique_id=2053402991]
+visible = false
+layout_mode = 0
+offset_left = -196.0
+offset_top = -203.0
+offset_right = 1446.0
+offset_bottom = 755.0
+texture = ExtResource("6_bdk3j")
+
+[node name="Exclamation" type="TextureRect" parent="CanvasLayer/UIController" unique_id=1316218696]
+visible = false
+layout_mode = 0
+offset_left = 287.0
+offset_top = 137.0
+offset_right = 589.0
+offset_bottom = 459.0
+texture = ExtResource("9_fj8ea")
+stretch_mode = 4
 
 [connection signal="pressed" from="CanvasLayer/UIController/ResultsPanel/ContinueButton" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]
