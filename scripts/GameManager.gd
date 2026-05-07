@@ -251,6 +251,5 @@ func _clear_event_visuals() -> void:
 	if event_background:
 		event_background.visible = false
 
-
 func _on_character_pressed() -> void:
 	pass # Replace with function body.

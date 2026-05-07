@@ -9,7 +9,24 @@
 [ext_resource type="Texture2D" uid="uid://c3vn5sacqwfkw" path="res://assets/backgrounds/Office background.png" id="6_bdk3j"]
 [ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
 [ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
-[ext_resource type="Texture2D" uid="uid://crp0w33d57n2x" path="res://assets/textures/exclamation.png" id="9_fj8ea"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ein"]
+bg_color = Color(0.2509804, 0.54509807, 0.68235296, 1)
+border_width_right = 157
+border_width_bottom = 229
+border_color = Color(0.13333334, 0.27058825, 0.38039216, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj8ea"]
+bg_color = Color(0.24705882, 0.3372549, 0.3882353, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+shadow_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+shadow_size = 5
 
 [node name="MainGame" type="Node2D" unique_id=136111819]
 
@@ -35,24 +52,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_b4yst")
-container = NodePath("VBoxContainer/CharacterPanel/GridContainer")
+container = NodePath("ProjectPanel/PanelContainer/VBoxContainer/CharacterPanel")
 
-[node name="AssignmentBoard" parent="CanvasLayer/UIController" unique_id=388412001 instance=ExtResource("6_abrd1")]
-layout_mode = 1
-offset_top = 4.0
-offset_right = -438.0
-
-[node name="EventPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1955128812]
-visible = false
+[node name="Panel" type="Panel" parent="CanvasLayer/UIController" unique_id=1193528596]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4ein")
+
+[node name="AssignmentBoard" parent="CanvasLayer/UIController" unique_id=388412001 instance=ExtResource("6_abrd1")]
+layout_mode = 1
+offset_top = 4.0
+offset_right = -438.0
 
 [node name="ResultsPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1827847448]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,31 +202,48 @@ offset_right = 500.0
 offset_bottom = 430.0
 text = "Salir"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIController" unique_id=1901257787]
+[node name="ProjectPanel" type="MarginContainer" parent="CanvasLayer/UIController" unique_id=1530380773]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+anchor_bottom = 1.0
+offset_left = -138.0
 grow_horizontal = 0
+grow_vertical = 2
 
-[node name="DeadlineUi" parent="CanvasLayer/UIController/VBoxContainer" unique_id=1733592942 instance=ExtResource("7_a23o7")]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UIController/ProjectPanel" unique_id=624616970]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_fj8ea")
 
-[node name="ProjectProgressUI" parent="CanvasLayer/UIController/VBoxContainer" unique_id=1193582838 instance=ExtResource("7_7xn8u")]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer" unique_id=1901257787]
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="CharacterPanel" type="Control" parent="CanvasLayer/UIController/VBoxContainer" unique_id=302294349]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1030264466]
+visible = false
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIController/VBoxContainer/CharacterPanel" unique_id=426727849]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
+[node name="DeadlineUi" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1733592942 instance=ExtResource("7_a23o7")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ProjectProgressUI" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1193582838 instance=ExtResource("7_7xn8u")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CharacterPanel" type="GridContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=426727849]
+layout_mode = 2
+size_flags_horizontal = 4
 columns = 2
+
+[node name="EventPanel" type="MarginContainer" parent="CanvasLayer/UIController" unique_id=1289925200]
+visible = false
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 166.0
 
 [node name="Background" type="TextureRect" parent="CanvasLayer/UIController" unique_id=2053402991]
 visible = false
@@ -220,16 +253,6 @@ offset_top = -203.0
 offset_right = 1446.0
 offset_bottom = 755.0
 texture = ExtResource("6_bdk3j")
-
-[node name="Exclamation" type="TextureRect" parent="CanvasLayer/UIController" unique_id=1316218696]
-visible = false
-layout_mode = 0
-offset_left = 287.0
-offset_top = 137.0
-offset_right = 589.0
-offset_bottom = 459.0
-texture = ExtResource("9_fj8ea")
-stretch_mode = 4
 
 [connection signal="pressed" from="CanvasLayer/UIController/ResultsPanel/ContinueButton" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]

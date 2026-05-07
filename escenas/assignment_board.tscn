@@ -1,6 +1,40 @@
 [gd_scene format=3 uid="uid://br8lxt7tlvyya"]
 
 [ext_resource type="Script" uid="uid://7ath2nbnmku5" path="res://scripts/AssignmentBoardController.gd" id="1_52lnx"]
+[ext_resource type="StyleBox" uid="uid://d4e0jw73mqxah" path="res://styles/ButtonGreen.tres" id="2_0av7o"]
+[ext_resource type="StyleBox" uid="uid://35pekhvhkly7" path="res://styles/ButtonRed.tres" id="3_pmxrn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0av7o"]
+bg_color = Color(0.4364222, 0.8219877, 0.29648092, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmxrn"]
+bg_color = Color(0.26679906, 0.5034469, 0.18292284, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tplo"]
+bg_color = Color(0.8514264, 0.39764705, 0.36889842, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td5r0"]
+bg_color = Color(0.5135615, 0.18888915, 0.17466256, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
 [node name="AssignmentBoard" type="Control" unique_id=272709185]
 layout_mode = 3
@@ -23,33 +57,45 @@ theme_override_constants/margin_bottom = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1749835899]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 62
+theme_override_constants/separation = 22
 
 [node name="TopBar" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1220468720]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_constants/separation = 14
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TopBar" unique_id=170522255]
 layout_mode = 2
-text = "Assing your characters"
+size_flags_horizontal = 4
+text = "Assign your characters"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TopBar" unique_id=24392531]
 layout_mode = 2
-theme_override_constants/separation = 42
+size_flags_horizontal = 4
+theme_override_constants/separation = 111
 
 [node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=1614482727]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_0av7o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0av7o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pmxrn")
 text = "Confirm"
 
 [node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=2071139685]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("3_pmxrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2tplo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_td5r0")
 text = "Reset"
 
 [node name="StartArea" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=176924919]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 38
+theme_override_constants/separation = 36
 
 [node name="Categories" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=882472609]
 layout_mode = 2

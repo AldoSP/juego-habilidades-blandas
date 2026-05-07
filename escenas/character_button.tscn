@@ -2,12 +2,19 @@
 
 [ext_resource type="Script" uid="uid://derx2l4wgynl6" path="res://scripts/CharacterButton.gd" id="1_dcwj0"]
 
-[node name="CharacterButton" type="Button" unique_id=2142265197]
+[node name="VBoxCharacterButton" type="VBoxContainer" unique_id=1040534570]
 offset_right = 98.0
 offset_bottom = 40.0
-text = "DEMO TEXT"
 script = ExtResource("1_dcwj0")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="." to="." method="_pressed"]
+[node name="CharacterButton" type="TextureButton" parent="." unique_id=1960263051]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CharacterName" type="Label" parent="." unique_id=131805705]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[connection signal="mouse_entered" from="CharacterButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterButton" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="CharacterButton" to="." method="_on_pressed"]

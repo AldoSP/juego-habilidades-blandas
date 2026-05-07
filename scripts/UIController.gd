@@ -48,8 +48,7 @@ func _ready():
 		characters[name] = {"task": null}
 	
 	# Obtener referencias a los paneles
-	assignment_panel = $AssignmentPanel
-	event_panel = $EventPanel
+	assignment_panel = $AssignmentBoard
 	results_panel = $ResultsPanel
 	game_over_panel = $GameOverPanel
 	_initialize_assignment_board()
@@ -104,10 +103,7 @@ func load_assignment_board(team_characters):
 		var char_name = _get_character_name(c)
 		if char_name == "":
 			continue
-		board_characters.append({
-			"id": char_name,
-			"name": char_name
-		})
+		board_characters.append(c)
 
 	print("Cargando AssignmentBoard con ", board_characters.size(), " personajes")
 	assignment_board.setup_board(board_characters, ASSIGNMENT_CATEGORIES)

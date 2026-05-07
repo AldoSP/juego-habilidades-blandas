@@ -15,11 +15,14 @@ script = ExtResource("1_143v8")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+alignment = 1
 
 [node name="Title" type="Label" parent="HBoxContainer" unique_id=1580948362]
 layout_mode = 2
 text = "Days remaining:"
+horizontal_alignment = 1
 
 [node name="Value" type="Label" parent="HBoxContainer" unique_id=718091880]
 layout_mode = 2
 text = "x"
+horizontal_alignment = 1
