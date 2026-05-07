@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://weslr57ivtnl"]
+
+[ext_resource type="Script" uid="uid://c2ab4bqeh1fkq" path="res://scripts/ResultsPanel.gd" id="1_rsp01"]
+
+[node name="ResultsPanel" type="Panel" unique_id=271872869]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rsp01")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=418748069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2108941380]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1641821148]
+layout_mode = 2
+text = "RESULTADOS"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1750811561]
+layout_mode = 2
+
+[node name="ProgrammingLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1769035864]
+layout_mode = 2
+text = "ProgramingLabel"
+fit_content = true
+
+[node name="DesignLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=670723526]
+layout_mode = 2
+text = "DesignLabel"
+fit_content = true
+
+[node name="TestingLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1091559043]
+layout_mode = 2
+text = "TestingLabel"
+fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=41296015]
+layout_mode = 2
+
+[node name="SummaryTitle" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1450298649]
+layout_mode = 2
+text = "Resumen"
+fit_content = true
+
+[node name="SummaryText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=480223243]
+layout_mode = 2
+text = "SummaryText"
+fit_content = true
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=751196926]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Continue"

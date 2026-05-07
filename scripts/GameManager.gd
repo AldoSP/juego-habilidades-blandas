@@ -157,10 +157,12 @@ func calculate_tasks():
 	"""Calcula los resultados de las tareas del día"""
 	_clear_event_visuals()
 	print("\nCalculando resultados...")
-	var results = tasks.resolve_all(team.characters)
-	
+	var resolve_result = tasks.resolve_all(team.characters)
+	var results = resolve_result["totals"]
+	var summary_lines: Array[String] = resolve_result["summary"]
+
 	if ui:
-		ui.show_results(results)
+		ui.show_results(results, summary_lines)
 	
 	# Aplicar resultados al proyecto
 	project.apply_results(results)
@@ -180,11 +182,7 @@ func calculate_tasks():
 	if deadline_ui:
 		deadline_ui.advance_day(1)
 	
-	if current_day <= max_days:
-		# Iniciar el siguiente día
-		print("\nPresiona cualquier botón para el siguiente día...")
-		start_day()
-	else:
+	if current_day > max_days:
 		print("\n=== FIN DEL JUEGO ===")
 		print("Proyecto final:")
 		print("  Programming: ", project.programming)

@@ -52,6 +52,9 @@ func _ready():
 	results_panel = $ResultsPanel
 	game_over_panel = $GameOverPanel
 	_initialize_assignment_board()
+	# Conectar señal del nuevo ResultsPanel
+	if results_panel and not results_panel.continue_pressed.is_connected(_on_continue_button_pressed):
+		results_panel.continue_pressed.connect(_on_continue_button_pressed)
 
 func setup(team, task_sys, event_sys, project_sys, gm):
 	team_system = team
@@ -183,31 +186,19 @@ func _on_confirm_button_pressed():
 	
 	emit_signal("tasks_assigned")
 
-func show_results(results):
+func show_results(results: Dictionary, summary_lines: Array[String] = []):
 	"""Muestra los resultados del día"""
 	print("Mostrando resultados del día")
-	
-	# Actualizar etiquetas de resultados
-	var prog_label = results_panel.get_node("ProgrammingResult")
-	var design_label = results_panel.get_node("DesignResult")
-	var testing_label = results_panel.get_node("TestingResult")
-	
-	prog_label.text = "Programming: %d" % results["programming"]
-	design_label.text = "Design: %d" % results["design"]
-	testing_label.text = "Testing: %d" % results["testing"]
-	
-	# Mostrar panel de resultados
-	_show_results_panel(true)
+	results_panel.set_results(results["programming"], results["design"], results["testing"])
+	results_panel.set_summary(summary_lines)
+	results_panel.show()
 
 func _on_continue_button_pressed():
 	print("Continuando a próximo día")
-	_show_results_panel(false)
 	_show_assignment_panel(true)
-	
-	# Limpiar asignaciones para el nuevo día
+	# Limpiar asignaciones locales para el nuevo día
 	for name in character_names:
 		characters[name]["task"] = null
-	
 	# Reiniciar el siguiente día
 	if game_manager:
 		game_manager.start_day()

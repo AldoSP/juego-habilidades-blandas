@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c3vn5sacqwfkw" path="res://assets/backgrounds/Office background.png" id="6_bdk3j"]
 [ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
 [ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
+[ext_resource type="PackedScene" uid="uid://weslr57ivtnl" path="res://escenas/results_panel.tscn" id="8_rspn1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ein"]
 bg_color = Color(0.2509804, 0.54509807, 0.68235296, 1)
@@ -68,67 +69,10 @@ layout_mode = 1
 offset_top = 4.0
 offset_right = -438.0
 
-[node name="ResultsPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1827847448]
+[node name="ResultsPanel" parent="CanvasLayer/UIController" unique_id=1827847448 instance=ExtResource("8_rspn1")]
+visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1296774372]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.2, 0.2, 0.15, 1)
-
-[node name="ResultsTitle" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1435917095]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 750.0
-offset_bottom = 100.0
-text = "Resultados del día"
-horizontal_alignment = 1
-
-[node name="ProgrammingResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1364867870]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 400.0
-offset_bottom = 200.0
-text = "Programming: 0"
-horizontal_alignment = 1
-
-[node name="DesignResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1608417988]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 220.0
-offset_right = 400.0
-offset_bottom = 270.0
-text = "Design: 0"
-horizontal_alignment = 1
-
-[node name="TestingResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1619884185]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 290.0
-offset_right = 400.0
-offset_bottom = 340.0
-text = "Testing: 0"
-horizontal_alignment = 1
-
-[node name="ContinueButton" type="Button" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1408611927]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 0
-offset_left = 150.0
-offset_top = 380.0
-offset_right = 350.0
-offset_bottom = 430.0
-text = "Continuar"
+offset_right = -140.0
 
 [node name="GameOverPanel" type="Control" parent="CanvasLayer/UIController" unique_id=2027133252]
 visible = false
@@ -254,6 +198,6 @@ offset_right = 1446.0
 offset_bottom = 755.0
 texture = ExtResource("6_bdk3j")
 
-[connection signal="pressed" from="CanvasLayer/UIController/ResultsPanel/ContinueButton" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
+[connection signal="continue_pressed" from="CanvasLayer/UIController/ResultsPanel" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/QuitButton" to="CanvasLayer/UIController" method="_on_quit_button_pressed"]
