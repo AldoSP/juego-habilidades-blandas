@@ -1,21 +1,25 @@
 [gd_scene format=3 uid="uid://ca4vsju06uecd"]
 
 [ext_resource type="Script" uid="uid://derx2l4wgynl6" path="res://scripts/CharacterButton.gd" id="1_dcwj0"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="2_6rq7i"]
 
 [node name="VBoxCharacterButton" type="VBoxContainer" unique_id=1040534570]
 offset_right = 98.0
 offset_bottom = 40.0
+size_flags_vertical = 4
 script = ExtResource("1_dcwj0")
 
 [node name="CharacterButton" type="TextureButton" parent="." unique_id=1960263051]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="CharacterName" type="Label" parent="." unique_id=131805705]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_6rq7i")
 
 [connection signal="mouse_entered" from="CharacterButton" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterButton" to="." method="_on_mouse_exited"]

@@ -1,8 +1,8 @@
 extends MarginContainer
 
-@onready var programming = $HBoxContainer/ProgrammingItem
-@onready var design = $HBoxContainer/DesignItem
-@onready var testing = $HBoxContainer/TestingItem
+@onready var programming = $PanelContainer/VBoxContainer/HBoxContainer/ProgrammingItem
+@onready var design = $PanelContainer/VBoxContainer/HBoxContainer/DesignItem
+@onready var testing = $PanelContainer/VBoxContainer/TestingItem
 
 func setup(data):
 	# data example:

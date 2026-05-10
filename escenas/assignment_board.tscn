@@ -2,10 +2,22 @@
 
 [ext_resource type="Script" uid="uid://7ath2nbnmku5" path="res://scripts/AssignmentBoardController.gd" id="1_52lnx"]
 [ext_resource type="StyleBox" uid="uid://d4e0jw73mqxah" path="res://styles/ButtonGreen.tres" id="2_0av7o"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="2_2tplo"]
 [ext_resource type="StyleBox" uid="uid://35pekhvhkly7" path="res://styles/ButtonRed.tres" id="3_pmxrn"]
+[ext_resource type="StyleBox" uid="uid://chvuuj1dvq4nv" path="res://styles/Inner_LightGray_Box.tres" id="5_td5r0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir02g"]
+bg_color = Color(0.105882354, 0.14901961, 0.16078432, 1)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.91764706, 0.28235295, 0.24313726, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0av7o"]
-bg_color = Color(0.4364222, 0.8219877, 0.29648092, 1)
+bg_color = Color(0.21690106, 0.7769951, 0.54826057, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -13,7 +25,7 @@ corner_radius_bottom_left = 10
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmxrn"]
-bg_color = Color(0.26679906, 0.5034469, 0.18292284, 1)
+bg_color = Color(0.14706147, 0.53133774, 0.37413877, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -21,7 +33,7 @@ corner_radius_bottom_left = 10
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tplo"]
-bg_color = Color(0.8514264, 0.39764705, 0.36889842, 1)
+bg_color = Color(0.8509804, 0.39607844, 0.36862746, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -29,7 +41,7 @@ corner_radius_bottom_left = 10
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td5r0"]
-bg_color = Color(0.5135615, 0.18888915, 0.17466256, 1)
+bg_color = Color(0.5137255, 0.1882353, 0.1764706, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -38,70 +50,101 @@ corner_detail = 20
 
 [node name="AssignmentBoard" type="Control" unique_id=272709185]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("1_52lnx")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1823803830]
 layout_mode = 1
-offset_right = 900.0
-offset_bottom = 600.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -488.0
+offset_right = 700.0
+grow_vertical = 0
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1749835899]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1271255626]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir02g")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1244488018]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1749835899]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 22
 
-[node name="TopBar" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1220468720]
+[node name="TopBar" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1220468720]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_constants/separation = 14
+size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TopBar" unique_id=170522255]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar" unique_id=24392531]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "Assign your characters"
+size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TopBar" unique_id=24392531]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=955571349]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 111
+size_flags_horizontal = 3
 
-[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=1614482727]
-custom_minimum_size = Vector2(100, 0)
+[node name="ConfirmButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/VBoxContainer" unique_id=1614482727]
+custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tplo")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("2_0av7o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0av7o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pmxrn")
-text = "Confirm"
+text = "Confirmar"
 
-[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=2071139685]
-custom_minimum_size = Vector2(100, 0)
+[node name="ResetButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/VBoxContainer" unique_id=2071139685]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("2_2tplo")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_pmxrn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2tplo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_td5r0")
-text = "Reset"
+text = "Reiniciar"
 
-[node name="StartArea" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=176924919]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer" unique_id=795935778]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 36
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = ExtResource("5_td5r0")
 
-[node name="Categories" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=882472609]
+[node name="StartArea" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/PanelContainer" unique_id=176924919]
+custom_minimum_size = Vector2(380, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 29
+theme_override_constants/separation = 36
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TopBar/HBoxContainer/ConfirmButton" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TopBar/HBoxContainer/ResetButton" to="." method="_on_reset_pressed"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=433861027]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("5_td5r0")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1158357833]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Categories" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=882472609]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 17
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/VBoxContainer/ResetButton" to="." method="_on_reset_pressed"]
