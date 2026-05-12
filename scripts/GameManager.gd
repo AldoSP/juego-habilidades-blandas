@@ -11,6 +11,7 @@ var tasks: Node
 var project: Node
 var project_progress_ui: Node
 var deadline_ui: Node
+var effects_layer: CanvasLayer
 
 var event_system
 var event_background: CanvasItem
@@ -50,6 +51,11 @@ func _ready():
 	deadline_ui = get_tree().root.find_child("DeadlineUi", true, false)
 	if deadline_ui == null:
 		deadline_ui = get_tree().root.find_child("DeadlineUI", true, false)
+	
+	# Obtener referencia a la capa de efectos
+	effects_layer = get_node_or_null("../EffectsLayer")
+	if effects_layer == null:
+		effects_layer = get_tree().root.find_child("EffectsLayer", true, false)
 
 	event_system = EventSystem.new()
 	add_child(event_system)
