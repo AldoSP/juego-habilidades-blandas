@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://w5cxs4yedpmd"]
 
 [ext_resource type="Script" uid="uid://bwie4j6slsh05" path="res://scripts/ProgressItem.gd" id="1_s4ujy"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="2_ks2ax"]
 
 [node name="ProgressItem" type="HBoxContainer" unique_id=1107010984]
 script = ExtResource("1_s4ujy")
@@ -10,3 +11,4 @@ layout_mode = 2
 
 [node name="progress text" type="Label" parent="." unique_id=304774773]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ks2ax")

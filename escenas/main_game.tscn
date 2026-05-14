@@ -8,6 +8,57 @@
 [ext_resource type="PackedScene" uid="uid://br8lxt7tlvyya" path="res://escenas/assignment_board.tscn" id="6_abrd1"]
 [ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
 [ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
+[ext_resource type="PackedScene" uid="uid://weslr57ivtnl" path="res://escenas/results_panel.tscn" id="8_rspn1"]
+[ext_resource type="StyleBox" uid="uid://c0wabjtbbubns" path="res://styles/Inner_DarkerGray_Box.tres" id="10_fj8ea"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="11_mp682"]
+[ext_resource type="StyleBox" uid="uid://c3yoxit57pk72" path="res://styles/YellowButton.tres" id="12_ce32g"]
+[ext_resource type="StyleBox" uid="uid://35pekhvhkly7" path="res://styles/ButtonRed.tres" id="13_dgtes"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ein"]
+bg_color = Color(0.2509804, 0.54509807, 0.68235296, 1)
+border_width_right = 157
+border_width_bottom = 229
+border_color = Color(0.13333334, 0.27058825, 0.38039216, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj8ea"]
+bg_color = Color(0.22745098, 0.3137255, 0.33333334, 1)
+border_width_left = 4
+border_color = Color(1, 0.29803923, 0.2509804, 1)
+border_blend = true
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7618"]
+bg_color = Color(1, 0.65875685, 0.31430316, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fsw8"]
+bg_color = Color(0.8026188, 0.46876842, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imq4c"]
+bg_color = Color(0.8514264, 0.39764705, 0.36889842, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vu04n"]
+bg_color = Color(0.5135615, 0.18888915, 0.17466256, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
 [node name="MainGame" type="Node2D" unique_id=136111819]
 
@@ -33,84 +84,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_b4yst")
-container = NodePath("VBoxContainer/CharacterPanel/GridContainer")
+container = NodePath("ProjectPanel/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer/CharacterPanel")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UIController" unique_id=1193528596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4ein")
 
 [node name="AssignmentBoard" parent="CanvasLayer/UIController" unique_id=388412001 instance=ExtResource("6_abrd1")]
 layout_mode = 1
-offset_top = 4.0
-offset_right = -438.0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 132.0
+offset_top = 729.0
+offset_right = 132.0
+offset_bottom = 729.0
+grow_vertical = 1
 
-[node name="EventPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1955128812]
+[node name="ResultsPanel" parent="CanvasLayer/UIController" unique_id=1827847448 instance=ExtResource("8_rspn1")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ResultsPanel" type="Control" parent="CanvasLayer/UIController" unique_id=1827847448]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1296774372]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.2, 0.2, 0.15, 1)
-
-[node name="ResultsTitle" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1435917095]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 750.0
-offset_bottom = 100.0
-text = "Resultados del día"
-horizontal_alignment = 1
-
-[node name="ProgrammingResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1364867870]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 400.0
-offset_bottom = 200.0
-text = "Programming: 0"
-horizontal_alignment = 1
-
-[node name="DesignResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1608417988]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 220.0
-offset_right = 400.0
-offset_bottom = 270.0
-text = "Design: 0"
-horizontal_alignment = 1
-
-[node name="TestingResult" type="Label" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1619884185]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 290.0
-offset_right = 400.0
-offset_bottom = 340.0
-text = "Testing: 0"
-horizontal_alignment = 1
-
-[node name="ContinueButton" type="Button" parent="CanvasLayer/UIController/ResultsPanel" unique_id=1408611927]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 0
-offset_left = 150.0
-offset_top = 380.0
-offset_right = 350.0
-offset_bottom = 430.0
-text = "Continuar"
+offset_right = -140.0
 
 [node name="GameOverPanel" type="Control" parent="CanvasLayer/UIController" unique_id=2027133252]
 visible = false
@@ -184,32 +183,95 @@ offset_right = 500.0
 offset_bottom = 430.0
 text = "Salir"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIController" unique_id=1901257787]
+[node name="ProjectPanel" type="MarginContainer" parent="CanvasLayer/UIController" unique_id=1530380773]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+anchor_bottom = 1.0
+offset_left = -157.0
 grow_horizontal = 0
+grow_vertical = 2
 
-[node name="DeadlineUi" parent="CanvasLayer/UIController/VBoxContainer" unique_id=1733592942 instance=ExtResource("7_a23o7")]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UIController/ProjectPanel" unique_id=624616970]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fj8ea")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer" unique_id=1901257787]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1030264466]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="DeadlineUi" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1733592942 instance=ExtResource("7_a23o7")]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="ProjectProgressUI" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1193582838 instance=ExtResource("7_7xn8u")]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=247232477]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer/MarginContainer2" unique_id=1706856321]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("10_fj8ea")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer" unique_id=223609166]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 4
+
+[node name="CharacterPanel" type="VBoxContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer" unique_id=1625768373]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginButtons" type="MarginContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer" unique_id=1333029772]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer/MarginButtons" unique_id=741894815]
 layout_mode = 2
 
-[node name="ProjectProgressUI" parent="CanvasLayer/UIController/VBoxContainer" unique_id=1193582838 instance=ExtResource("7_7xn8u")]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer/MarginButtons/VBoxContainer" unique_id=446525334]
+custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("11_mp682")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("12_ce32g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g7618")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5fsw8")
+text = "Opciones"
 
-[node name="CharacterPanel" type="Control" parent="CanvasLayer/UIController/VBoxContainer" unique_id=302294349]
+[node name="ExitButton" type="Button" parent="CanvasLayer/UIController/ProjectPanel/PanelContainer/VBoxContainer/MarginButtons/VBoxContainer" unique_id=1829715535]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("11_mp682")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("13_dgtes")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_imq4c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vu04n")
+text = "Salir"
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIController/VBoxContainer/CharacterPanel" unique_id=426727849]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
-columns = 2
+[node name="EventPanel" type="MarginContainer" parent="CanvasLayer/UIController" unique_id=1289925200]
+visible = false
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 166.0
 
-[connection signal="pressed" from="CanvasLayer/UIController/ResultsPanel/ContinueButton" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
+[connection signal="continue_pressed" from="CanvasLayer/UIController/ResultsPanel" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/QuitButton" to="CanvasLayer/UIController" method="_on_quit_button_pressed"]

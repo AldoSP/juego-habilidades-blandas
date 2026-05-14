@@ -1,0 +1,12 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan) center
+Jhonatan: Encontré un bug bastante grave.
+Jhonatan: Pero arreglarlo implica programar...
+Jhonatan (Jhonatan Preocupado): Y eso no me gusta mucho.
+Jhonatan: ¿Qué hago?
+- Que solo lo reporte y siga con testing
+	Jhonatan: Ok, lo reporto.
+	Jhonatan (Jhonatan Preocupado): Pero nadie lo arregló a tiempo...
+- Animarlo a intentar arreglarlo o ayudar con la solución
+	Jhonatan (Jhonatan Preocupado): Hmm... puedo intentarlo.
+	Jhonatan (Jhonatan Feliz): ¡Lo logré! O al menos avancé bastante.

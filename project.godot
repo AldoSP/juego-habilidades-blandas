@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Habilidades blandas"
-run/main_scene="uid://cthqm8sj5slv5"
+run/main_scene="uid://t5cxvxlockl1"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,14 +23,31 @@ AssignmentManager="*uid://dsxkfv46ogqk"
 [dialogic]
 
 directories/dch_directory={
+"David": "res://dialogic/characters/David.dch",
+"Erick": "res://dialogic/characters/Erick.dch",
+"Jhonatan": "res://dialogic/characters/Jhonatan.dch",
 "Karol": "res://dialogic/characters/Karol.dch",
-"Xcharacter": "res://dialogic/characters/Xcharacter.dch"
+"Narrator": "res://dialogic/characters/Narrator.dch"
 }
 directories/dtl_directory={
-"client_change": "res://dialogic/timelines/client_change.dtl",
-"timeline": "res://dialogic/timelines/timeline.dtl"
+"Event_David deuda tecnica oculta": "res://dialogic/timelines/events/Event_David deuda tecnica oculta.dtl",
+"Event_David y Jhonatan choque de criterios": "res://dialogic/timelines/events/Event_David y Jhonatan choque de criterios.dtl",
+"Event_Erick cambios de ultimo minuto": "res://dialogic/timelines/events/Event_Erick cambios de ultimo minuto.dtl",
+"Event_Erick y Karol alcance visual": "res://dialogic/timelines/events/Event_Erick y Karol alcance visual.dtl",
+"Event_Jhonatan falso positivo critico": "res://dialogic/timelines/events/Event_Jhonatan falso positivo critico.dtl",
+"Event_Jhonatan y Erick reporte ambiguo": "res://dialogic/timelines/events/Event_Jhonatan y Erick reporte ambiguo.dtl",
+"Event_Karol prioridades en conflicto": "res://dialogic/timelines/events/Event_Karol prioridades en conflicto.dtl",
+"Event_No hay coordinacion": "res://dialogic/timelines/events/Event_No hay coordinacion.dtl",
+"Event_No me gusta programar": "res://dialogic/timelines/events/Event_No me gusta programar.dtl",
+"Event_Probar es aburrido Erick": "res://dialogic/timelines/events/Event_Probar es aburrido Erick.dtl",
+"Event_Programador Confiado": "res://dialogic/timelines/events/Event_Programador Confiado.dtl",
+"Introduction": "res://dialogic/timelines/Introduction.dtl",
+"client_change": "res://dialogic/timelines/client_change.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialogic/styles/Test.tres",
+"Test": "res://dialogic/styles/Test.tres"
+}
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -50,11 +67,31 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
+layout/style_list=["res://dialogic/styles/Test.tres"]
+layout/default_style="res://dialogic/styles/Test.tres"
+variables={
+"TestVar": ""
+}
 
 [display]
 
-window/size/viewport_width=1200
-window/size/viewport_height=700
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [editor_plugins]
 

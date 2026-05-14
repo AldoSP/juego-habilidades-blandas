@@ -1,0 +1,12 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) left
+join Erick (Erick Preocupado) right
+Jhonatan: Reporte un bug visual, pero la descripcion esta muy general.
+Erick: Asi no se exactamente que reproducir.
+Jhonatan: Podemos asumir el caso mas comun y listo.
+- Corregir sin pasos claros de reproduccion
+	Erick (Erick): Hice un ajuste rapido.
+	Jhonatan (Jhonatan Preocupado): El bug original seguia apareciendo.
+- Refinar reporte con pasos, contexto y evidencia
+	Jhonatan (Jhonatan): Te paso video y pasos exactos.
+	Erick (Erick Feliz): Ahora si lo corregi bien desde la causa.
