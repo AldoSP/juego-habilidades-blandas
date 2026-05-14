@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c5p21pcmp5rqa"]
+
+[ext_resource type="Script" uid="uid://drrqkly1ox7q4" path="res://scripts/character_selection_button_2.gd" id="1_jq3gj"]
+[ext_resource type="Texture2D" uid="uid://5bbhv07gb6y5" path="res://assets/sprites/characters/Karol/KarolPortrait.png" id="2_ylbm4"]
+
+[node name="CharacterSelectionButton2_" type="Control" unique_id=1539644426]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jq3gj")
+
+[node name="FaceButton" type="TextureButton" parent="." unique_id=1450931821]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 79.0
+offset_bottom = 73.0
+texture_normal = ExtResource("2_ylbm4")
+ignore_texture_size = true
+
+[connection signal="mouse_entered" from="FaceButton" to="." method="_on_face_button_mouse_entered"]
+[connection signal="mouse_exited" from="FaceButton" to="." method="_on_face_button_mouse_exited"]
+[connection signal="pressed" from="FaceButton" to="." method="_on_face_button_pressed"]

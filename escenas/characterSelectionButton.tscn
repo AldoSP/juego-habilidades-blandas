@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://gmtgjkt5lrft"]
+
+[ext_resource type="Script" uid="uid://kiot1uig50u4" path="res://scripts/character_selection_button.gd" id="1_v5t5s"]
+[ext_resource type="Texture2D" uid="uid://bcvviy5kxvafi" path="res://assets/sprites/characters/Jhonatan/JhonatanPortrait.png" id="2_kn2mp"]
+
+[node name="CharacterSelectionButton" type="Control" unique_id=253556320]
+custom_minimum_size = Vector2(180, 140)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5t5s")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1563889597]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 112.0
+offset_right = 160.0
+offset_bottom = 186.0
+texture_normal = ExtResource("2_kn2mp")
+
+[node name="Panel" type="Panel" parent="." unique_id=1133470683]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 177.0
+offset_right = 253.0
+offset_bottom = 349.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=196754133]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 228.0
+offset_bottom = 148.0
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

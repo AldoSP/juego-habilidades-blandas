@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://bjclcxtewxo4h"]
+
+[ext_resource type="PackedScene" uid="uid://c5p21pcmp5rqa" path="res://escenas/character_Selection_Button_2.tscn" id="1_2rdfn"]
+[ext_resource type="Script" uid="uid://digj5dn31iv07" path="res://scripts/character_selection_2.gd" id="1_slmr1"]
+[ext_resource type="Texture2D" uid="uid://5bbhv07gb6y5" path="res://assets/sprites/characters/Karol/KarolPortrait.png" id="2_0386i"]
+[ext_resource type="Texture2D" uid="uid://c81xs8vl7j34i" path="res://assets/backgrounds/interior-de-oficina-arte-pixel-4 (3).jpg" id="2_o6u5m"]
+[ext_resource type="Texture2D" uid="uid://bqx1vs1cvcnm8" path="res://assets/sprites/characters/Karol/Karol.png" id="3_qw8n2"]
+[ext_resource type="Texture2D" uid="uid://lcpssdr0e5u3" path="res://assets/sprites/characters/Christian/ChristianPortrait.png" id="4_qw8n2"]
+[ext_resource type="Texture2D" uid="uid://tniat3bgd6bu" path="res://assets/sprites/characters/Christian/Christian.png" id="5_slmr1"]
+[ext_resource type="Texture2D" uid="uid://bcvviy5kxvafi" path="res://assets/sprites/characters/Jhonatan/JhonatanPortrait.png" id="7_0ao3q"]
+[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/sprites/characters/Jhonatan/Jhonatan.png" id="8_o6u5m"]
+[ext_resource type="Texture2D" uid="uid://03oeky0ovrai" path="res://assets/sprites/characters/Ana/AnaPortrait.png" id="9_ggovf"]
+[ext_resource type="Texture2D" uid="uid://byjvciob66q5p" path="res://assets/sprites/characters/Ana/Ana.png" id="10_ntqn6"]
+[ext_resource type="Texture2D" uid="uid://ibqnb00a10tm" path="res://assets/sprites/characters/David/DavidPortrait.png" id="11_snwmy"]
+[ext_resource type="Texture2D" uid="uid://dnq6futu83vg5" path="res://assets/sprites/characters/David/David.png" id="12_1rfeg"]
+[ext_resource type="Texture2D" uid="uid://cgapk08xmfw8l" path="res://assets/sprites/characters/Elizabeth/ElizabethPortrait.png" id="13_a10vs"]
+[ext_resource type="Texture2D" uid="uid://bxsjtjr6fwrjf" path="res://assets/sprites/characters/Elizabeth/Elizaebth.png" id="14_2iqxi"]
+[ext_resource type="Texture2D" uid="uid://c08t67b7ps5kf" path="res://assets/sprites/characters/Erick/ErickPortrait.png" id="15_c3c5h"]
+[ext_resource type="Texture2D" uid="uid://cmthv06r76u2t" path="res://assets/sprites/characters/Erick/Erick.png" id="16_lrfby"]
+[ext_resource type="Texture2D" uid="uid://bwsba57pohks" path="res://assets/sprites/characters/Jessica/JessicaPortrait.png" id="17_30kiu"]
+[ext_resource type="Texture2D" uid="uid://5ntmw6oy7tax" path="res://assets/sprites/characters/Jessica/Jessica.png" id="18_wlcrq"]
+
+[node name="CharacterSelection2" type="Control" unique_id=1377152435]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_slmr1")
+
+[node name="InteriorDeOficinaArtePixel4(3)" type="Sprite2D" parent="." unique_id=821142535]
+position = Vector2(635.0591, 350.74997)
+scale = Vector2(1.5875273, 1.5875274)
+texture = ExtResource("2_o6u5m")
+
+[node name="MainMargin" type="MarginContainer" parent="." unique_id=2098413364]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainHBox" type="HBoxContainer" parent="MainMargin" unique_id=852850914]
+layout_mode = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="MainMargin/MainHBox" unique_id=1147137028]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMargin/MainHBox/LeftPanel" unique_id=1803527516]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14509805, 0.12941177, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "¡HAZ TU EQUIPO! 
+SELECCIONA 4"
+horizontal_alignment = 1
+
+[node name="CharactersGrid" type="GridContainer" parent="MainMargin/MainHBox/LeftPanel" unique_id=89392912]
+layout_mode = 2
+columns = 4
+
+[node name="CharacterSelectionButton2_" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=1539644426 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Karol"
+strength = "Diseño"
+weakness = "Código"
+description = "Juega más League of Legends de lo que estudia"
+face_texture = ExtResource("2_0386i")
+full_body_texture = ExtResource("3_qw8n2")
+
+[node name="CharacterSelectionButton2_2" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=353876374 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Christian"
+strength = "Código"
+weakness = "Diseño"
+description = "Virgen hacker niño rata"
+face_texture = ExtResource("4_qw8n2")
+full_body_texture = ExtResource("5_slmr1")
+
+[node name="CharacterSelectionButton2_3" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=1811959769 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Jhonatan"
+strength = "Debuggin"
+weakness = "Diseño"
+description = "Sólo vive para jugar Doom."
+face_texture = ExtResource("7_0ao3q")
+full_body_texture = ExtResource("8_o6u5m")
+
+[node name="CharacterSelectionButton2_4" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=382809765 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Ana"
+strength = "Código"
+weakness = "Diseño"
+description = "No toma café"
+face_texture = ExtResource("9_ggovf")
+full_body_texture = ExtResource("10_ntqn6")
+
+[node name="CharacterSelectionButton2_5" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=1442066059 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "David"
+strength = "Debugging"
+weakness = "Diseño"
+description = "Pelón desde los 22 años"
+face_texture = ExtResource("11_snwmy")
+full_body_texture = ExtResource("12_1rfeg")
+
+[node name="CharacterSelectionButton2_6" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=2059215270 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Elizabeth"
+strength = "Diseño"
+weakness = "Código"
+description = "Adicta a Pinterest"
+face_texture = ExtResource("13_a10vs")
+full_body_texture = ExtResource("14_2iqxi")
+
+[node name="CharacterSelectionButton2_7" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=1286258764 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Erick"
+strength = "Código"
+weakness = "Diseño"
+description = "Adicto a Javascript"
+face_texture = ExtResource("15_c3c5h")
+full_body_texture = ExtResource("16_lrfby")
+
+[node name="CharacterSelectionButton2_8" parent="MainMargin/MainHBox/LeftPanel/CharactersGrid" unique_id=1315157292 instance=ExtResource("1_2rdfn")]
+layout_mode = 2
+character_name = "Jessica"
+strength = "Diseño"
+weakness = "Código"
+description = "La estrato 20"
+face_texture = ExtResource("17_30kiu")
+full_body_texture = ExtResource("18_wlcrq")
+
+[node name="PreviewPanel" type="VBoxContainer" parent="MainMargin/MainHBox" unique_id=1289422182]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PreviewInfo" type="RichTextLabel" parent="MainMargin/MainHBox/PreviewPanel" unique_id=309376508]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="PreviewFullBody" type="TextureRect" parent="MainMargin/MainHBox/PreviewPanel" unique_id=183466658]
+custom_minimum_size = Vector2(0, 560)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 5
+
+[node name="RightPanel" type="VBoxContainer" parent="MainMargin/MainHBox" unique_id=2134145601]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+
+[node name="SelectedTitle" type="Label" parent="MainMargin/MainHBox/RightPanel" unique_id=1969050136]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14117648, 0.1764706, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "TU EQUIPO
+ESTÁ ASÍ:"
+horizontal_alignment = 1
+
+[node name="SelectedSlots" type="VBoxContainer" parent="MainMargin/MainHBox/RightPanel" unique_id=1192086463]
+layout_mode = 2
+
+[node name="slot1" type="VBoxContainer" parent="MainMargin/MainHBox/RightPanel/SelectedSlots" unique_id=845159222]
+layout_mode = 2
+
+[node name="face1" type="TextureRect" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot1" unique_id=120759910]
+custom_minimum_size = Vector2(94, 94)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="name1" type="Label" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot1" unique_id=1290329850]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vacío"
+
+[node name="slot2" type="VBoxContainer" parent="MainMargin/MainHBox/RightPanel/SelectedSlots" unique_id=60838766]
+layout_mode = 2
+
+[node name="face2" type="TextureRect" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot2" unique_id=280089307]
+custom_minimum_size = Vector2(94, 94)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="name2" type="Label" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot2" unique_id=229719651]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vacío"
+
+[node name="slot3" type="VBoxContainer" parent="MainMargin/MainHBox/RightPanel/SelectedSlots" unique_id=1600428639]
+layout_mode = 2
+
+[node name="face3" type="TextureRect" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot3" unique_id=1443858309]
+custom_minimum_size = Vector2(94, 94)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="name3" type="Label" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot3" unique_id=1580747512]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vacío"
+
+[node name="slot4" type="VBoxContainer" parent="MainMargin/MainHBox/RightPanel/SelectedSlots" unique_id=585948216]
+layout_mode = 2
+
+[node name="face4" type="TextureRect" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot4" unique_id=233200427]
+custom_minimum_size = Vector2(94, 94)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="name4" type="Label" parent="MainMargin/MainHBox/RightPanel/SelectedSlots/slot4" unique_id=2019609247]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="LimitWarning" type="Label" parent="MainMargin/MainHBox/RightPanel" unique_id=939437161]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.24705882, 0.05490196, 1)
+theme_override_font_sizes/font_size = 20
+text = "Llegaste al límite de 4 personajes."
+
+[node name="WarningTimer" type="Timer" parent="MainMargin/MainHBox/RightPanel" unique_id=1070749463]
+wait_time = 3.0
+one_shot = true
+
+[node name="ClearButton" type="Button" parent="MainMargin/MainHBox/RightPanel" unique_id=353204348]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Borrar selección"
+
+[node name="ReadyButton" type="Button" parent="MainMargin/MainHBox/RightPanel" unique_id=1819190808]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "¡Estoy listo!"
+
+[connection signal="timeout" from="MainMargin/MainHBox/RightPanel/WarningTimer" to="." method="_on_warning_timer_timeout"]
+[connection signal="pressed" from="MainMargin/MainHBox/RightPanel/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="MainMargin/MainHBox/RightPanel/ReadyButton" to="." method="_on_ready_button_pressed"]

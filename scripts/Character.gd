@@ -11,6 +11,7 @@ var assigned_task = null
 var event_modifier = 0
 var event_description = ""
 var sprites: Dictionary = {}
+var description
 signal energy_changed
 	
 func _init(_name, _strength, _weakness):
