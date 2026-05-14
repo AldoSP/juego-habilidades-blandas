@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cthqm8sj5slv5"]
+
+[ext_resource type="Script" uid="uid://b0r11la4xwt3s" path="res://scripts/escena.gd" id="1_tch7t"]
+[ext_resource type="Texture2D" uid="uid://66tik74je5bg" path="res://assets/sprites/Imagen_Pantalla_Inicio.png" id="2_aawgh"]
+[ext_resource type="Texture2D" uid="uid://cm7sndpdbc24u" path="res://assets/sprites/BtnEntiende.png" id="3_qmpo2"]
+[ext_resource type="Texture2D" uid="uid://ck2rck83vyp5e" path="res://assets/sprites/BtnJUGAR.png" id="4_6mopb"]
+[ext_resource type="Texture2D" uid="uid://cpcaragijgt56" path="res://assets/sprites/BtnConoce.png" id="5_fpto8"]
+
+[node name="Escena1" type="Node2D" unique_id=161524590]
+script = ExtResource("1_tch7t")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=308655436]
+position = Vector2(608, 362.00003)
+scale = Vector2(1.0283333, 1.0385716)
+texture = ExtResource("2_aawgh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=864910546]
+offset_left = 323.0
+offset_top = 486.0
+offset_right = 931.0
+offset_bottom = 546.0
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer" unique_id=2097124204]
+layout_mode = 2
+texture_normal = ExtResource("3_qmpo2")
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=1567844371]
+layout_mode = 2
+texture_normal = ExtResource("4_6mopb")
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer" unique_id=656092603]
+layout_mode = 2
+texture_normal = ExtResource("5_fpto8")
+
+[connection signal="pressed" from="HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

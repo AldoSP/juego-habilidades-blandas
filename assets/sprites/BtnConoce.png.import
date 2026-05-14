@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/sprites/BtnConoce.png.import
-uid="uid://cpcaragijgt56"
+uid="uid://cshyhki3rf0lj"
 path="res://.godot/imported/BtnConoce.png-e6c3004961b6eb628aa6e92e1bec0585.ctex"
-========
-uid="uid://bok3l8eyeem20"
-path="res://.godot/imported/EscenaInicioFinDia (1).jpg-6c301c3556898f22fe474e4f3b6a7bbd.ctex"
->>>>>>>> baa50a7e51241454de9336837c2b427a81cb2a0b:assets/backgrounds/EscenaInicioFinDia (1).jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/sprites/BtnConoce.png.import
 source_file="res://assets/sprites/BtnConoce.png"
 dest_files=["res://.godot/imported/BtnConoce.png-e6c3004961b6eb628aa6e92e1bec0585.ctex"]
-========
-source_file="res://assets/backgrounds/EscenaInicioFinDia (1).jpg"
-dest_files=["res://.godot/imported/EscenaInicioFinDia (1).jpg-6c301c3556898f22fe474e4f3b6a7bbd.ctex"]
->>>>>>>> baa50a7e51241454de9336837c2b427a81cb2a0b:assets/backgrounds/EscenaInicioFinDia (1).jpg.import
 
 [params]
 

@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/sprites/BtnBlanco.png.import
-uid="uid://dy4amjmlsy0lb"
+uid="uid://dgcbm71xcb2f3"
 path="res://.godot/imported/BtnBlanco.png-6c6b6ca028305221bf4b89718bfcc01f.ctex"
-========
-uid="uid://cbwnb03uguqyp"
-path="res://.godot/imported/EscenaOficinaTrabajo.jpg-4619033f5e354ae07ec9026cca854987.ctex"
->>>>>>>> baa50a7e51241454de9336837c2b427a81cb2a0b:assets/backgrounds/EscenaOficinaTrabajo.jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/sprites/BtnBlanco.png.import
 source_file="res://assets/sprites/BtnBlanco.png"
 dest_files=["res://.godot/imported/BtnBlanco.png-6c6b6ca028305221bf4b89718bfcc01f.ctex"]
-========
-source_file="res://assets/backgrounds/EscenaOficinaTrabajo.jpg"
-dest_files=["res://.godot/imported/EscenaOficinaTrabajo.jpg-4619033f5e354ae07ec9026cca854987.ctex"]
->>>>>>>> baa50a7e51241454de9336837c2b427a81cb2a0b:assets/backgrounds/EscenaOficinaTrabajo.jpg.import
 
 [params]
 
