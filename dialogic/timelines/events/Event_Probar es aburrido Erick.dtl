@@ -1,0 +1,14 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Erick (Erick) center
+Erick: Oye, terminé unos diseños nuevos.
+Erick: Pero probarlos es aburrido...
+Erick (Erick Feliz): Mejor se los pasamos a testing directamente.
+Erick: Así nos ahorramos tiempo.
+- Mandarlos directo a testing
+	Erick: Perfecto, menos trabajo para mí.
+	Erick: ...
+	Erick: Ok, testing encontró muchos problemas.
+- Pedirle que revise su trabajo antes de enviarlo
+	Erick (Erick Preocupado): Ugh... está bien.
+	Erick: Ajusté varias cosas antes de enviarlo.
+	Erick (Erick Feliz): Ahora sí debería estar mejor.

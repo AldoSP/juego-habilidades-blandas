@@ -2,7 +2,7 @@ extends MarginContainer
 
 signal deadline_reached
 
-@onready var value_label = $HBoxContainer/Value
+@onready var value_label = $PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/Value
 
 var days_remaining := 10
 

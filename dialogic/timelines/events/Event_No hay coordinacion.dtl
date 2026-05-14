@@ -1,0 +1,11 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) center
+Karol: El equipo está trabajando, pero no hemos hablado del plan claramente.
+Karol: Podríamos seguir así para no perder tiempo...
+Karol (Karol Preocupada): O detenernos a organizarnos mejor.
+- Seguir trabajando sin plan claro
+	Karol (Karol Preocupada): Hmm...
+	Karol: Creo que estamos duplicando trabajo...
+- Tomar un momento para organizar tareas y prioridades
+	Karol (Karol Feliz): Perfecto, organicemos esto.
+	Karol: Ahora todos saben qué hacer.

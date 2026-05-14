@@ -1,0 +1,11 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) center
+Jhonatan: Saltaron errores en pruebas automaticas.
+Jhonatan: Creo que son falsos positivos, pero no estoy 100% seguro.
+Jhonatan (Jhonatan Preocupado): Si los ignoro, ganamos tiempo.
+- Ignorar alertas y cerrar reporte
+	Jhonatan: Ok, lo cierro.
+	Jhonatan (Jhonatan Preocupado): Uno era real y llego a produccion.
+- Verificar una muestra y escalar si se confirma riesgo
+	Jhonatan (Jhonatan): Revisando ahora.
+	Jhonatan (Jhonatan Feliz): Era un caso real, lo atrapamos a tiempo.

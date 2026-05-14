@@ -22,11 +22,12 @@ func calculate_task(character, task_type):
 	return score
 
 func resolve_all(characters):
-	var results = {
+	var totals = {
 		"programming": 0,
 		"design": 0,
 		"testing": 0
 	}
+	var summary_lines: Array[String] = []
 
 	for c in characters:
 		if c.assigned_task == null:
@@ -34,14 +35,15 @@ func resolve_all(characters):
 
 		if c.assigned_task == "rest":
 			# Rest no contribuye puntos al proyecto, pero restaura energía
-			c.energy += 20  # Restaurar más energía que lo que se pierde
+			c.set_energy(c.energy + 20)  # Emitir señal para actualizar UI al instante
 			c.event_modifier = 0
+			summary_lines.append("%s: descansó y recuperó energía" % c.name)
 			continue
 
 		var value = calculate_task(c, c.assigned_task)
-		results[c.assigned_task] += value
+		totals[c.assigned_task] += value
 		c.set_energy(c.energy - 10)
-		#c.energy -= 10
 		c.event_modifier = 0
-	
-	return results
+		summary_lines.append("%s: +%d %s" % [c.name, value, c.assigned_task])
+
+	return {"totals": totals, "summary": summary_lines}

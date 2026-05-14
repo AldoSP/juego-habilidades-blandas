@@ -5,10 +5,10 @@ var selected_character = null
 const CharacterButtonScene = preload("res://escenas/character_button.tscn")
 const CategoryContainerScene = preload("res://escenas/category_container.tscn")
 
-@onready var start_area = $MarginContainer/VBoxContainer/StartArea
-@onready var categories_container = $MarginContainer/VBoxContainer/Categories
-@onready var confirm_button = $MarginContainer/VBoxContainer/TopBar/HBoxContainer/ConfirmButton
-@onready var reset_button = $MarginContainer/VBoxContainer/TopBar/HBoxContainer/ResetButton
+@onready var start_area = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/PanelContainer/StartArea
+@onready var categories_container = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/Categories
+@onready var confirm_button = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/VBoxContainer/ConfirmButton
+@onready var reset_button = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TopBar/HBoxContainer/VBoxContainer/ResetButton
 
 
 
@@ -54,11 +54,25 @@ func load_characters():
 	for child in start_area.get_children():
 		child.queue_free()
 
-	for data in characters_data:
+	for character_data in characters_data:
 		var button = CharacterButtonScene.instantiate()
 		
-		button.character_id = data["id"]
-		button.text = data["name"]
+		# Handle both Character objects and dictionaries
+		if character_data is Character:
+			button.character_id = character_data.name
+			button.character_name = character_data.name
+			
+			# Set texture from character's portrait sprite
+			var portrait_texture = character_data.get_sprite("Portrait")
+			if portrait_texture:
+				button.character_texture = portrait_texture
+		else:
+			# Fallback for dictionary format
+			button.character_id = character_data["id"]
+			button.character_name = character_data["name"]
+			
+			if character_data.has("portrait"):
+				button.character_texture = character_data["portrait"]
 
 		start_area.add_child(button)
 
