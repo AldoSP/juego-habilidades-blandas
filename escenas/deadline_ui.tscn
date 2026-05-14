@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://t4xsreas2pc1"]
 
 [ext_resource type="Script" uid="uid://dejrro0lq6t7c" path="res://scripts/DeadlineUI.gd" id="1_143v8"]
+[ext_resource type="StyleBox" uid="uid://c0wabjtbbubns" path="res://styles/Inner_DarkerGray_Box.tres" id="2_pputs"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="2_q37qv"]
+[ext_resource type="StyleBox" uid="uid://ci8scejp3rd1e" path="res://styles/Inner_LightishGray_Box.tres" id="4_texjx"]
 
 [node name="DeadlineUi" type="MarginContainer" unique_id=1733592942]
 anchors_preset = 1
@@ -11,15 +14,47 @@ offset_bottom = 23.0
 grow_horizontal = 0
 script = ExtResource("1_143v8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2129096166]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=127737194]
 layout_mode = 2
-size_flags_horizontal = 8
+theme_override_styles/panel = ExtResource("2_pputs")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1790993880]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2129096166]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1580948362]
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_q37qv")
+text = "Dias restantes:"
+horizontal_alignment = 1
 
-[node name="Title" type="Label" parent="HBoxContainer" unique_id=1580948362]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1453586658]
 layout_mode = 2
-text = "Days remaining:"
+theme_override_styles/panel = ExtResource("4_texjx")
 
-[node name="Value" type="Label" parent="HBoxContainer" unique_id=718091880]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=259890575]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="Value" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=718091880]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_q37qv")
 text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1

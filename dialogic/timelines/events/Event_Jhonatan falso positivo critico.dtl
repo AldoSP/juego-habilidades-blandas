@@ -1,3 +1,4 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
 join Jhonatan (Jhonatan Preocupado) center
 Jhonatan: Saltaron errores en pruebas automaticas.
 Jhonatan: Creo que son falsos positivos, pero no estoy 100% seguro.

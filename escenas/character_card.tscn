@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dw875k7usj8s2" path="res://scripts/CharacterCard.gd" id="1_t1j4c"]
 [ext_resource type="Texture2D" uid="uid://bc775htnv7nj" path="res://icon.svg" id="2_t1j4c"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="3_bpb51"]
 
 [node name="CharacterCard" type="Control" unique_id=486469005]
 layout_mode = 3
@@ -27,6 +28,7 @@ layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=257228772]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bpb51")
 text = "Ana"
 
 [node name="EnergyBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=986384206]
