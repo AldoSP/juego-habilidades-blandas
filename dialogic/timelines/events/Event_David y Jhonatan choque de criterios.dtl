@@ -12,4 +12,5 @@ David (David): Podemos subirla ya y probar despues.
 - Hacer prueba dirigida con Jhonatan antes de publicar
 	Jhonatan (Jhonatan): Dame 20 minutos y validamos riesgo.
 	audio "res://assets/sfx/Success.mp3"
-	Narrator: Salio bien y sin romper casos borde.
+	Narrator: Salio bien y sin romper casos borde.  (+1 Programación)
+	do AssignmentManager.get_characters_in_category("")

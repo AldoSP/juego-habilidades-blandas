@@ -16,7 +16,7 @@ func calculate_task(character, task_type):
 	
 	print(character.name, " energía: ", character.energy)
 
-	var score = int(base * multiplier) + character.event_modifier
+	var score = int(base * multiplier) + character.task_modifier
 	if score < 0:
 		score = 0
 	return score
@@ -36,14 +36,14 @@ func resolve_all(characters):
 		if c.assigned_task == "rest":
 			# Rest no contribuye puntos al proyecto, pero restaura energía
 			c.set_energy(c.energy + 20)  # Emitir señal para actualizar UI al instante
-			c.event_modifier = 0
+			c.task_modifier = 0
 			summary_lines.append("%s: descansó y recuperó energía" % c.name)
 			continue
 
 		var value = calculate_task(c, c.assigned_task)
 		totals[c.assigned_task] += value
 		c.set_energy(c.energy - 10)
-		c.event_modifier = 0
+		c.task_modifier = 0
 		summary_lines.append("%s: +%d %s" % [c.name, value, c.assigned_task])
 
 	return {"totals": totals, "summary": summary_lines}
