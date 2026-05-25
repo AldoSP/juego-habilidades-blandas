@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*uid://ds2q0uclmolvu"
 AssignmentManager="*uid://dsxkfv46ogqk"
+EventAPI="*uid://brw0e8g1umnq6"
 
 [dialogic]
 

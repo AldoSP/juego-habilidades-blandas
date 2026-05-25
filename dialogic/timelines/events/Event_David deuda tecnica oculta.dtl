@@ -1,11 +1,15 @@
 [background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
 join David (David Preocupado) center
-David: Termine rapido un modulo clave.
-David (David Feliz): Funciona... pero el codigo quedo desordenado y sin comentarios.
+David: Terminé rapido un modulo clave.
+David (David Feliz): Funciona... pero el codigo quedó desordenado y sin comentarios.
 David: Si nadie lo toca hoy, tal vez no pase nada.
 - Aceptar y seguir sin limpieza
 	David (David Feliz): Listo, seguimos.
-	David (David Preocupado): Luego nadie entendio el modulo y perdimos tiempo corrigiendo.
+	update David (David Preocupado)
+	Narrator: Luego nadie entendio el modulo y perdimos tiempo corrigiendo.\
+	-2 Testing, -1 Energia.
+	do EventAPI.modify_active_character_energy(-1)
+	do EventAPI.modify_project_progress("testing", -2)
 - Pedirle refactor minimo y comentarios antes de seguir
 	David (David Preocupado): Ok, me tomo un rato extra.
 	David (David Feliz): Ahora el equipo puede mantenerlo sin romper todo.

@@ -9,7 +9,7 @@ var events: Array = [
 		"task": "programming",
 		"activation_conditions": {
 			"allowed_characters": ["David"],
-			"required_team_characters": []
+			"required_team_characters": ["David"]
 		}
 	},
 	{
@@ -17,7 +17,7 @@ var events: Array = [
 		"task": "design",
 		"activation_conditions": {
 			"allowed_characters": ["Erick"],
-			"required_team_characters": []
+			"required_team_characters": ["Erick"]
 		}
 	},
 	{
@@ -25,7 +25,7 @@ var events: Array = [
 		"task": "testing",
 		"activation_conditions": {
 			"allowed_characters": ["Jhonatan"],
-			"required_team_characters": []
+			"required_team_characters": ["Jhonatan"]
 		}
 	},
 	{
@@ -33,7 +33,7 @@ var events: Array = [
 		"task": "any",
 		"activation_conditions": {
 			"allowed_characters": ["Karol"],
-			"required_team_characters": []
+			"required_team_characters": ["Karol"]
 		}
 	},
 	{
@@ -41,7 +41,7 @@ var events: Array = [
 		"task": "programming",
 		"activation_conditions": {
 			"allowed_characters": ["David"],
-			"required_team_characters": []
+			"required_team_characters": ["David"]
 		}
 	},
 	{
@@ -49,7 +49,7 @@ var events: Array = [
 		"task": "design",
 		"activation_conditions": {
 			"allowed_characters": ["Erick"],
-			"required_team_characters": []
+			"required_team_characters": ["Erick"]
 		}
 	},
 	{
@@ -57,7 +57,7 @@ var events: Array = [
 		"task": "testing",
 		"activation_conditions": {
 			"allowed_characters": ["Jhonatan"],
-			"required_team_characters": []
+			"required_team_characters": ["Jhonatan"]
 		}
 	},
 	{
@@ -65,7 +65,7 @@ var events: Array = [
 		"task": "any",
 		"activation_conditions": {
 			"allowed_characters": ["Karol"],
-			"required_team_characters": []
+			"required_team_characters": ["Karol"]
 		}
 	},
 	{

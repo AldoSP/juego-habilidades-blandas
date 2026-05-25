@@ -28,6 +28,7 @@ func _ready():
 	team = $TeamSystem
 	tasks = $TaskSystem
 	project = $ProjectSystem
+	EventAPI.game_manager = self
 	
 	# Obtener referencia a UI (puede estar en CanvasLayer o no)
 	ui = get_tree().root.find_child("UIController", true, false)
@@ -89,7 +90,7 @@ func process_events():
 
 	var eligible_characters: Array = []
 	for c in team.characters:
-		c.event_modifier = 0
+		c.task_modifier = 0
 		if c.assigned_task == null:
 			print("[Eventos] ", c.name, " no tiene tarea asignada; se omite la selección de evento.")
 			continue
@@ -251,3 +252,42 @@ func _clear_event_visuals() -> void:
 
 func _on_character_pressed() -> void:
 	pass # Replace with function body.
+
+func get_active_event_character():
+	return active_event_data.get("character")
+
+func modify_project_progress(stat:String, amount:int):
+	var normalized_stat := stat.to_lower()
+	var was_modified := true
+
+	match normalized_stat:
+		"programming":
+			project.programming += amount
+		"design":
+			project.design += amount
+		"testing":
+			project.testing += amount
+		_:
+			was_modified = false
+
+	if was_modified:
+		print("[PROJECT] ", normalized_stat, " modified by ", amount)
+	else:
+		push_warning("[PROJECT] Unknown stat '%s', change ignored." % stat)
+
+	if project_progress_ui:
+		project_progress_ui.setup(project.get_completion_summary())
+
+func modify_active_character_energy(amount:int):
+	var c = get_active_event_character()
+
+	if c:
+		c.set_energy(c.energy + amount)
+		print("[ENERGY] ", c.name, " modified by ", amount)
+
+func modify_active_character_task_modifier(amount:int):
+	var c = get_active_event_character()
+
+	if c:
+		c.task_modifier += amount
+		print("[MODIFIER] ", c.name, " modified by ", amount)

@@ -8,7 +8,7 @@ var strength
 var weakness
 var energy = 100
 var assigned_task = null
-var event_modifier = 0
+var task_modifier = 0
 var event_description = ""
 var sprites: Dictionary = {}
 var description
