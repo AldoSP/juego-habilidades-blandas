@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Character" format=3]
+
+[ext_resource type="Script" uid="uid://bforictr3xiw7" path="res://scripts/Character.gd" id="1_03dm2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/Jessica/Jessica.png" id="2_body"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/Jessica/JessFeliz.png" id="3_happy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/Jessica/JessPreocupada.png" id="4_worried"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/Jessica/JessicaPortrait.png" id="5_portrait"]
+
+[resource]
+script = ExtResource("1_03dm2")
+name = "Jessica"
+strength = "testing"
+weakness = "design"
+energy = 100
+assigned_task = null
+task_modifier = 0
+event_description = ""
+sprites = {
+"": ExtResource("2_body"),
+"Feliz": ExtResource("3_happy"),
+"Preocupado": ExtResource("4_worried"),
+"Portrait": ExtResource("5_portrait")
+}
+description = "Jessica detecta bugs con rapidez y detalle, aunque no se siente comoda tomando decisiones esteticas."
+metadata/_custom_type_script = "uid://bforictr3xiw7"

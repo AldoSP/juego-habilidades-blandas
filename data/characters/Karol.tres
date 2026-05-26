@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bkc3y73u0nu0e"]
+
+[ext_resource type="Script" uid="uid://bforictr3xiw7" path="res://scripts/Character.gd" id="1_03dm2"]
+[ext_resource type="Texture2D" uid="uid://bqx1vs1cvcnm8" path="res://assets/sprites/characters/Karol/Karol.png" id="2_body"]
+[ext_resource type="Texture2D" uid="uid://cj2pbydw4k6u3" path="res://assets/sprites/characters/Karol/KarolFeliz.png" id="3_happy"]
+[ext_resource type="Texture2D" uid="uid://beakmxdj8cu0v" path="res://assets/sprites/characters/Karol/KarolPreocupada.png" id="4_worried"]
+[ext_resource type="Texture2D" uid="uid://5bbhv07gb6y5" path="res://assets/sprites/characters/Karol/KarolPortrait.png" id="5_portrait"]
+
+[resource]
+script = ExtResource("1_03dm2")
+name = "Karol"
+strength = "testing"
+weakness = "design"
+assigned_task = null
+sprites = {
+"": ExtResource("2_body"),
+"Feliz": ExtResource("3_happy"),
+"Portrait": ExtResource("5_portrait"),
+"Preocupado": ExtResource("4_worried")
+}
+description = "Karol es meticulosa para validar entregables, aunque no disfruta tareas de diseño visual."
+metadata/_custom_type_script = "uid://bforictr3xiw7"

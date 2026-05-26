@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cr0n8e201lsu8"]
+
+[ext_resource type="Script" uid="uid://bforictr3xiw7" path="res://scripts/Character.gd" id="1_03dm2"]
+[ext_resource type="Texture2D" uid="uid://cmthv06r76u2t" path="res://assets/sprites/characters/Erick/Erick.png" id="2_body"]
+[ext_resource type="Texture2D" uid="uid://u3ghqrl4lqhq" path="res://assets/sprites/characters/Erick/ErickFeliz.png" id="3_happy"]
+[ext_resource type="Texture2D" uid="uid://daninentmmmyy" path="res://assets/sprites/characters/Erick/ErickPreocupado.png" id="4_worried"]
+[ext_resource type="Texture2D" uid="uid://c08t67b7ps5kf" path="res://assets/sprites/characters/Erick/ErickPortrait.png" id="5_portrait"]
+
+[resource]
+script = ExtResource("1_03dm2")
+name = "Erick"
+strength = "design"
+weakness = "testing"
+assigned_task = null
+sprites = {
+"": ExtResource("2_body"),
+"Feliz": ExtResource("3_happy"),
+"Portrait": ExtResource("5_portrait"),
+"Preocupado": ExtResource("4_worried")
+}
+description = "Erick es fuerte en diseño y débil en testing."
+metadata/_custom_type_script = "uid://bforictr3xiw7"
