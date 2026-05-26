@@ -3,6 +3,12 @@ extends Control
 const CHARACTER_BUTTON_SCENE = preload("res://escenas/character_Selection_Button_2.tscn")
 const MAIN_GAME_SCENE := "res://escenas/main_game.tscn"
 
+const SKILL_LABELS := {
+	"programming": "Programación",
+	"design": "Diseño",
+	"testing": "Testing"
+}
+
 @onready var limit_warning = $MainMargin/PanelContainer/MainHBox/RightContainer/MarginContainer/RightPanel/LimitWarning
 @onready var warning_timer = $MainMargin/PanelContainer/MainHBox/RightContainer/MarginContainer/RightPanel/WarningTimer
 
@@ -54,7 +60,7 @@ func _on_character_hovered(character: Character):
 		return
 
 	preview_full_body.texture = _get_full_body_texture(character)
-	preview_info.text = "[center][font_size=28]" + character.name + "[/font_size]\n\nFortaleza: " + str(character.strength) + "\nDebilidad: " + str(character.weakness) + "\n" + str(character.description) + "[/center]"
+	preview_info.text = "[center][font_size=28]" + character.name + "[/font_size]\n\nFortaleza: " + _skill_label(character.strength) + "\nDebilidad: " + _skill_label(character.weakness) + "\n" + str(character.description) + "[/center]"
 
 func _on_character_selected(character: Character):
 	if character == null:
@@ -106,6 +112,9 @@ func _update_selected_slots() -> void:
 	if selected_characters.size() > 3:
 		face_4.texture = _get_face_texture(selected_characters[3])
 		name_4.text = selected_characters[3].name
+
+func _skill_label(skill: String) -> String:
+	return SKILL_LABELS.get(skill.to_lower(), skill)
 
 func _get_face_texture(character: Character) -> Texture2D:
 	if character == null:
