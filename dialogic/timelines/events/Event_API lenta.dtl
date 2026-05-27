@@ -1,6 +1,6 @@
 [background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) right
 join Christian (Christian Preocupado) left
-join Jhonathan (Jhonathan Preocupado) right
 join Narrator center
 
 Christian: "La API responde en 3 segundos en promedio. ¿Aceptable?"
@@ -11,12 +11,11 @@ Jhonathan: "Para una API moderna, no."
 	Jhonathan: "Así la API responde en menos de 500ms."
 	audio "res://assets/sfx/Success.mp3"
 	Resultado: La experiencia de usuario mejora significativamente.
-	do EventAPI.modify_project_progress("programming",2)
+	do EventAPI.modify_project_progress("programming", 2)
 
 - 3 segundos es aceptable, es suficiente
 	Christian: "3 segundos es aceptable, es suficiente."
 	Jhonathan: "Los usuarios esperarán."
 	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Usuarios se frustran y usan la competencia.
-	do EventAPI.modify_project_progress("programming",-1)
-
+	do EventAPI.modify_project_progress("programming", -1)

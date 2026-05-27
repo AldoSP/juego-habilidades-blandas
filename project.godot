@@ -24,8 +24,12 @@ EventAPI="*uid://brw0e8g1umnq6"
 [dialogic]
 
 directories/dch_directory={
+"Ana": "res://dialogic/characters/Ana.dch",
+"Christian": "res://dialogic/characters/Christian.dch",
 "David": "res://dialogic/characters/David.dch",
+"Elizabeth": "res://dialogic/characters/Elizabeth.dch",
 "Erick": "res://dialogic/characters/Erick.dch",
+"Jessica": "res://dialogic/characters/Jessica.dch",
 "Jhonatan": "res://dialogic/characters/Jhonatan.dch",
 "Karol": "res://dialogic/characters/Karol.dch",
 "Narrator": "res://dialogic/characters/Narrator.dch"
