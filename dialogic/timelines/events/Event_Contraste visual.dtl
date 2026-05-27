@@ -9,14 +9,14 @@ Elizabeth: "¿Afecta la accesibilidad?"
 - Sí, usamos colores con contraste WCAG AA mínimo
 	Karol: "Sí, usamos colores con contraste WCAG AA mínimo."
 	Elizabeth: "Beneficia a todos, especialmente quiénes tienen problemas visuales."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El sitio es más legible y accesible.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - El contraste está bien para la mayoría
 	Karol: "El contraste está bien para la mayoría."
 	Elizabeth: "Los colores se ven mejor así."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Algunos usuarios no pueden leer el contenido.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

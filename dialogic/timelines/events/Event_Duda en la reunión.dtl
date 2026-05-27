@@ -9,15 +9,15 @@ Jessica: "Podríamos investigar juntos o asumir que funciona."
 - Dediquemos 30 minutos a revisar la lógica
 	Erick: "Dediquemos 30 minutos a revisar la lógica."
 	Jessica: "Es mejor saber antes de escribir tests."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Evitan un bug potencial en validación.
 	do EventAPI.modify_project_progress("programming",2)
 	do EventAPI.modify_project_progress("testing",1)
-
+	update Erick (Erick Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Asumamos que está bien, probablemente funciona
 	Erick: "Asumamos que está bien, probablemente funciona."
 	Jessica: "Vamos al siguiente ticket."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Los tests fallan porque el comportamiento es diferente al esperado.
 	do EventAPI.modify_project_progress("testing",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

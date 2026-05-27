@@ -9,14 +9,14 @@ Elizabeth: "¿Incorporamos los cambios?"
 - Evaluamos qué cambios son críticos vs qué puede esperar
 	Karol: "Evaluamos qué cambios son críticos vs qué puede esperar."
 	Elizabeth: "Así priorizamos inteligentemente."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Se incorporan cambios críticos sin grandes retrasos.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Incorporamos todo, el release se retrasa 2 semanas
 	Karol: "Incorporamos todo, el release se retrasa 2 semanas."
 	Elizabeth: "Mejor asegurar que sea perfecto."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: El cliente se enoja por el retraso.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

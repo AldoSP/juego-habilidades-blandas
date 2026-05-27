@@ -9,14 +9,14 @@ Jessica: "¿Consolidamos o mejoramos la diferencia?"
 - Clarificamos la diferencia con labels explícitos y organización lógica
 	Karol: "Clarificamos la diferencia con labels explícitos y organización lógica."
 	Jessica: "Así el flujo es evidente."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Los usuarios navegan intuitivamente.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Jessica (Jessica Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Es suficientemente claro, algunos usuarios se confunden pero está bien
 	Karol: "Es suficientemente claro, algunos usuarios se confunden pero está bien."
 	Jessica: "La mayoría entiende."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: El soporte recibe preguntas constantemente sobre navegación.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

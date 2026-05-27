@@ -9,13 +9,14 @@ Karol: "¿Rediseñamos o simplemente agregamos un tutorial?"
 - Simplificamos el flujo, un buen diseño no necesita tutorial
 	Ana: "Simplificamos el flujo, un buen diseño no necesita tutorial."
 	Karol: "El diseño debe ser intuitivo por sí mismo."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: La interfaz es más usable sin necesidad de instrucciones.
 	do EventAPI.modify_project_progress("design", 2)
-
+	update Ana (Ana Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Agregamos un tutorial, así entenderán mejor
 	Ana: "Agregamos un tutorial, así entenderán mejor."
 	Karol: "Es más rápido que rediseñar."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Usuarios aún se sienten perdidos.
 	do EventAPI.modify_project_progress("design", -1)
+	audio "res://assets/sfx/Failure.mp3"

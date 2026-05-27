@@ -9,14 +9,14 @@ David: "¿Cuán probable es que ocurra en producción?"
 - Es mejor prevenir. Hacemos tests exhaustivos.
 	Jessica: "Es mejor prevenir. Hacemos tests exhaustivos."
 	David: "Así un usuario no puede romper el sistema."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: La aplicación maneja inputs inesperados sin errores.
 	do EventAPI.modify_project_progress("testing",2)
-
+	update David (David Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Asumamos que los usuarios son racionales
 	Jessica: "Asumamos que los usuarios son racionales."
 	David: "No harán cosas extrañas."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Un usuario arriba con datos inválidos y causa crash.
 	do EventAPI.modify_project_progress("testing",-2)
-
+	audio "res://assets/sfx/Failure.mp3"

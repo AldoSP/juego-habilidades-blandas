@@ -9,14 +9,14 @@ David: "Funciona, ¿eso no es lo importante?"
 - Agregamos comentarios y docstrings
 	Ana: "Agregamos comentarios y docstrings. Futuros cambios serán más fáciles."
 	David: "Tienes razón, lo hago ahora."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El código es más mantenible y evita errores futuros.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Ana (Ana Feliz)
+	update David (David Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Si está funcionando, no gastes tiempo en eso
 	Ana: "Si está funcionando, no gastes tiempo en eso."
 	David: "Claro, mejor vamos al siguiente feature."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Cuando alguien modifica ese código, surge un bug inesperado.
 	do EventAPI.modify_project_progress("programming",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

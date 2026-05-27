@@ -9,14 +9,14 @@ Erick: "¿Es realista ese escenario?"
 - Sí, así evitamos sorpresas inesperadas
 	Jessica: "Sí, así evitamos sorpresas inesperadas."
 	Erick: "Los usuarios hacen cosas inesperadas."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El sistema maneja casos extremos sin problemas.
 	do EventAPI.modify_project_progress("testing",2)
-
+	update Erick (Erick Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Asumamos que los usuarios actúan racionalmente
 	Jessica: "Asumamos que los usuarios actúan racionalmente."
 	Erick: "Esos casos son tan raros que podemos ignorarlos."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Un usuario arriba con el edge case y causa bug.
 	do EventAPI.modify_project_progress("testing",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

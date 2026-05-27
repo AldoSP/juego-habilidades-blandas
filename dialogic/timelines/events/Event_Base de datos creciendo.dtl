@@ -4,18 +4,19 @@ join Jhonatan (Jhonatan Preocupado) right
 join Narrator center
 
 Christian: "La base de datos crece rápidamente. ¿Optimizamos indexes?"
-Jhonathan: "¿Hay problema de performance?"
+Jhonatan: "¿Hay problema de performance?"
 
 - Sí, antes de que sea un problema
 	Christian: "Sí, antes de que sea un problema."
-	Jhonathan: "Agregamos indexes en campos que se consultan frecuentemente."
-	audio "res://assets/sfx/Success.mp3"
+	Jhonatan: "Agregamos indexes en campos que se consultan frecuentemente."
 	Resultado: Las consultas permanecen rápidas incluso con datos masivos.
 	do EventAPI.modify_project_progress("programming", 2)
-
+	update Christian (Christian Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Solo si tenemos problema
 	Christian: "Solo si tenemos problema."
-	Jhonathan: "No hay síntomas de lentitud."
-	audio "res://assets/sfx/Failure.mp3"
+	Jhonatan: "No hay síntomas de lentitud."
 	Resultado: Un día la BD es tan lenta que el sitio falla.
 	do EventAPI.modify_project_progress("programming", -1)
+	audio "res://assets/sfx/Failure.mp3"

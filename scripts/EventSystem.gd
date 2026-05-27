@@ -40,8 +40,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_El proyecto al límite.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "David"],
-			"required_team_characters": ["Jhonathan", "David"]
+			"allowed_characters": ["Jhonatan", "David"],
+			"required_team_characters": ["Jhonatan", "David"]
 		}
 	},
 	{
@@ -72,8 +72,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_El reto de Karol.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Karol", "Jhonathan"],
-			"required_team_characters": ["Karol", "Jhonathan"]
+			"allowed_characters": ["Karol", "Jhonatan"],
+			"required_team_characters": ["Karol", "Jhonatan"]
 		}
 	},
 	{
@@ -112,8 +112,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Testing incompleto.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "Jessica"],
-			"required_team_characters": ["Jhonathan", "Jessica"]
+			"allowed_characters": ["Jhonatan", "Jessica"],
+			"required_team_characters": ["Jhonatan", "Jessica"]
 		}
 	},
 	{
@@ -152,8 +152,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Performance lento.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Christian", "Jhonathan"],
-			"required_team_characters": ["Christian", "Jhonathan"]
+			"allowed_characters": ["Christian", "Jhonatan"],
+			"required_team_characters": ["Christian", "Jhonatan"]
 		}
 	},
 	{
@@ -192,8 +192,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Cobertura de tests.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "Christian"],
-			"required_team_characters": ["Jhonathan", "Christian"]
+			"allowed_characters": ["Jhonatan", "Christian"],
+			"required_team_characters": ["Jhonatan", "Christian"]
 		}
 	},
 	{
@@ -232,8 +232,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Ambiente de producción.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "Karol"],
-			"required_team_characters": ["Jhonathan", "Karol"]
+			"allowed_characters": ["Jhonatan", "Karol"],
+			"required_team_characters": ["Jhonatan", "Karol"]
 		}
 	},
 	{
@@ -256,8 +256,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Prueba de estrés.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "Jessica"],
-			"required_team_characters": ["Jhonathan", "Jessica"]
+			"allowed_characters": ["Jhonatan", "Jessica"],
+			"required_team_characters": ["Jhonatan", "Jessica"]
 		}
 	},
 	{
@@ -288,8 +288,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Escalabilidad cuestionada.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "Elizabeth"],
-			"required_team_characters": ["Jhonathan", "Elizabeth"]
+			"allowed_characters": ["Jhonatan", "Elizabeth"],
+			"required_team_characters": ["Jhonatan", "Elizabeth"]
 		}
 	},
 	{
@@ -312,8 +312,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_API lenta.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Christian", "Jhonathan"],
-			"required_team_characters": ["Christian", "Jhonathan"]
+			"allowed_characters": ["Christian", "Jhonatan"],
+			"required_team_characters": ["Christian", "Jhonatan"]
 		}
 	},
 	{
@@ -352,8 +352,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Manejo de errores.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonathan", "David"],
-			"required_team_characters": ["Jhonathan", "David"]
+			"allowed_characters": ["Jhonatan", "David"],
+			"required_team_characters": ["Jhonatan", "David"]
 		}
 	},
 	{
@@ -368,8 +368,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Base de datos creciendo.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Christian", "Jhonathan"],
-			"required_team_characters": ["Christian", "Jhonathan"]
+			"allowed_characters": ["Christian", "Jhonatan"],
+			"required_team_characters": ["Christian", "Jhonatan"]
 		}
 	},
 	{
@@ -400,8 +400,8 @@ var events: Array = [
 		"id": "res://dialogic/timelines/events/Event_Sprint final.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jessica", "Jhonathan", "Elizabeth"],
-			"required_team_characters": ["Jessica", "Jhonathan", "Elizabeth"]
+			"allowed_characters": ["Jessica", "Jhonatan", "Elizabeth"],
+			"required_team_characters": ["Jessica", "Jhonatan", "Elizabeth"]
 		}
 	},
 ]

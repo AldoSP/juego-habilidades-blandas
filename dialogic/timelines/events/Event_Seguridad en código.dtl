@@ -9,14 +9,14 @@ Christian: "¿Cuán probable es que alguien lo explote?"
 - Sí, aunque sea poco probable, la seguridad es crítica
 	David: "Sí, aunque sea poco probable, la seguridad es crítica."
 	Christian: "Mejor prevenir ahora que enfrentar un breach."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: La vulnerabilidad se cierra antes de que sea explotada.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Christian (Christian Feliz)
+	update David (David Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Es poco probable, lo dejamos para después
 	David: "Es poco probable, lo dejamos para después."
 	Christian: "Es complicado de arreglar ahora."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Un atacante la explota y datos se comprometen.
 	do EventAPI.modify_project_progress("programming",-2)
-
+	audio "res://assets/sfx/Failure.mp3"

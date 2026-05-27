@@ -9,14 +9,14 @@ Christian: "¿Importa realmente?"
 - Usamos datos realistas que reflejan la realidad
 	Erick: "Usamos datos realistas que reflejan la realidad."
 	Christian: "Así los tests son más confiables."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Los tests detectan problemas que pasarían desapercibidos.
 	do EventAPI.modify_project_progress("testing",2)
-
+	update Christian (Christian Feliz)
+	update Erick (Erick Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Usamos datos simples, más rápido
 	Erick: "Usamos datos simples, más rápido."
 	Christian: "Es suficiente para pruebas unitarias."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: El código funciona en tests pero falla en producción.
 	do EventAPI.modify_project_progress("testing",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

@@ -9,14 +9,14 @@ Christian: "¿Es un bug real o no entender qué hace la funcionalidad?"
 - Analizamos feedback y simplificamos tanto la interfaz como la documentación
 	Ana: "Analizamos feedback y simplificamos tanto la interfaz como la documentación."
 	Christian: "Así prevenimos malentendidos futuros."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Los usuarios entienden la funcionalidad correctamente.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Ana (Ana Feliz)
+	update Christian (Christian Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Es culpa del usuario, debe leer la documentación
 	Ana: "Es culpa del usuario, debe leer la documentación."
 	Christian: "No es nuestro problema."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Más usuarios se frustran, reputación daña.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

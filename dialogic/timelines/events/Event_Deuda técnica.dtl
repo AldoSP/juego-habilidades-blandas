@@ -9,14 +9,14 @@ Karol: "¿Consolidamos o dejamos que crezca?"
 - Extrae componentes reutilizables, así reducimos deuda
 	Erick: "Extrae componentes reutilizables, así reducimos deuda."
 	Karol: "El código será más mantenible."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Actualizaciones futuras son más fáciles.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Erick (Erick Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - El código duplicado está funcionando, no lo toquemos
 	Erick: "El código duplicado está funcionando, no lo toquemos."
 	Karol: "Es arriesgado cambiar lo que funciona."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Mantener múltiples versiones es un dolor constante.
 	do EventAPI.modify_project_progress("programming",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

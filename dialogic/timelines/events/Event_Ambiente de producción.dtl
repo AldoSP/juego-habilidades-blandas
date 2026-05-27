@@ -1,22 +1,22 @@
 [background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
-join Jhonathan (Jhonathan Preocupado) left
+join Jhonatan (Jhonatan Preocupado) left
 join Karol (Karol Preocupada) right
 join Narrator center
 
-Jhonathan: "El ambiente de producción se comporta diferente al de desarrollo."
+Jhonatan: "El ambiente de producción se comporta diferente al de desarrollo."
 Karol: "¿Qué diferencias hay?"
 
 - Replicamos la configuración exacta de producción en desarrollo
-	Jhonathan: "Replicamos la configuración exacta de producción en desarrollo."
+	Jhonatan: "Replicamos la configuración exacta de producción en desarrollo."
 	Karol: "Así prevenimos sorpresas."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Bugs en producción se detectan en desarrollo.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Jhonatan (Jhonatan Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - No vale la pena, desarrollo y producción pueden ser diferentes
-	Jhonathan: "No vale la pena, desarrollo y producción pueden ser diferentes."
+	Jhonatan: "No vale la pena, desarrollo y producción pueden ser diferentes."
 	Karol: "Resolvemos problemas cuando surjan."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Cada deploy lleva sorpresas desagradables.
 	do EventAPI.modify_project_progress("programming",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

@@ -9,14 +9,14 @@ Elizabeth: "¿Cuán diferente es al diseño actual?"
 - Evaluamos el impacto y hacemos cambios mínimos si es posible
 	Ana: "Evaluamos el impacto y hacemos cambios mínimos si es posible."
 	Elizabeth: "Reutilizamos lo que podemos."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Se adapta la funcionalidad sin pérdida de trabajo.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Ana (Ana Feliz)
+	update Elizabeth (Elizabeth Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Borramos todo y empezamos de cero
 	Ana: "Borramos todo y empezamos de cero."
 	Elizabeth: "Así asegurándonos que sea correcto."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Tiempo perdido, proyecto atrasado.
 	do EventAPI.modify_project_progress("programming",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

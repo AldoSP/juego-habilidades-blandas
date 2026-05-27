@@ -9,14 +9,14 @@ Christian: "El cliente pidió dos nuevas funcionalidades para la semana."
 - Refactorizamos primero, después los features son más rápidos de implementar
 	Elizabeth: "Refactorizamos primero, después los features son más rápidos de implementar."
 	Christian: "La deuda técnica está quitando productividad."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El código es más ágil y los nuevos features se entregan más rápido.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Christian (Christian Feliz)
+	update Elizabeth (Elizabeth Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Podemos esperar, mejor hacemos los features
 	Elizabeth: "Podemos esperar, mejor hacemos los features."
 	Christian: "El cliente lo pagó, eso es prioritario."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: La próxima semana el sistema está más lento aún.
 	do EventAPI.modify_project_progress("programming",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

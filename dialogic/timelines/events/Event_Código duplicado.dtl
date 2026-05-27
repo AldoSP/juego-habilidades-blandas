@@ -9,14 +9,14 @@ Jessica: "¿Las consolidamos en una?"
 - Creamos una función genérica parametrizable
 	David: "Creamos una función genérica parametrizable."
 	Jessica: "Así el mantenimiento es más fácil."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Cambios futuros afectan un solo lugar.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update David (David Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Si funciona, dejamos como está
 	David: "Si funciona, dejamos como está."
 	Jessica: "No hay riesgo en no tocar código."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Un bug en la lógica requiere arreglarlo en 5 lugares.
 	do EventAPI.modify_project_progress("programming",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

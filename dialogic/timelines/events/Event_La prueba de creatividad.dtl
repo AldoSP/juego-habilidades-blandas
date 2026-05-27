@@ -9,14 +9,14 @@ Ana: "¿Cuánto tiempo implica implementar la propuesta?"
 - Hacemos un prototipo rápido y probamos con usuarios
 	Karol: "Hacemos un prototipo rápido y probamos con usuarios."
 	Ana: "Así validamos antes de invertir mucho tiempo."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El nuevo diseño mejora UX y se implementa sin grandes cambios.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Ana (Ana Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Mejor dejamos todo como está, es seguro
 	Karol: "Mejor dejamos todo como está, es seguro."
 	Ana: "Sin riesgo, sin problemas."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: El dashboard sigue siendo incómodo para los usuarios.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

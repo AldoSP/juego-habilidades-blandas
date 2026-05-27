@@ -9,14 +9,14 @@ David: "¿Cuánto tiempo toma un hotfix?"
 - Sí, esto es prioritario
 	Christian: "Sí, esto es prioritario. Hacemos hotfix inmediatamente."
 	David: "La estabilidad en producción es lo primero."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El bug se soluciona rápidamente, los usuarios no sufren.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Christian (Christian Feliz)
+	update David (David Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Lo dejamos para la siguiente iteración
 	Christian: "Lo dejamos para la siguiente iteración."
 	David: "Continuamos con lo que estábamos."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Más usuarios afectados, reputación dañada.
 	do EventAPI.modify_project_progress("programming",-2)
-
+	audio "res://assets/sfx/Failure.mp3"

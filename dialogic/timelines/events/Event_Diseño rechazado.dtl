@@ -9,14 +9,14 @@ Elizabeth: "¿Qué feedback específico dieron?"
 - Recopilamos feedback detallado y hacemos una segunda versión
 	Karol: "Recopilamos feedback detallado y hacemos una segunda versión."
 	Elizabeth: "Así no partimos de cero, solo ajustamos."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: La segunda versión incorpora feedback y se aprueba.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Empezamos de nuevo sin entender bien qué no gustó
 	Karol: "Empezamos de nuevo sin entender bien qué no gustó."
 	Elizabeth: "Esperamos que esta vez funcione."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: El nuevo diseño nuevamente no cumple expectativas.
 	do EventAPI.modify_project_progress("design",-2)
-
+	audio "res://assets/sfx/Failure.mp3"

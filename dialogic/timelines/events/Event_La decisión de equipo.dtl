@@ -11,14 +11,14 @@ Elizabeth: "Sin tests, el código es arriesgado."
 - Usamos TDD para las funciones críticas
 	Jessica: "Usamos TDD para las funciones críticas."
 	Erick: "Así es un punto medio entre velocidad y calidad."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Los bugs se detectan temprano y el código es más robusto.
 	do EventAPI.modify_project_progress("testing",2)
-
+	update Erick (Erick Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Escribimos código primero, tests después
 	Jessica: "Escribimos código primero, tests después."
 	Erick: "Es más rápido sin la restricción de tests."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Deuda técnica de tests no escritos acumulados.
 	do EventAPI.modify_project_progress("testing",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

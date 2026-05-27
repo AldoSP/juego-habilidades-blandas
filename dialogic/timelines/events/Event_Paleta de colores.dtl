@@ -9,14 +9,14 @@ Elizabeth: "¿Cuántos componentes habría que actualizar?"
 - Actualizamos el sistema de diseño una sola vez
 	Karol: "Actualizamos el sistema de diseño una sola vez."
 	Elizabeth: "Todos los componentes reflejarán el cambio automáticamente."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: La marca es consistente, cambio es fácil.
 	do EventAPI.modify_project_progress("design",2)
-
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Mejor dejamos los colores como están
 	Karol: "Mejor dejamos los colores como están."
 	Elizabeth: "Cambiarlos es mucho trabajo."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: La marca se ve desactualizada.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"

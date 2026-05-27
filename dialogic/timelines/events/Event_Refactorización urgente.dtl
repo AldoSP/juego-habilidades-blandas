@@ -9,14 +9,14 @@ Erick: "¿Revisamos el código o lo vemos en el próximo sprint?"
 - Hacemos profiling para identificar el cuello de botella
 	Elizabeth: "Hacemos profiling para identificar el cuello de botella."
 	Erick: "Así priorizamos exactamente qué optimizar."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: Se optimiza la consulta y los endpoints responden en 200ms.
 	do EventAPI.modify_project_progress("programming",2)
-
+	update Elizabeth (Elizabeth Feliz)
+	update Erick (Erick Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Lo dejamos para después, tal vez se resuelva solo
 	Elizabeth: "Lo dejamos para después, tal vez se resuelva solo."
 	Erick: "A veces los problemas desaparecen."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: Usuarios reportan lentitud, reputación se daña.
 	do EventAPI.modify_project_progress("programming",-2)
-
+	audio "res://assets/sfx/Failure.mp3"

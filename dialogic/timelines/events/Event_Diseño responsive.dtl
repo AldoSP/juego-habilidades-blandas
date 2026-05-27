@@ -9,14 +9,14 @@ David: "¿Rediseñamos o solo agregamos media queries?"
 - Rediseñamos pensando mobile-first
 	Karol: "Rediseñamos pensando mobile-first."
 	David: "Así la experiencia es óptima en todos los dispositivos."
-	audio "res://assets/sfx/Success.mp3"
 	Resultado: El sitio funciona perfectamente en móvil y desktop.
 	do EventAPI.modify_project_progress("design",2)
-
+	update David (David Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
 - Solo ajustamos con CSS media queries
 	Karol: "Solo ajustamos con CSS media queries."
 	David: "Así no gastamos mucho tiempo."
-	audio "res://assets/sfx/Failure.mp3"
 	Resultado: El sitio sigue siendo incómodo en el móvil.
 	do EventAPI.modify_project_progress("design",-1)
-
+	audio "res://assets/sfx/Failure.mp3"
