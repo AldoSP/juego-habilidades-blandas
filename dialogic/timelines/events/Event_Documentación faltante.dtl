@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Elizabeth (Elizabeth Preocupada) left
+join Ana (Ana Preocupada) right
+join Narrator center
+
+Elizabeth: "Las APIs no tienen documentación. ¿Alguien sabe cómo usarlas?"
+Ana: "¿Documentamos o lo aprendemos por prueba y error?"
+
+- Documentamos ahora, así nuevos desarrolladores ahorran tiempo
+	Elizabeth: "Documentamos ahora, así nuevos desarrolladores ahorran tiempo."
+	Ana: "Evitamos preguntas repetidas."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: La documentación acelera el onboarding y reduce errores.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Lo dejamos, está en el código
+	Elizabeth: "Lo dejamos, está en el código."
+	Ana: "Que estudien el código."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Los nuevos desarrolladores pierden semanas entendiendo APIs.
+	do EventAPI.modify_project_progress("programming",-1)
+

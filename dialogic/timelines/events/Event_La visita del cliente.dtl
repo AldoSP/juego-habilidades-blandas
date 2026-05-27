@@ -1,0 +1,23 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Ana: "El cliente llega en 2 horas. ¿Mostramos el feature con bugs pequeños o esperamos?"
+Elizabeth: "Si mostramos algo inestable, puede afectar la confianza."
+
+- Mostramos sólo lo funcional y explicamos qué viene
+	Ana: "Mostramos sólo lo funcional y explicamos qué viene."
+	Elizabeth: "El cliente verá que hay orden y plan."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El cliente aprecia la transparencia y la progresión.
+	do EventAPI.modify_project_progress("programming",1)
+	do EventAPI.modify_project_progress("testing",1)
+
+- Entregamos todo aunque esté incompleto
+	Ana: "Entregamos todo aunque esté incompleto."
+	Elizabeth: "Esperamos que no lo noten."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El cliente detecta bugs y cuestiona la calidad.
+	do EventAPI.modify_project_progress("testing",-2)
+

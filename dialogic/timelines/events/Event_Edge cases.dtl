@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jessica (Jessica Preocupada) left
+join Erick (Erick Preocupado) right
+join Narrator center
+
+Jessica: "¿Qué pasa si el usuario deja el formulario abierto 24 horas y luego envía?"
+Erick: "¿Es realista ese escenario?"
+
+- Sí, así evitamos sorpresas inesperadas
+	Jessica: "Sí, así evitamos sorpresas inesperadas."
+	Erick: "Los usuarios hacen cosas inesperadas."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El sistema maneja casos extremos sin problemas.
+	do EventAPI.modify_project_progress("testing",2)
+
+- Asumamos que los usuarios actúan racionalmente
+	Jessica: "Asumamos que los usuarios actúan racionalmente."
+	Erick: "Esos casos son tan raros que podemos ignorarlos."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Un usuario arriba con el edge case y causa bug.
+	do EventAPI.modify_project_progress("testing",-1)
+

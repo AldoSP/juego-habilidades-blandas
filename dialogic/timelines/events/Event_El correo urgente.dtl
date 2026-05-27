@@ -1,0 +1,23 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Christian (Christian Preocupado) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Christian: "El cliente necesita correcciones visuales urgentes para la demo de hoy."
+Elizabeth: "El diseño actual tiene algunos problemas, pero hacer cambios rápido puede romper otras cosas."
+
+- Revisemos qué cambia y probamos antes de entregar
+	Christian: "Revisemos qué cambia y probamos antes de entregar."
+	Elizabeth: "Así evitamos sorpresas en la demo."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: Los cambios llegan sin efectos secundarios.
+	do EventAPI.modify_project_progress("design",2)
+	do EventAPI.modify_project_progress("testing",1)
+
+- No hay tiempo, solo apliquemos los cambios
+	Christian: "No hay tiempo, solo apliquemos los cambios."
+	Elizabeth: "Esperamos que todo funcione."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Surgen problemas visuales en medio de la demo.
+	do EventAPI.modify_project_progress("design",-2)
+

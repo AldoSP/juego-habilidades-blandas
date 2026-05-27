@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join David (David Preocupado) right
+join Narrator center
+
+Karol: "El sitio se ve bien en desktop pero terrible en móvil."
+David: "¿Rediseñamos o solo agregamos media queries?"
+
+- Rediseñamos pensando mobile-first
+	Karol: "Rediseñamos pensando mobile-first."
+	David: "Así la experiencia es óptima en todos los dispositivos."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El sitio funciona perfectamente en móvil y desktop.
+	do EventAPI.modify_project_progress("design",2)
+
+- Solo ajustamos con CSS media queries
+	Karol: "Solo ajustamos con CSS media queries."
+	David: "Así no gastamos mucho tiempo."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El sitio sigue siendo incómodo en el móvil.
+	do EventAPI.modify_project_progress("design",-1)
+

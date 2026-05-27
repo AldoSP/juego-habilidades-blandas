@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join David (David Preocupado) left
+join Christian (Christian Preocupado) right
+join Narrator center
+
+David: "El código legacy que heredamos es imposible de extender. ¿Lo refactorizamos?"
+Christian: "Tomar tiempo en refactor puede retrasar nuevas funcionalidades."
+
+- Refactorizamos módulos críticos gradualmente
+	David: "Refactorizamos módulos críticos gradualmente."
+	Christian: "Así reducimos complejidad sin paralizar features."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El mantenimiento futuro es más fácil y rápido.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Lo dejamos como está, es costoso refactorizar
+	David: "Lo dejamos como está, es costoso refactorizar."
+	Christian: "Si funciona, mejor no lo tocamos."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Cada nuevo feature toma más tiempo de lo esperado.
+	do EventAPI.modify_project_progress("programming",-1)
+

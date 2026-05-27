@@ -1,0 +1,23 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Jhonathan (Jhonathan Preocupado) right
+join Narrator center
+
+Karol: "El cliente quiere un diseño completamente diferente al anterior."
+Jhonathan: "¿Cuánto afecta eso al código actual?"
+
+- Hacemos un análisis de impacto primero
+	Karol: "Hacemos un análisis de impacto primero."
+	Jhonathan: "Así sabremos si es refactor o reescritura total."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: La decisión es informada y el cambio es eficiente.
+	do EventAPI.modify_project_progress("programming",2)
+	do EventAPI.modify_project_progress("design",1)
+
+- Solo hazlo compatible sin pensar demasiado
+	Karol: "Solo hazlo compatible sin pensar demasiado."
+	Jhonathan: "Claro, lo hacemos rápido."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El código queda frágil y el mantenimiento futuro es difícil.
+	do EventAPI.modify_project_progress("programming",-1)
+

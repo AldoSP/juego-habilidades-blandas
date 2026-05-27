@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Erick (Erick Preocupado) right
+join Narrator center
+
+Ana: "La API externa que integramos está fallando en 10% de las llamadas."
+Erick: "¿Reintentamos o reportamos al proveedor?"
+
+- Implementamos reintentos con backoff exponencial
+	Ana: "Implementamos reintentos con backoff exponencial."
+	Erick: "Así es más resiliente ante fallos temporales."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: La integración es mucho más confiable.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Si falla una vez, mostramos error al usuario
+	Ana: "Si falla una vez, mostramos error al usuario."
+	Erick: "Que el proveedor arregle su API."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Los usuarios ven errores innecesarios.
+	do EventAPI.modify_project_progress("programming",-1)
+

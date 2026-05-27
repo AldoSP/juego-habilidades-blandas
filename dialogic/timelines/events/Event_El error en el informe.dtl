@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join David (David Preocupado) left
+join Christian (Christian Preocupado) right
+join Narrator center
+
+David: "Encontré un bug en la lógica de cálculos que afecta los reportes."
+Christian: "¿Cuántos reportes ya se generaron con ese bug?"
+
+- Lo reportamos inmediatamente y avisamos al cliente
+	David: "Lo reportamos inmediatamente y avisamos al cliente."
+	Christian: "Mejor ser transparente que esconderlo."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El cliente aprecia la honestidad y se corrige rápido.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Arreglemoslo en silencio, sin que nadie se entere
+	David: "Arreglemoslo en silencio, sin que nadie se entere."
+	Christian: "Evitamos escándalo así."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El cliente descubre la discrepancia y pierde confianza.
+	do EventAPI.modify_project_progress("programming",-2)
+

@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonathan (Jhonathan Preocupado) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Jhonathan: "La arquitectura actual no escala para 10x de usuarios."
+Elizabeth: "¿Rediseñamos ahora o cuando sea necesario?"
+
+- Rediseñamos ahora antes de que sea una crisis
+	Jhonathan: "Rediseñamos ahora antes de que sea una crisis."
+	Elizabeth: "Es más fácil hacerlo preventivamente."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: Crecimiento futuro es smooth.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Esperamos a que falle, luego arreglamos
+	Jhonathan: "Esperamos a que falle, luego arreglamos."
+	Elizabeth: "No queremos over-engineer."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El sistema falla y hay downtime cuando crece.
+	do EventAPI.modify_project_progress("programming",-2)
+

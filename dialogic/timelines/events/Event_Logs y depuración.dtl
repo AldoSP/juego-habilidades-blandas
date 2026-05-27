@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Christian (Christian Preocupado) left
+join David (David Preocupado) right
+join Narrator center
+
+Christian: "El error en producción es difícil de reproducir. ¿Agregamos más logs?"
+David: "¿Demasiados logs ralentizan el sistema?"
+
+- Agregamos logs estratégicos en puntos clave
+	Christian: "Agregamos logs estratégicos en puntos clave."
+	David: "Así depuramos sin afectar performance."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: Futuro debugging en producción es más fácil.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Dejamos como está, si pasa de nuevo investiguemos
+	Christian: "Dejamos como está, si pasa de nuevo investiguemos."
+	David: "Los logs son suficientes."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El mismo error ocurre y nadie logra reproducirlo.
+	do EventAPI.modify_project_progress("programming",-1)
+

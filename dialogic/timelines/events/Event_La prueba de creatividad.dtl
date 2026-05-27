@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Karol (Karol Preocupada) right
+join Narrator center
+
+Karol: "Propongo un diseño completamente nuevo para el dashboard, pero es arriesgado."
+Ana: "¿Cuánto tiempo implica implementar la propuesta?"
+
+- Hacemos un prototipo rápido y probamos con usuarios
+	Karol: "Hacemos un prototipo rápido y probamos con usuarios."
+	Ana: "Así validamos antes de invertir mucho tiempo."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El nuevo diseño mejora UX y se implementa sin grandes cambios.
+	do EventAPI.modify_project_progress("design",2)
+
+- Mejor dejamos todo como está, es seguro
+	Karol: "Mejor dejamos todo como está, es seguro."
+	Ana: "Sin riesgo, sin problemas."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El dashboard sigue siendo incómodo para los usuarios.
+	do EventAPI.modify_project_progress("design",-1)
+

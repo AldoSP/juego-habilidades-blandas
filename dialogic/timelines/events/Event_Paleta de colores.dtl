@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Karol: "La paleta de colores no refleja la identidad actualizada de la marca."
+Elizabeth: "¿Cuántos componentes habría que actualizar?"
+
+- Actualizamos el sistema de diseño una sola vez
+	Karol: "Actualizamos el sistema de diseño una sola vez."
+	Elizabeth: "Todos los componentes reflejarán el cambio automáticamente."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: La marca es consistente, cambio es fácil.
+	do EventAPI.modify_project_progress("design",2)
+
+- Mejor dejamos los colores como están
+	Karol: "Mejor dejamos los colores como están."
+	Elizabeth: "Cambiarlos es mucho trabajo."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: La marca se ve desactualizada.
+	do EventAPI.modify_project_progress("design",-1)
+

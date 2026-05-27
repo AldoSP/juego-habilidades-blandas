@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join David (David Preocupado) left
+join Jessica (Jessica Preocupada) right
+join Narrator center
+
+David: "Hay múltiples lugares donde validamos emails. ¿Centralizamos?"
+Jessica: "¿Afectaría el performance?"
+
+- Creamos un módulo reutilizable, es más mantenible
+	David: "Creamos un módulo reutilizable, es más mantenible."
+	Jessica: "Así un cambio en validación afecta todo el sistema."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: Consistencia en validación y mantenimiento simplificado.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Está bien que cada módulo valide por su lado
+	David: "Está bien que cada módulo valide por su lado."
+	Jessica: "Evitamos dependencias entre componentes."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Una validación falla en un módulo pero funciona en otro.
+	do EventAPI.modify_project_progress("programming",-1)
+

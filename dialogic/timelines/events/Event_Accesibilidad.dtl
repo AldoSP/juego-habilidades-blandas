@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Karol (Karol Preocupada) right
+join Narrator center
+
+Ana: "El sitio no es accesible para usuarios con limitaciones visuales."
+Karol: "¿Agregamos solo etiquetas alt o rediseñamos para accesibilidad?"
+
+- Rediseñamos pensando en accesibilidad desde el inicio
+	Ana: "Rediseñamos pensando en accesibilidad desde el inicio."
+	Karol: "Beneficia a todos, no solo a usuarios con discapacidades."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: El sitio es completamente accesible y user-friendly.
+	do EventAPI.modify_project_progress("design",2)
+
+- Solo etiquetas alt, es suficiente
+	Ana: "Solo etiquetas alt, es suficiente."
+	Karol: "Cambios mínimos, menor esfuerzo."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El sitio sigue siendo inaccesible.
+	do EventAPI.modify_project_progress("design",-1)
+

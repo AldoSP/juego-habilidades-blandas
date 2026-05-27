@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join David (David Preocupado) left
+join Christian (Christian Preocupado) right
+join Narrator center
+
+David: "Encontré una potencial vulnerabilidad SQL injection en un formulario."
+Christian: "¿Cuán probable es que alguien lo explote?"
+
+- Sí, aunque sea poco probable, la seguridad es crítica
+	David: "Sí, aunque sea poco probable, la seguridad es crítica."
+	Christian: "Mejor prevenir ahora que enfrentar un breach."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: La vulnerabilidad se cierra antes de que sea explotada.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Es poco probable, lo dejamos para después
+	David: "Es poco probable, lo dejamos para después."
+	Christian: "Es complicado de arreglar ahora."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Un atacante la explota y datos se comprometen.
+	do EventAPI.modify_project_progress("programming",-2)
+

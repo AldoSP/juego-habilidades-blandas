@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Christian (Christian Preocupado) left
+join Jhonathan (Jhonathan Preocupado) right
+join Narrator center
+
+Christian: "El dashboard carga en 8 segundos. Debería ser 2."
+Jhonathan: "¿Optimizamos frontend o backend?"
+
+- Hacemos profiling en ambos lados para identificar la culpa
+	Christian: "Hacemos profiling en ambos lados para identificar la culpa."
+	Jhonathan: "Así atacamos el real problema."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: Se optimiza tanto frontend como backend, carga es rápida.
+	do EventAPI.modify_project_progress("programming",2)
+
+- Probablemente sea frontend, optimizamos allí
+	Christian: "Probablemente sea frontend, optimizamos allí."
+	Jhonathan: "Esperamos que funcione."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: El dashboard sigue siendo lento porque el problema está en backend.
+	do EventAPI.modify_project_progress("programming",-1)
+

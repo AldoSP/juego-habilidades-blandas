@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Christian (Christian Preocupado) right
+join Narrator center
+
+Ana: "Usuarios reportan que la funcionalidad X no funciona como esperaban."
+Christian: "¿Es un bug real o no entender qué hace la funcionalidad?"
+
+- Analizamos feedback y simplificamos tanto la interfaz como la documentación
+	Ana: "Analizamos feedback y simplificamos tanto la interfaz como la documentación."
+	Christian: "Así prevenimos malentendidos futuros."
+	audio "res://assets/sfx/Success.mp3"
+	Resultado: Los usuarios entienden la funcionalidad correctamente.
+	do EventAPI.modify_project_progress("design",2)
+
+- Es culpa del usuario, debe leer la documentación
+	Ana: "Es culpa del usuario, debe leer la documentación."
+	Christian: "No es nuestro problema."
+	audio "res://assets/sfx/Failure.mp3"
+	Resultado: Más usuarios se frustran, reputación daña.
+	do EventAPI.modify_project_progress("design",-1)
+
