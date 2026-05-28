@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Karol: "El diseñador solicita cambios drásticos una semana antes del release."
+Elizabeth: "¿Incorporamos los cambios?"
+
+- Evaluamos qué cambios son críticos vs qué puede esperar
+	Karol: "Evaluamos qué cambios son críticos vs qué puede esperar."
+	Elizabeth: "Así priorizamos inteligentemente."
+	Resultado: Se incorporan cambios críticos sin grandes retrasos.
+	do EventAPI.modify_project_progress("design",2)
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Incorporamos todo, el release se retrasa 2 semanas
+	Karol: "Incorporamos todo, el release se retrasa 2 semanas."
+	Elizabeth: "Mejor asegurar que sea perfecto."
+	Resultado: El cliente se enoja por el retraso.
+	do EventAPI.modify_project_progress("design",-1)
+	audio "res://assets/sfx/Failure.mp3"

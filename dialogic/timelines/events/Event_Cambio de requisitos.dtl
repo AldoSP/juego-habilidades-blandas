@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Ana: "El cliente cambió el requisito de la funcionalidad en la que trabajamos hace 2 días."
+Elizabeth: "¿Cuán diferente es al diseño actual?"
+
+- Evaluamos el impacto y hacemos cambios mínimos si es posible
+	Ana: "Evaluamos el impacto y hacemos cambios mínimos si es posible."
+	Elizabeth: "Reutilizamos lo que podemos."
+	Resultado: Se adapta la funcionalidad sin pérdida de trabajo.
+	do EventAPI.modify_project_progress("programming",2)
+	update Ana (Ana Feliz)
+	update Elizabeth (Elizabeth Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Borramos todo y empezamos de cero
+	Ana: "Borramos todo y empezamos de cero."
+	Elizabeth: "Así asegurándonos que sea correcto."
+	Resultado: Tiempo perdido, proyecto atrasado.
+	do EventAPI.modify_project_progress("programming",-1)
+	audio "res://assets/sfx/Failure.mp3"

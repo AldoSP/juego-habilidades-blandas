@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) left
+join David (David Preocupado) right
+join Narrator center
+
+Jhonatan: "¿Qué pasa si la base de datos no responde?"
+David: "¿Mostramos un error genérico o específico?"
+
+- Implementamos reintentos y mensajes claros
+	Jhonatan: "Implementamos reintentos y mensajes claros."
+	David: "Así los usuarios entienden qué pasó."
+	Resultado: El sistema es robusto ante fallos.
+	do EventAPI.modify_project_progress("programming",2)
+	update David (David Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Dejamos que falle sin mensaje
+	Jhonatan: "Dejamos que falle sin mensaje."
+	David: "El usuario sabrá qué hacer."
+	Resultado: Los usuarios se sienten perdidos cuando hay errores.
+	do EventAPI.modify_project_progress("programming",-1)
+	audio "res://assets/sfx/Failure.mp3"

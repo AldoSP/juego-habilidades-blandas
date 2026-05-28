@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Ana (Ana Preocupada) right
+join Narrator center
+
+Karol: "Usamos 5 tamaños de font diferentes sin patrón claro."
+Ana: "¿Estandarizamos tipografía?"
+
+- Definimos una escala clara: h1, h2, body, small, etc
+	Karol: "Definimos una escala clara: h1, h2, body, small, etc."
+	Ana: "Así todo se ve coherente."
+	Resultado: El diseño es más profesional y consistente.
+	do EventAPI.modify_project_progress("design",2)
+	update Ana (Ana Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Está bien que cada sección tenga su propia tipografía
+	Karol: "Está bien que cada sección tenga su propia tipografía."
+	Ana: "La libertad es buena."
+	Resultado: El sitio se ve desordenado.
+	do EventAPI.modify_project_progress("design",-1)
+	audio "res://assets/sfx/Failure.mp3"

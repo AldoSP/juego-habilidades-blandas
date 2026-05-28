@@ -5,7 +5,6 @@ David (David Feliz): Funciona... pero el codigo quedó desordenado y sin comenta
 David: Si nadie lo toca hoy, tal vez no pase nada.
 - Aceptar y seguir sin limpieza
 	David (David Feliz): Listo, seguimos.
-	update David (David Preocupado)
 	Narrator: Luego nadie entendio el modulo y perdimos tiempo corrigiendo.\
 	-2 Testing, -1 Energia.
 	do EventAPI.modify_active_character_energy(-1)

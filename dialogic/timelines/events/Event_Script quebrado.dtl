@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Christian (Christian Preocupado) left
+join Jessica (Jessica Preocupada) right
+join Narrator center
+
+Christian: "Un script JavaScript causa errores en consola. ¿Lo investigamos?"
+Jessica: "¿Afecta la funcionalidad?"
+
+- Sí, investigamos. Errores silenciosos son peligrosos.
+	Christian: "Sí, investigamos. Errores silenciosos son peligrosos."
+	Jessica: "Podrían esconder problemas mayores."
+	Resultado: Se descubre que el error afecta funcionalidad en ciertos navegadores.
+	do EventAPI.modify_project_progress("programming",2)
+	update Christian (Christian Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Si no lo nota el usuario, dejamos así
+	Christian: "Si no lo nota el usuario, dejamos así."
+	Jessica: "Es un warning, no es crítico."
+	Resultado: El error se propaga y causa crashes en producción.
+	do EventAPI.modify_project_progress("programming",-1)
+	audio "res://assets/sfx/Failure.mp3"

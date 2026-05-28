@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jessica (Jessica Preocupada) left
+join Erick (Erick Preocupado) right
+join Narrator center
+
+Jessica: "Tengo una idea para mejorar la accesibilidad del sitio con ARIA labels."
+Erick: "¿Vale la pena si no lo piden explícitamente?"
+
+- Es una mejora que beneficia a todos, especialmente usuarios con discapacidades
+	Jessica: "Es una mejora que beneficia a todos, especialmente usuarios con discapacidades."
+	Erick: "Hagámoslo, es lo correcto."
+	Resultado: El sitio es más usable y gana puntos de cumplimiento normativo.
+	do EventAPI.modify_project_progress("design",2)
+	update Erick (Erick Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Mejor enfocarnos en lo que piden
+	Jessica: "Mejor enfocarnos en lo que piden."
+	Erick: "Cierto, los requisitos primero."
+	Resultado: El sitio sigue siendo inaccesible para muchos usuarios.
+	do EventAPI.modify_project_progress("design",-1)
+	audio "res://assets/sfx/Failure.mp3"

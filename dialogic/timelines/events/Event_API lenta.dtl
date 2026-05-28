@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) right
+join Christian (Christian Preocupado) left
+join Narrator center
+
+Christian: "La API responde en 3 segundos en promedio. ¿Aceptable?"
+Jhonatan: "Para una API moderna, no."
+
+- Implementamos caching y optimizamos queries
+	Christian: "Implementamos caching y optimizamos queries."
+	Jhonatan: "Así la API responde en menos de 500ms."
+	Resultado: La experiencia de usuario mejora significativamente.
+	do EventAPI.modify_project_progress("programming", 2)
+	update Christian (Christian Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- 3 segundos es aceptable, es suficiente
+	Christian: "3 segundos es aceptable, es suficiente."
+	Jhonatan: "Los usuarios esperarán."
+	Resultado: Usuarios se frustran y usan la competencia.
+	do EventAPI.modify_project_progress("programming", -1)
+	audio "res://assets/sfx/Failure.mp3"

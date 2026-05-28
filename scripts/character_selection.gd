@@ -48,7 +48,7 @@ var personajes = [
 		"imagen": preload("res://assets/sprites/characters/Jessica/JessicaPortrait.png")
 	},
 	{
-		"nombre": "Jhonathan",
+		"nombre": "Jhonatan",
 		"fortaleza": "debugging",
 		"debilidad": "diseño",
 		"descripcion": "Lorem ipsum",

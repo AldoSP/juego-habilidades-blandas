@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) left
+join Christian (Christian Preocupado) right
+join Narrator center
+
+Jhonatan: "La cobertura de tests es solo un 30%. ¿Mejoramos antes de release?"
+Christian: "¿Hay tiempo?"
+
+- Dedicamos días a mejorar a 70% antes de release
+	Jhonatan: "Dedicamos días a mejorar a 70% antes de release."
+	Christian: "Así minimizamos riesgos en producción."
+	Resultado: El release es más estable, pocos bugs reportados.
+	do EventAPI.modify_project_progress("testing", 2)
+	update Christian (Christian Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Liberamos con 30%, testeamos en producción
+	Jhonatan: "Liberamos con 30%, testeamos en producción."
+	Christian: "Los usuarios nos dicen qué falla."
+	Resultado: Bugs críticos en producción afectan la experiencia de usuario.
+	do EventAPI.modify_project_progress("testing", -2)
+	audio "res://assets/sfx/Failure.mp3"

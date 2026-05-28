@@ -1,0 +1,25 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jessica (Jessica Preocupada) left
+join Jhonatan (Jhonatan Preocupado) center
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Jessica: "Es el último sprint antes del release. ¿Qué priorizamos?"
+Jhonatan: "Hay features pendientes, bugs reportados y tests incompletos."
+Elizabeth: "No podemos hacer todo."
+
+- Priorizamos: bugs críticos > tests > features
+	Jessica: "Priorizamos: bugs críticos > tests > features. Estabilidad primero."
+	Jhonatan: "Un release inestable es peor que features incompletas."
+	Resultado: El release es estable y confiable.
+	do EventAPI.modify_project_progress("testing",2)
+	do EventAPI.modify_project_progress("programming",1)
+	update Jessica (Jessica Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Completamos todas las features, bugs después
+	Jessica: "Completamos todas las features, bugs después."
+	Jhonatan: "Los usuarios reportarán qué falla."
+	Resultado: El release tiene bugs graves que no se detectaron.
+	do EventAPI.modify_project_progress("testing",-2)
+	audio "res://assets/sfx/Failure.mp3"

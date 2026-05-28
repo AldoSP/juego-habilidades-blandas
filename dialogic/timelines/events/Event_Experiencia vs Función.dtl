@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Ana (Ana Preocupada) right
+join Narrator center
+
+Karol: "Puedo agregar más features pero eso hace la interfaz más compleja."
+Ana: "¿Qué es más importante?"
+
+- Menos features bien diseñadas que muchas confusas
+	Karol: "Menos features bien diseñadas que muchas confusas."
+	Ana: "La simplicidad es una característica también."
+	Resultado: Los usuarios aman la interfaz limpia y simple.
+	do EventAPI.modify_project_progress("design",2)
+	update Ana (Ana Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Agregamos todo, así hay más valor
+	Karol: "Agregamos todo, así hay más valor."
+	Ana: "Más features = mejor producto."
+	Resultado: La interfaz es abrumadora, los usuarios se van.
+	do EventAPI.modify_project_progress("design",-2)
+	audio "res://assets/sfx/Failure.mp3"

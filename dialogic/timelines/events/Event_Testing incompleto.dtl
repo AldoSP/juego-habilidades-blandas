@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) left
+join Jessica (Jessica Preocupada) right
+join Narrator center
+
+Jhonatan: "La cobertura de tests es del 45%. ¿Seguimos sin tests más?"
+Jessica: "Cada feature sin tests es deuda técnica."
+
+- Dedicamos sprints a mejorar la cobertura a 80% mínimo
+	Jhonatan: "Dedicamos sprints a mejorar la cobertura a 80% mínimo."
+	Jessica: "Así la base es confiable."
+	Resultado: Bugs futuros se detectan automáticamente.
+	do EventAPI.modify_project_progress("testing",2)
+	update Jessica (Jessica Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Seguimos sin tests, ya veremos si surge algo
+	Jhonatan: "Seguimos sin tests, ya veremos si surge algo."
+	Jessica: "Confiar en QA manual es suficiente."
+	Resultado: Bugs en producción por falta de cobertura.
+	do EventAPI.modify_project_progress("testing",-1)
+	audio "res://assets/sfx/Failure.mp3"

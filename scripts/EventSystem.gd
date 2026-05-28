@@ -5,93 +5,405 @@ extends Node
 
 var events: Array = [
 	{
-		"id": "res://dialogic/timelines/events/Event_Programador Confiado.dtl",
+		"id": "res://dialogic/timelines/events/Event_Feedback sorpresa.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["David"],
-			"required_team_characters": ["David"]
+			"allowed_characters": ["Ana", "David"],
+			"required_team_characters": ["Ana", "David"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_Probar es aburrido Erick.dtl",
+		"id": "res://dialogic/timelines/events/Event_El correo urgente.dtl",
 		"task": "design",
 		"activation_conditions": {
-			"allowed_characters": ["Erick"],
-			"required_team_characters": ["Erick"]
+			"allowed_characters": ["Christian", "Elizabeth"],
+			"required_team_characters": ["Christian", "Elizabeth"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_No me gusta programar.dtl",
+		"id": "res://dialogic/timelines/events/Event_Duda en la reunión.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonatan"],
-			"required_team_characters": ["Jhonatan"]
+			"allowed_characters": ["Erick", "Jessica"],
+			"required_team_characters": ["Erick", "Jessica"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_No hay coordinacion.dtl",
-		"task": "any",
+		"id": "res://dialogic/timelines/events/Event_La prueba de creatividad.dtl",
+		"task": "design",
 		"activation_conditions": {
-			"allowed_characters": ["Karol"],
-			"required_team_characters": ["Karol"]
+			"allowed_characters": ["Ana", "Karol"],
+			"required_team_characters": ["Ana", "Karol"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_David deuda tecnica oculta.dtl",
+		"id": "res://dialogic/timelines/events/Event_El proyecto al límite.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "David"],
+			"required_team_characters": ["Jhonatan", "David"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_El conflicto de prioridades.dtl",
 		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["David"],
-			"required_team_characters": ["David"]
+			"allowed_characters": ["Elizabeth", "Christian"],
+			"required_team_characters": ["Elizabeth", "Christian"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_Erick cambios de ultimo minuto.dtl",
+		"id": "res://dialogic/timelines/events/Event_La idea de Jessica.dtl",
 		"task": "design",
 		"activation_conditions": {
-			"allowed_characters": ["Erick"],
-			"required_team_characters": ["Erick"]
+			"allowed_characters": ["Jessica", "Erick"],
+			"required_team_characters": ["Jessica", "Erick"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_Jhonatan falso positivo critico.dtl",
+		"id": "res://dialogic/timelines/events/Event_La visita del cliente.dtl",
 		"task": "testing",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonatan"],
-			"required_team_characters": ["Jhonatan"]
+			"allowed_characters": ["Ana", "Elizabeth"],
+			"required_team_characters": ["Ana", "Elizabeth"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_Karol prioridades en conflicto.dtl",
-		"task": "any",
+		"id": "res://dialogic/timelines/events/Event_El reto de Karol.dtl",
+		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Karol"],
-			"required_team_characters": ["Karol"]
+			"allowed_characters": ["Karol", "Jhonatan"],
+			"required_team_characters": ["Karol", "Jhonatan"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_David y Jhonatan choque de criterios.dtl",
-		"task": "any",
+		"id": "res://dialogic/timelines/events/Event_El error en el informe.dtl",
+		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["David", "Jhonatan"],
-			"required_team_characters": ["David", "Jhonatan"]
+			"allowed_characters": ["David", "Christian"],
+			"required_team_characters": ["David", "Christian"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_Erick y Karol alcance visual.dtl",
-		"task": "any",
+		"id": "res://dialogic/timelines/events/Event_La decisión de equipo.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jessica", "Erick", "Elizabeth"],
+			"required_team_characters": ["Jessica", "Erick", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Bug crítico.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Christian", "David"],
+			"required_team_characters": ["Christian", "David"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Diseño rechazado.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Elizabeth"],
+			"required_team_characters": ["Karol", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Testing incompleto.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "Jessica"],
+			"required_team_characters": ["Jhonatan", "Jessica"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_El código heredado.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["David", "Christian"],
+			"required_team_characters": ["David", "Christian"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Refactorización urgente.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Elizabeth", "Erick"],
+			"required_team_characters": ["Elizabeth", "Erick"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Interfaz complicada.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Ana", "Karol"],
+			"required_team_characters": ["Ana", "Karol"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Casos no cubiertos.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jessica", "David"],
+			"required_team_characters": ["Jessica", "David"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Performance lento.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Christian", "Jhonatan"],
+			"required_team_characters": ["Christian", "Jhonatan"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Cambio de requisitos.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Ana", "Elizabeth"],
+			"required_team_characters": ["Ana", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Deuda técnica.dtl",
+		"task": "programming",
 		"activation_conditions": {
 			"allowed_characters": ["Erick", "Karol"],
 			"required_team_characters": ["Erick", "Karol"]
 		}
 	},
 	{
-		"id": "res://dialogic/timelines/events/Event_Jhonatan y Erick reporte ambiguo.dtl",
-		"task": "any",
+		"id": "res://dialogic/timelines/events/Event_Validación de datos.dtl",
+		"task": "programming",
 		"activation_conditions": {
-			"allowed_characters": ["Jhonatan", "Erick"],
-			"required_team_characters": ["Jhonatan", "Erick"]
+			"allowed_characters": ["David", "Jessica"],
+			"required_team_characters": ["David", "Jessica"]
 		}
-	}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Paleta de colores.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Elizabeth"],
+			"required_team_characters": ["Karol", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Cobertura de tests.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "Christian"],
+			"required_team_characters": ["Jhonatan", "Christian"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Integración fallida.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Ana", "Erick"],
+			"required_team_characters": ["Ana", "Erick"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Diseño responsive.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "David"],
+			"required_team_characters": ["Karol", "David"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Script quebrado.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Christian", "Jessica"],
+			"required_team_characters": ["Christian", "Jessica"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Documentación faltante.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Elizabeth", "Ana"],
+			"required_team_characters": ["Elizabeth", "Ana"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Ambiente de producción.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "Karol"],
+			"required_team_characters": ["Jhonatan", "Karol"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Animaciones suaves.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Elizabeth"],
+			"required_team_characters": ["Karol", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Seguridad en código.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["David", "Christian"],
+			"required_team_characters": ["David", "Christian"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Prueba de estrés.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "Jessica"],
+			"required_team_characters": ["Jhonatan", "Jessica"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Accesibilidad.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Ana", "Karol"],
+			"required_team_characters": ["Ana", "Karol"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Logs y depuración.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Christian", "David"],
+			"required_team_characters": ["Christian", "David"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Usuario se confunde.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Elizabeth"],
+			"required_team_characters": ["Karol", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Escalabilidad cuestionada.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "Elizabeth"],
+			"required_team_characters": ["Jhonatan", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Tipografía inconsistente.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Ana"],
+			"required_team_characters": ["Karol", "Ana"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Edge cases.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jessica", "Erick"],
+			"required_team_characters": ["Jessica", "Erick"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_API lenta.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Christian", "Jhonatan"],
+			"required_team_characters": ["Christian", "Jhonatan"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Contraste visual.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Elizabeth"],
+			"required_team_characters": ["Karol", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Código duplicado.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["David", "Jessica"],
+			"required_team_characters": ["David", "Jessica"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Mock de datos.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Erick", "Christian"],
+			"required_team_characters": ["Erick", "Christian"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Experiencia vs Función.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Ana"],
+			"required_team_characters": ["Karol", "Ana"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Manejo de errores.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Jhonatan", "David"],
+			"required_team_characters": ["Jhonatan", "David"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Feedback del diseñador.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Elizabeth"],
+			"required_team_characters": ["Karol", "Elizabeth"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Base de datos creciendo.dtl",
+		"task": "programming",
+		"activation_conditions": {
+			"allowed_characters": ["Christian", "Jhonatan"],
+			"required_team_characters": ["Christian", "Jhonatan"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Flujo de usuario confuso.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Karol", "Jessica"],
+			"required_team_characters": ["Karol", "Jessica"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Unit test falló.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["David", "Erick"],
+			"required_team_characters": ["David", "Erick"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Feedback en producción.dtl",
+		"task": "design",
+		"activation_conditions": {
+			"allowed_characters": ["Ana", "Christian"],
+			"required_team_characters": ["Ana", "Christian"]
+		}
+	},
+	{
+		"id": "res://dialogic/timelines/events/Event_Sprint final.dtl",
+		"task": "testing",
+		"activation_conditions": {
+			"allowed_characters": ["Jessica", "Jhonatan", "Elizabeth"],
+			"required_team_characters": ["Jessica", "Jhonatan", "Elizabeth"]
+		}
+	},
 ]
 
 var played_event_ids: Dictionary = {}

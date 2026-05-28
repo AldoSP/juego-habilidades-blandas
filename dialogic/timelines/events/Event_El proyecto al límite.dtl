@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) left
+join David (David Preocupado) right
+join Narrator center
+
+Jhonatan: "Quedan pocas horas y los tests no pasan. ¿Entregamos sin cobertura completa?"
+David: "Si hacemos eso, otros romperán cosas accidentalmente."
+
+- Extendemos 2 horas y cerramos los casos críticos
+	Jhonatan: "Extendemos 2 horas y cerramos los casos críticos."
+	David: "Así la base es sólida."
+	Resultado: Se entrega con pruebas estables.
+	do EventAPI.modify_project_progress("testing",2)
+	update David (David Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Entregamos y escribimos tests después
+	Jhonatan: "Entregamos y escribimos tests después."
+	David: "Es un detalle, lo solucionaremos luego."
+	Resultado: Bugs en producción por falta de cobertura.
+	do EventAPI.modify_project_progress("testing",-2)
+	audio "res://assets/sfx/Failure.mp3"

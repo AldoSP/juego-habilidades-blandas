@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join David (David Preocupado) left
+join Erick (Erick Preocupado) right
+join Narrator center
+
+David: "Un unittest que pasaba ahora falla inconsistentemente."
+Erick: "¿Es un test flaky o un verdadero problema?"
+
+- Investigamos y arreglamos la raíz del problema
+	David: "Investigamos y arreglamos la raíz del problema."
+	Erick: "Tests flaky destruyen la confianza."
+	Resultado: Los tests son confiables y sirven como safety net.
+	do EventAPI.modify_project_progress("testing",2)
+	update David (David Feliz)
+	update Erick (Erick Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- A veces falla, a veces pasa
+	David: "A veces falla, a veces pasa. Ignora los fallos ocasionales."
+	Erick: "Es extraño pero probablemente sea timing."
+	Resultado: Un día el test falla y causa falso positivo/negativo en CI.
+	do EventAPI.modify_project_progress("testing",-1)
+	audio "res://assets/sfx/Failure.mp3"

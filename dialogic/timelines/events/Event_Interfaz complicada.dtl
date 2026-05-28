@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Ana (Ana Preocupada) left
+join Karol (Karol Preocupada) right
+join Narrator center
+
+Ana: "Los usuarios se confunden con el flujo de la interfaz principal."
+Karol: "¿Rediseñamos o simplemente agregamos un tutorial?"
+
+- Simplificamos el flujo, un buen diseño no necesita tutorial
+	Ana: "Simplificamos el flujo, un buen diseño no necesita tutorial."
+	Karol: "El diseño debe ser intuitivo por sí mismo."
+	Resultado: La interfaz es más usable sin necesidad de instrucciones.
+	do EventAPI.modify_project_progress("design", 2)
+	update Ana (Ana Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Agregamos un tutorial, así entenderán mejor
+	Ana: "Agregamos un tutorial, así entenderán mejor."
+	Karol: "Es más rápido que rediseñar."
+	Resultado: Usuarios aún se sienten perdidos.
+	do EventAPI.modify_project_progress("design", -1)
+	audio "res://assets/sfx/Failure.mp3"

@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Karol: "Usuarios no entienden cómo usar esta funcionalidad."
+Elizabeth: "¿Es malo el diseño o la funcionalidad es poco clara?"
+
+- Simplificamos el flujo y hacemos obvio el camino
+	Karol: "Simplificamos el flujo y hacemos obvio el camino."
+	Elizabeth: "Un buen diseño no necesita mucho helptext."
+	Resultado: Los usuarios entienden intuitivamente.
+	do EventAPI.modify_project_progress("design",2)
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Agregamos tooltips y un tutorial
+	Karol: "Agregamos tooltips y un tutorial."
+	Elizabeth: "La ayuda explicará todo."
+	Resultado: Usuarios aún se sienten perdidos.
+	do EventAPI.modify_project_progress("design",-1)
+	audio "res://assets/sfx/Failure.mp3"

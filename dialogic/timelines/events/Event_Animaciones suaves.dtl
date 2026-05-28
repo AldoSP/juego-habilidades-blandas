@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Karol (Karol Preocupada) left
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Karol: "Las animaciones de UI están haciendo lag en dispositivos lentos."
+Elizabeth: "¿Reducimos las animaciones o las optimizamos?"
+
+- Optimizamos con CSS transforms en lugar de cambios de layout
+	Karol: "Optimizamos con CSS transforms en lugar de cambios de layout."
+	Elizabeth: "Así las animaciones son smooth incluso en dispositivos lentos."
+	Resultado: La experiencia es fluida en todos los dispositivos.
+	do EventAPI.modify_project_progress("design",2)
+	update Elizabeth (Elizabeth Feliz)
+	update Karol (Karol Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Eliminamos las animaciones, así no lag
+	Karol: "Eliminamos las animaciones, así no lag."
+	Elizabeth: "La interfaz será más aburrida pero más rápida."
+	Resultado: La experiencia es plana y menos atractiva.
+	do EventAPI.modify_project_progress("design",-1)
+	audio "res://assets/sfx/Failure.mp3"

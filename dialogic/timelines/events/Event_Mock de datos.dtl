@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Erick (Erick Preocupado) left
+join Christian (Christian Preocupado) right
+join Narrator center
+
+Erick: "¿Usamos datos reales o mocks para testing?"
+Christian: "¿Importa realmente?"
+
+- Usamos datos realistas que reflejan la realidad
+	Erick: "Usamos datos realistas que reflejan la realidad."
+	Christian: "Así los tests son más confiables."
+	Resultado: Los tests detectan problemas que pasarían desapercibidos.
+	do EventAPI.modify_project_progress("testing",2)
+	update Christian (Christian Feliz)
+	update Erick (Erick Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Usamos datos simples, más rápido
+	Erick: "Usamos datos simples, más rápido."
+	Christian: "Es suficiente para pruebas unitarias."
+	Resultado: El código funciona en tests pero falla en producción.
+	do EventAPI.modify_project_progress("testing",-1)
+	audio "res://assets/sfx/Failure.mp3"

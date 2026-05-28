@@ -1,0 +1,23 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Erick (Erick Preocupado) left
+join Jessica (Jessica Preocupada) right
+join Narrator center
+
+Erick: "¿Alguien sabe cómo el sistema valida los email duplicados? No lo encontré en el código."
+Jessica: "Podríamos investigar juntos o asumir que funciona."
+
+- Dediquemos 30 minutos a revisar la lógica
+	Erick: "Dediquemos 30 minutos a revisar la lógica."
+	Jessica: "Es mejor saber antes de escribir tests."
+	Resultado: Evitan un bug potencial en validación.
+	do EventAPI.modify_project_progress("programming",2)
+	do EventAPI.modify_project_progress("testing",1)
+	update Erick (Erick Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Asumamos que está bien, probablemente funciona
+	Erick: "Asumamos que está bien, probablemente funciona."
+	Jessica: "Vamos al siguiente ticket."
+	Resultado: Los tests fallan porque el comportamiento es diferente al esperado.
+	do EventAPI.modify_project_progress("testing",-1)
+	audio "res://assets/sfx/Failure.mp3"

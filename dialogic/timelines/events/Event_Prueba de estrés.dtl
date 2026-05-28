@@ -1,0 +1,22 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jhonatan (Jhonatan Preocupado) left
+join Jessica (Jessica Preocupada) right
+join Narrator center
+
+Jhonatan: "¿Hacemos pruebas de carga antes del Black Friday?"
+Jessica: "¿El servidor aguanta 10x el tráfico normal?"
+
+- Sí, simulamos picos de tráfico antes del evento
+	Jhonatan: "Sí, simulamos picos de tráfico antes del evento."
+	Jessica: "Así identificamos problemas a tiempo."
+	Resultado: El servidor se escala sin caídas durante picos.
+	do EventAPI.modify_project_progress("testing",2)
+	update Jessica (Jessica Feliz)
+	update Jhonatan (Jhonatan Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Confiamos que resista, no hay tiempo para testing
+	Jhonatan: "Confiamos que resista, no hay tiempo para testing."
+	Jessica: "Probablemente funcione."
+	Resultado: El sistema cae durante Black Friday.
+	do EventAPI.modify_project_progress("testing",-2)
+	audio "res://assets/sfx/Failure.mp3"

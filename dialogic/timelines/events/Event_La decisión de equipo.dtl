@@ -1,0 +1,24 @@
+[background arg="res://assets/backgrounds/Office background.png" fade="0.0"]
+join Jessica (Jessica Preocupada) left
+join Erick (Erick Preocupado) center
+join Elizabeth (Elizabeth Preocupada) right
+join Narrator center
+
+Jessica: "¿Escribimos tests primero (TDD) o después de codificar?"
+Erick: "TDD es disciplina, pero es más lento inicialmente."
+Elizabeth: "Sin tests, el código es arriesgado."
+
+- Usamos TDD para las funciones críticas
+	Jessica: "Usamos TDD para las funciones críticas."
+	Erick: "Así es un punto medio entre velocidad y calidad."
+	Resultado: Los bugs se detectan temprano y el código es más robusto.
+	do EventAPI.modify_project_progress("testing",2)
+	update Erick (Erick Feliz)
+	update Jessica (Jessica Feliz)
+	audio "res://assets/sfx/Success.mp3"
+- Escribimos código primero, tests después
+	Jessica: "Escribimos código primero, tests después."
+	Erick: "Es más rápido sin la restricción de tests."
+	Resultado: Deuda técnica de tests no escritos acumulados.
+	do EventAPI.modify_project_progress("testing",-1)
+	audio "res://assets/sfx/Failure.mp3"
