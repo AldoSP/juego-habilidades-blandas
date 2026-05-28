@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dporqmsh6t760" path="res://escenas/project_progress_ui.tscn" id="7_7xn8u"]
 [ext_resource type="PackedScene" uid="uid://t4xsreas2pc1" path="res://escenas/deadline_ui.tscn" id="7_a23o7"]
 [ext_resource type="PackedScene" uid="uid://weslr57ivtnl" path="res://escenas/results_panel.tscn" id="8_rspn1"]
+[ext_resource type="PackedScene" uid="uid://dxfwchp3ylnny" path="res://escenas/effects_layer.tscn" id="9_efcts"]
 [ext_resource type="StyleBox" uid="uid://c0wabjtbbubns" path="res://styles/Inner_DarkerGray_Box.tres" id="10_fj8ea"]
 [ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="11_mp682"]
 [ext_resource type="StyleBox" uid="uid://c3yoxit57pk72" path="res://styles/YellowButton.tres" id="12_ce32g"]
@@ -271,6 +272,8 @@ visible = false
 layout_mode = 0
 offset_right = 248.0
 offset_bottom = 166.0
+
+[node name="EffectsLayer" parent="." unique_id=1884729505 instance=ExtResource("9_efcts")]
 
 [connection signal="continue_pressed" from="CanvasLayer/UIController/ResultsPanel" to="CanvasLayer/UIController" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UIController/GameOverPanel/RestartButton" to="CanvasLayer/UIController" method="_on_restart_button_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxfwchp3ylnny"]
+
+[ext_resource type="Script" uid="uid://ccbhqv1mmgdx" path="res://scripts/EffectsLayer.gd" id="1_fcfvh"]
+
+[node name="EffectsLayer" type="CanvasLayer" unique_id=1884729505]
+script = ExtResource("1_fcfvh")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://asset_sparkle_scene"]
+
+[ext_resource type="Texture2D" uid="uid://asset_texture" path="res://assets/textures/exclamation.png" id="1"]
+
+[node name="AssetSparkle" type="Node2D" unique_id=1030000000]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1030000001]
+texture = ExtResource("1")
+centered = true
+scale = Vector2(0.7, 0.7)
+modulate = Color(1, 1, 1, 0.0)
