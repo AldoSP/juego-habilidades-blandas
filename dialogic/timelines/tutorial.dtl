@@ -1,0 +1,54 @@
+join Karol leftmost
+Karol: ¡Hola, soy Karol!\
+Bienvenido al tutorial, voy a explicarte como jugar.
+Karol: Eres el líder de un proyecto de desarrollo de software.\
+Tu objetivo es completar el proyecto antes de que el tiempo se agote.
+Karol: Como líder, no realizarás el trabajo directamente. En cambio, deberás organizar a tu equipo y decidir qué tarea realizará cada integrante cada día.
+Karol: Para completar el proyecto, deberás alcanzar las metas de\:\
+• Programación\
+• Diseño\
+• Testing
+Karol: Antes de comenzar, deberás formar tu equipo.
+[background arg="res://assets/backgrounds/tutorials/T1.png" fade="0.0"]
+Karol: Puedes seleccionar 4 personajes de un grupo de 8 disponibles.
+Karol: Cada personaje posee fortalezas y debilidades distintas.\
+Algunos destacan en Programación, mientras que otros son mejores en Diseño o Testing.
+Karol: Elegir un equipo balanceado te ayudará a completar el proyecto más fácilmente.\
+Revisa cuidadosamente las descripciones de cada personaje antes de elegir.
+[background arg="res://assets/backgrounds/tutorials/T2.png" fade="0.0"]
+Karol: Cada día deberás asignar tareas a los miembros de tu equipo.
+Karol: Puedes colocar personajes en\:\
+• Programación\
+• Diseño\
+• Testing\
+• Descanso
+Karol: Los personajes rendirán mejor en tareas relacionadas con sus fortalezas.\
+También puedes permitir que descansen para recuperar energía.\
+Administrar correctamente la energía del equipo será clave para completar proyectos largos.
+[background arg="res://assets/backgrounds/tutorials/T3.png" fade="0.0"]
+Karol: En el panel derecho podrás ver la información más importante del proyecto.
+Karol: Aquí encontrarás\:\
+• Los días restantes\
+• El progreso actual del proyecto\
+• La energía disponible de cada personaje
+Karol: Ten cuidado\: si los días llegan a 0 antes de completar todas las metas, el proyecto fracasará.
+[background arg="res://assets/backgrounds/tutorials/T2.png" fade="0.0"]
+Karol: Cuando estés listo, presiona "Confirmar" para finalizar el día.
+[background arg="res://assets/backgrounds/tutorials/T4.png" fade="0.0"]
+Karol: Al finalizar cada día pueden ocurrir eventos aleatorios.
+Karol: Los miembros del equipo pueden enfrentarse a problemas, discusiones o situaciones inesperadas durante el desarrollo.\\
+Deberás tomar una decisión para resolver cada situación.
+[background arg="res://assets/backgrounds/tutorials/T5.png" fade="0.0"]
+Karol: Tus decisiones pueden aumentar o disminuir\:\
+• El progreso del proyecto\
+• La energía de los personajes\
+• El rendimiento del equipo
+[background arg="res://assets/backgrounds/tutorials/T6.png" fade="0.0"]
+Karol: Después de cada día recibirás un resumen de los resultados obtenidos.
+Karol: El progreso del proyecto dependerá de\:\
+• Las tareas asignadas\
+• Los personajes que las realizaron\
+• Las decisiones tomadas durante los eventos
+Karol: El juego continuará hasta que los días disponibles lleguen a 0.
+Karol: Ganarás si logras completar todas las metas de Programación, Diseño y Testing antes de que el tiempo se agote.\
+¡Buena suerte, líder!

@@ -44,7 +44,8 @@ directories/dtl_directory={
 "Event_Probar es aburrido Erick": "res://dialogic/timelines/events/Event_Probar es aburrido Erick.dtl",
 "Event_Programador Confiado": "res://dialogic/timelines/events/Event_Programador Confiado.dtl",
 "Introduction": "res://dialogic/timelines/Introduction.dtl",
-"client_change": "res://dialogic/timelines/client_change.dtl"
+"client_change": "res://dialogic/timelines/client_change.dtl",
+"tutorial": "res://dialogic/timelines/tutorial.dtl"
 }
 layout/style_directory={
 "": "res://dialogic/styles/Test.tres",
