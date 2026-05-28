@@ -1,21 +1,28 @@
 extends HBoxContainer
 
+@onready var itemName = $"itemName"
 @onready var icon = $icon
 @onready var label = $"progress text"
 
 var current := 0
 var target := 0
 var _pending_texture: Texture2D = null
+var _pending_name := ""
 
 func _ready():
+	if _pending_name != "":
+		itemName.text = _pending_name
 	if _pending_texture != null:
 		icon.texture = _pending_texture
 		_update_label()
 
-func setup(icon_texture: Texture2D, target_value: int):
+func setup(icon_texture: Texture2D, target_value: int, item_name: String = ""):
 	target = target_value
 	current = 0
 	_pending_texture = icon_texture
+	_pending_name = item_name
+	if is_node_ready() and item_name != "":
+		itemName.text = item_name
 	if is_node_ready():
 		icon.texture = icon_texture
 		_update_label()

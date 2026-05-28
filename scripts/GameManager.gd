@@ -18,7 +18,7 @@ var event_alert_overlay: Control
 var event_exclamation: CanvasItem
 var event_alert_audio: AudioStreamPlayer
 var current_day = 1
-var max_days = 3
+var max_days = 7
 var current_event_index = 0
 var pending_events = []
 var active_event_data: Dictionary = {}

@@ -18,17 +18,22 @@ script = ExtResource("1_tnd72")
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_00x7y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=645437798]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1717181553]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=645437798]
 layout_mode = 2
 
-[node name="ProgrammingItem" parent="PanelContainer/VBoxContainer" unique_id=1107010984 instance=ExtResource("2_rie0b")]
+[node name="ProgrammingItem" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1107010984 instance=ExtResource("2_rie0b")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="DesignItem" parent="PanelContainer/VBoxContainer" unique_id=904869311 instance=ExtResource("2_rie0b")]
+[node name="DesignItem" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=904869311 instance=ExtResource("2_rie0b")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TestingItem" parent="PanelContainer/VBoxContainer" unique_id=997593538 instance=ExtResource("2_rie0b")]
+[node name="TestingItem" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=997593538 instance=ExtResource("2_rie0b")]
 layout_mode = 2
 size_flags_horizontal = 4

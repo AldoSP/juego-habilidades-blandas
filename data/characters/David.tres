@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://da67rc51gwgyt"]
+
+[ext_resource type="Script" uid="uid://bforictr3xiw7" path="res://scripts/Character.gd" id="1_03dm2"]
+[ext_resource type="Texture2D" uid="uid://dnq6futu83vg5" path="res://assets/sprites/characters/David/David.png" id="2_body"]
+[ext_resource type="Texture2D" uid="uid://0sf8evoow1v6" path="res://assets/sprites/characters/David/DavidFeliz.png" id="3_happy"]
+[ext_resource type="Texture2D" uid="uid://db75s8gh6g0lb" path="res://assets/sprites/characters/David/DavidPreocupado.png" id="4_worried"]
+[ext_resource type="Texture2D" uid="uid://ibqnb00a10tm" path="res://assets/sprites/characters/David/DavidPortrait.png" id="5_portrait"]
+
+[resource]
+script = ExtResource("1_03dm2")
+name = "David"
+strength = "programming"
+weakness = "design"
+assigned_task = null
+sprites = {
+"": ExtResource("2_body"),
+"Feliz": ExtResource("3_happy"),
+"Portrait": ExtResource("5_portrait"),
+"Preocupado": ExtResource("4_worried")
+}
+description = "David destaca resolviendo lógica y arquitectura, pero le cuesta traducir ideas visuales con claridad."
+metadata/_custom_type_script = "uid://bforictr3xiw7"

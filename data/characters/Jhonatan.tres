@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://dilumspy1hexm"]
+
+[ext_resource type="Script" uid="uid://bforictr3xiw7" path="res://scripts/Character.gd" id="1_03dm2"]
+[ext_resource type="Texture2D" uid="uid://se2xqsxumnii" path="res://assets/sprites/characters/Jhonatan/Jhonatan.png" id="2_body"]
+[ext_resource type="Texture2D" uid="uid://cvp5qckm4r4eh" path="res://assets/sprites/characters/Jhonatan/JhonatanFeliz.png" id="3_happy"]
+[ext_resource type="Texture2D" uid="uid://b6bxbbthbxmap" path="res://assets/sprites/characters/Jhonatan/JhonatanPreocupado.png" id="4_worried"]
+[ext_resource type="Texture2D" uid="uid://bcvviy5kxvafi" path="res://assets/sprites/characters/Jhonatan/JhonatanPortrait.png" id="5_portrait"]
+
+[resource]
+script = ExtResource("1_03dm2")
+name = "Jhonatan"
+strength = "testing"
+weakness = "programming"
+assigned_task = null
+sprites = {
+"": ExtResource("2_body"),
+"Feliz": ExtResource("3_happy"),
+"Portrait": ExtResource("5_portrait"),
+"Preocupado": ExtResource("4_worried")
+}
+description = "Jhonatan es fuerte en testing y débil en programación."
+metadata/_custom_type_script = "uid://bforictr3xiw7"

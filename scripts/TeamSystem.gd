@@ -7,6 +7,28 @@ var characters = []
 #La estructura de un personaje es nombre, fortaleza, debilidad
 
 func _ready():
+	if _load_selected_characters_from_database():
+		return
+
+	if not characters.is_empty():
+		return
+
+	_load_default_characters()
+
+func _load_selected_characters_from_database() -> bool:
+	if not CharacterDatabase.has_method("get_selected_characters"):
+		return false
+
+	var selected := CharacterDatabase.get_selected_characters()
+	if selected.is_empty():
+		return false
+
+	set_selected_characters(selected)
+	if CharacterDatabase.has_method("clear_selected_characters"):
+		CharacterDatabase.clear_selected_characters()
+	return true
+
+func _load_default_characters() -> void:
 	var David = Character.new("David", "programming", "design")
 	David.sprites = {
 		"": preload("res://assets/sprites/characters/David/David.png"),
@@ -34,7 +56,7 @@ func _ready():
 	}
 	characters.append(Jhonatan)
 
-	var Karol = Character.new("Karol", "management", "management")
+	var Karol = Character.new("Karol", "testing", "design")
 	Karol.sprites = {
 		"": preload("res://assets/sprites/characters/Karol/Karol.png"),
 		"Feliz": preload("res://assets/sprites/characters/Karol/KarolFeliz.png"),
@@ -42,3 +64,10 @@ func _ready():
 		"Portrait": preload("res://assets/sprites/characters/Karol/KarolPortrait.png"),
 	}
 	characters.append(Karol)
+
+func set_selected_characters(new_characters: Array) -> void:
+	characters.clear()
+	for character in new_characters:
+		if character == null:
+			continue
+		characters.append(character.duplicate(true))

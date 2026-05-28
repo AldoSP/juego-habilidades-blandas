@@ -4,11 +4,22 @@
 [ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="2_ks2ax"]
 
 [node name="ProgressItem" type="HBoxContainer" unique_id=1107010984]
+size_flags_horizontal = 8
 script = ExtResource("1_s4ujy")
 
-[node name="icon" type="TextureRect" parent="." unique_id=1729916646]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2092046720]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="itemName" type="Label" parent="MarginContainer" unique_id=553699387]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ks2ax")
+
+[node name="icon" type="TextureRect" parent="MarginContainer" unique_id=1729916646]
 layout_mode = 2
 
-[node name="progress text" type="Label" parent="." unique_id=304774773]
+[node name="progress text" type="Label" parent="MarginContainer" unique_id=304774773]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ks2ax")

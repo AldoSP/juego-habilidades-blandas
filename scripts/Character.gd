@@ -3,18 +3,18 @@ class_name Character
 
 #Esta es la estructura de un personaje
 
-var name
-var strength
-var weakness
-var energy = 100
-var assigned_task = null
-var task_modifier = 0
-var event_description = ""
-var sprites: Dictionary = {}
-var description
+@export var name: String = ""
+@export var strength: String = ""
+@export var weakness: String = ""
+@export var energy: int = 100
+@export var assigned_task: Variant = null
+@export var task_modifier: int = 0
+@export_multiline var event_description: String = ""
+@export var sprites: Dictionary = {}
+@export_multiline var description: String = ""
 signal energy_changed
 	
-func _init(_name, _strength, _weakness):
+func _init(_name: String = "", _strength: String = "", _weakness: String = ""):
 	name = _name
 	strength = _strength
 	weakness = _weakness
