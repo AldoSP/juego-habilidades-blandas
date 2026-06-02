@@ -10,7 +10,7 @@ Karol: "¿Agregamos solo etiquetas alt o rediseñamos para accesibilidad?"
 	Ana: "Rediseñamos pensando en accesibilidad desde el inicio."
 	Karol: "Beneficia a todos, no solo a usuarios con discapacidades."
 	Resultado: El sitio es completamente accesible y user-friendly.
-	do EventAPI.modify_project_progress("design",2)
+	do EventAPI.modify_project_progress("design", 2)
 	update Ana (Ana Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -18,5 +18,5 @@ Karol: "¿Agregamos solo etiquetas alt o rediseñamos para accesibilidad?"
 	Ana: "Solo etiquetas alt, es suficiente."
 	Karol: "Cambios mínimos, menor esfuerzo."
 	Resultado: El sitio sigue siendo inaccesible.
-	do EventAPI.modify_project_progress("design",-1)
+	do EventAPI.modify_project_progress("design", -1)
 	audio "res://assets/sfx/Failure.mp3"

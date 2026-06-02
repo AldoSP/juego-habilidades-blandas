@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var itemName = $"itemName"
+@onready var itemName = $itemName
 @onready var icon = $icon
 @onready var label = $"progress text"
 
@@ -10,20 +10,20 @@ var _pending_texture: Texture2D = null
 var _pending_name := ""
 
 func _ready():
-	if _pending_name != "":
+	if _pending_name != "" and itemName != null:
 		itemName.text = _pending_name
-	if _pending_texture != null:
+	if _pending_texture != null and icon != null:
 		icon.texture = _pending_texture
-		_update_label()
+	_update_label()
 
 func setup(icon_texture: Texture2D, target_value: int, item_name: String = ""):
 	target = target_value
 	current = 0
 	_pending_texture = icon_texture
 	_pending_name = item_name
-	if is_node_ready() and item_name != "":
+	if is_node_ready() and item_name != "" and itemName != null:
 		itemName.text = item_name
-	if is_node_ready():
+	if is_node_ready() and icon != null:
 		icon.texture = icon_texture
 		_update_label()
 
@@ -38,7 +38,8 @@ func set_progress(value: int):
 	_update_label()
 
 func _update_label():
-	label.text = str(current) + "/" + str(target)
+	if label != null:
+		label.text = str(current) + "/" + str(target)
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.1)
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.1)
