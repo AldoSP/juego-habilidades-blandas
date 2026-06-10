@@ -11,6 +11,7 @@ Erick: "¿Reintentamos o reportamos al proveedor?"
 	Erick: "Así es más resiliente ante fallos temporales."
 	Resultado: La integración es mucho más confiable.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Ana (Ana Feliz)
 	update Erick (Erick Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Erick: "¿Reintentamos o reportamos al proveedor?"
 	Erick: "Que el proveedor arregle su API."
 	Resultado: Los usuarios ven errores innecesarios.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

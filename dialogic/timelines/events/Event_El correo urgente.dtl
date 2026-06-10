@@ -11,7 +11,9 @@ Elizabeth: "El diseño actual tiene algunos problemas, pero hacer cambios rápid
 	Elizabeth: "Así evitamos sorpresas en la demo."
 	Resultado: Los cambios llegan sin efectos secundarios.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	do EventAPI.modify_project_progress("testing",1)
+	join Testing (plus1) center
 	update Christian (Christian Feliz)
 	update Elizabeth (Elizabeth Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -20,4 +22,5 @@ Elizabeth: "El diseño actual tiene algunos problemas, pero hacer cambios rápid
 	Elizabeth: "Esperamos que todo funcione."
 	Resultado: Surgen problemas visuales en medio de la demo.
 	do EventAPI.modify_project_progress("design",-2)
+	join Design (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

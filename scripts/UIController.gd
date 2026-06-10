@@ -186,10 +186,11 @@ func _on_confirm_button_pressed():
 	
 	emit_signal("tasks_assigned")
 
-func show_results(results: Dictionary, summary_lines: Array[String] = []):
+func show_results(results: Dictionary, summary_lines: Array[String] = [], event_lines: Array[String] = []):
 	"""Muestra los resultados del día"""
 	print("Mostrando resultados del día")
 	results_panel.set_results(results["programming"], results["design"], results["testing"])
+	results_panel.set_event_summary(event_lines)
 	results_panel.set_summary(summary_lines)
 	results_panel.show()
 

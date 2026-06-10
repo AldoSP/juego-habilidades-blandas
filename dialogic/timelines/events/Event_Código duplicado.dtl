@@ -11,6 +11,7 @@ Jessica: "¿Las consolidamos en una?"
 	Jessica: "Así el mantenimiento es más fácil."
 	Resultado: Cambios futuros afectan un solo lugar.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update David (David Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jessica: "¿Las consolidamos en una?"
 	Jessica: "No hay riesgo en no tocar código."
 	Resultado: Un bug en la lógica requiere arreglarlo en 5 lugares.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

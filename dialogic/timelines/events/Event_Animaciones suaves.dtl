@@ -10,7 +10,8 @@ Elizabeth: "¿Reducimos las animaciones o las optimizamos?"
 	Karol: "Optimizamos con CSS transforms en lugar de cambios de layout."
 	Elizabeth: "Así las animaciones son smooth incluso en dispositivos lentos."
 	Resultado: La experiencia es fluida en todos los dispositivos.
-	do EventAPI.modify_project_progress("design",2)
+	do EventAPI.modify_project_progress("design", 2)
+	join Design (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -18,5 +19,6 @@ Elizabeth: "¿Reducimos las animaciones o las optimizamos?"
 	Karol: "Eliminamos las animaciones, así no lag."
 	Elizabeth: "La interfaz será más aburrida pero más rápida."
 	Resultado: La experiencia es plana y menos atractiva.
-	do EventAPI.modify_project_progress("design",-1)
+	do EventAPI.modify_project_progress("design", -1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

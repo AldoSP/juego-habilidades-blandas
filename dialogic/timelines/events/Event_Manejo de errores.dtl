@@ -11,6 +11,7 @@ David: "¿Mostramos un error genérico o específico?"
 	David: "Así los usuarios entienden qué pasó."
 	Resultado: El sistema es robusto ante fallos.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update David (David Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ David: "¿Mostramos un error genérico o específico?"
 	David: "El usuario sabrá qué hacer."
 	Resultado: Los usuarios se sienten perdidos cuando hay errores.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

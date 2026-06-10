@@ -11,6 +11,7 @@ Christian: "¿Hay tiempo?"
 	Christian: "Así minimizamos riesgos en producción."
 	Resultado: El release es más estable, pocos bugs reportados.
 	do EventAPI.modify_project_progress("testing", 2)
+	join Testing (plus2) center
 	update Christian (Christian Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Christian: "¿Hay tiempo?"
 	Christian: "Los usuarios nos dicen qué falla."
 	Resultado: Bugs críticos en producción afectan la experiencia de usuario.
 	do EventAPI.modify_project_progress("testing", -2)
+	join Testing (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

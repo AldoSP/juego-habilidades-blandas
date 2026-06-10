@@ -11,6 +11,7 @@ Christian: "¿Cuán probable es que alguien lo explote?"
 	Christian: "Mejor prevenir ahora que enfrentar un breach."
 	Resultado: La vulnerabilidad se cierra antes de que sea explotada.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Christian (Christian Feliz)
 	update David (David Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Christian: "¿Cuán probable es que alguien lo explote?"
 	Christian: "Es complicado de arreglar ahora."
 	Resultado: Un atacante la explota y datos se comprometen.
 	do EventAPI.modify_project_progress("programming",-2)
+	join Programming (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

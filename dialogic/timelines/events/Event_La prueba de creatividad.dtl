@@ -11,6 +11,7 @@ Ana: "¿Cuánto tiempo implica implementar la propuesta?"
 	Ana: "Así validamos antes de invertir mucho tiempo."
 	Resultado: El nuevo diseño mejora UX y se implementa sin grandes cambios.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Ana (Ana Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Ana: "¿Cuánto tiempo implica implementar la propuesta?"
 	Ana: "Sin riesgo, sin problemas."
 	Resultado: El dashboard sigue siendo incómodo para los usuarios.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

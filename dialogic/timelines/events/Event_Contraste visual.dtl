@@ -11,6 +11,7 @@ Elizabeth: "¿Afecta la accesibilidad?"
 	Elizabeth: "Beneficia a todos, especialmente quiénes tienen problemas visuales."
 	Resultado: El sitio es más legible y accesible.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Elizabeth: "¿Afecta la accesibilidad?"
 	Elizabeth: "Los colores se ven mejor así."
 	Resultado: Algunos usuarios no pueden leer el contenido.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

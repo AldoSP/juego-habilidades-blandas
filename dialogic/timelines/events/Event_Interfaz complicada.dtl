@@ -11,6 +11,7 @@ Karol: "¿Rediseñamos o simplemente agregamos un tutorial?"
 	Karol: "El diseño debe ser intuitivo por sí mismo."
 	Resultado: La interfaz es más usable sin necesidad de instrucciones.
 	do EventAPI.modify_project_progress("design", 2)
+	join Design (plus2) center
 	update Ana (Ana Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Karol: "¿Rediseñamos o simplemente agregamos un tutorial?"
 	Karol: "Es más rápido que rediseñar."
 	Resultado: Usuarios aún se sienten perdidos.
 	do EventAPI.modify_project_progress("design", -1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

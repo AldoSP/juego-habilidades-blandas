@@ -11,6 +11,7 @@ Elizabeth: "¿Cuántos componentes habría que actualizar?"
 	Elizabeth: "Todos los componentes reflejarán el cambio automáticamente."
 	Resultado: La marca es consistente, cambio es fácil.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Elizabeth: "¿Cuántos componentes habría que actualizar?"
 	Elizabeth: "Cambiarlos es mucho trabajo."
 	Resultado: La marca se ve desactualizada.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

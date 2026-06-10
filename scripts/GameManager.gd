@@ -23,6 +23,7 @@ var max_days = 7
 var current_event_index = 0
 var pending_events = []
 var active_event_data: Dictionary = {}
+var event_day_deltas := {"programming": 0, "design": 0, "testing": 0}
 
 func _ready():
 	# Obtener referencias a los sistemas
@@ -82,6 +83,11 @@ func _ready():
 
 func start_day():
 	print("\n=== DÍA ", current_day, " ===")
+
+	# Reset per-day event deltas
+	event_day_deltas["programming"] = 0
+	event_day_deltas["design"] = 0
+	event_day_deltas["testing"] = 0
 	if ui:
 		print("Esperando asignación de tareas...")
 
@@ -169,7 +175,22 @@ func calculate_tasks():
 	var summary_lines: Array[String] = resolve_result["summary"]
 
 	if ui:
-		ui.show_results(results, summary_lines)
+		var event_lines: Array[String] = []
+		if event_day_deltas["programming"] != 0 or event_day_deltas["design"] != 0 or event_day_deltas["testing"] != 0:
+			event_lines.append("Eventos:")
+			if event_day_deltas["programming"] != 0:
+				var sign_prog = "+" if event_day_deltas["programming"] > 0 else "-"
+				event_lines.append("Programming: %s%d" % [sign_prog, abs(event_day_deltas["programming"])])
+			if event_day_deltas["design"] != 0:
+				var sign_design = "+" if event_day_deltas["design"] > 0 else "-"
+				event_lines.append("Design: %s%d" % [sign_design, abs(event_day_deltas["design"])])
+			if event_day_deltas["testing"] != 0:
+				var sign_test = "+" if event_day_deltas["testing"] > 0 else "-"
+				event_lines.append("Testing: %s%d" % [sign_test, abs(event_day_deltas["testing"])])
+		ui.show_results(results, summary_lines, event_lines)
+		event_day_deltas["programming"] = 0
+		event_day_deltas["design"] = 0
+		event_day_deltas["testing"] = 0
 	
 	# Aplicar resultados al proyecto
 	project.apply_results(results)
@@ -278,6 +299,9 @@ func modify_project_progress(stat:String, amount:int):
 
 	if was_modified:
 		print("[PROJECT] ", normalized_stat, " modified by ", amount)
+		# Accumulate per-day deltas from events so we can show them in results
+		if event_day_deltas.has(normalized_stat):
+			event_day_deltas[normalized_stat] += amount
 	else:
 		push_warning("[PROJECT] Unknown stat '%s', change ignored." % stat)
 

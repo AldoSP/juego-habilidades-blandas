@@ -11,7 +11,9 @@ Jessica: "Podríamos investigar juntos o asumir que funciona."
 	Jessica: "Es mejor saber antes de escribir tests."
 	Resultado: Evitan un bug potencial en validación.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	do EventAPI.modify_project_progress("testing",1)
+	join Testing (plus1) center
 	update Erick (Erick Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -20,4 +22,5 @@ Jessica: "Podríamos investigar juntos o asumir que funciona."
 	Jessica: "Vamos al siguiente ticket."
 	Resultado: Los tests fallan porque el comportamiento es diferente al esperado.
 	do EventAPI.modify_project_progress("testing",-1)
+	join Testing (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

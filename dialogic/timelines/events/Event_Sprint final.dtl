@@ -13,7 +13,9 @@ Elizabeth: "No podemos hacer todo."
 	Jhonatan: "Un release inestable es peor que features incompletas."
 	Resultado: El release es estable y confiable.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	do EventAPI.modify_project_progress("programming",1)
+	join Programming (plus1) center
 	update Jessica (Jessica Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -22,4 +24,5 @@ Elizabeth: "No podemos hacer todo."
 	Jhonatan: "Los usuarios reportarán qué falla."
 	Resultado: El release tiene bugs graves que no se detectaron.
 	do EventAPI.modify_project_progress("testing",-2)
+	join Testing (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

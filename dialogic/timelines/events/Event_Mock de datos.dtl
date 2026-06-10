@@ -11,6 +11,7 @@ Christian: "¿Importa realmente?"
 	Christian: "Así los tests son más confiables."
 	Resultado: Los tests detectan problemas que pasarían desapercibidos.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update Christian (Christian Feliz)
 	update Erick (Erick Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Christian: "¿Importa realmente?"
 	Christian: "Es suficiente para pruebas unitarias."
 	Resultado: El código funciona en tests pero falla en producción.
 	do EventAPI.modify_project_progress("testing",-1)
+	join Testing (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

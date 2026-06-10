@@ -11,6 +11,7 @@ Ana: "¿Estandarizamos tipografía?"
 	Ana: "Así todo se ve coherente."
 	Resultado: El diseño es más profesional y consistente.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Ana (Ana Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Ana: "¿Estandarizamos tipografía?"
 	Ana: "La libertad es buena."
 	Resultado: El sitio se ve desordenado.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

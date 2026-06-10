@@ -11,6 +11,7 @@ Jhonatan: "¿Hay problema de performance?"
 	Jhonatan: "Agregamos indexes en campos que se consultan frecuentemente."
 	Resultado: Las consultas permanecen rápidas incluso con datos masivos.
 	do EventAPI.modify_project_progress("programming", 2)
+	join Programming (plus2) center
 	update Christian (Christian Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jhonatan: "¿Hay problema de performance?"
 	Jhonatan: "No hay síntomas de lentitud."
 	Resultado: Un día la BD es tan lenta que el sitio falla.
 	do EventAPI.modify_project_progress("programming", -1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

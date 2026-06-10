@@ -11,6 +11,7 @@ Elizabeth: "¿Es malo el diseño o la funcionalidad es poco clara?"
 	Elizabeth: "Un buen diseño no necesita mucho helptext."
 	Resultado: Los usuarios entienden intuitivamente.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Elizabeth: "¿Es malo el diseño o la funcionalidad es poco clara?"
 	Elizabeth: "La ayuda explicará todo."
 	Resultado: Usuarios aún se sienten perdidos.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

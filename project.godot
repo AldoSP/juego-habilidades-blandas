@@ -28,12 +28,15 @@ directories/dch_directory={
 "Ana": "res://dialogic/characters/Ana.dch",
 "Christian": "res://dialogic/characters/Christian.dch",
 "David": "res://dialogic/characters/David.dch",
+"Design": "res://dialogic/characters/results/Design.dch",
 "Elizabeth": "res://dialogic/characters/Elizabeth.dch",
 "Erick": "res://dialogic/characters/Erick.dch",
 "Jessica": "res://dialogic/characters/Jessica.dch",
 "Jhonatan": "res://dialogic/characters/Jhonatan.dch",
 "Karol": "res://dialogic/characters/Karol.dch",
-"Narrator": "res://dialogic/characters/Narrator.dch"
+"Narrator": "res://dialogic/characters/Narrator.dch",
+"Programming": "res://dialogic/characters/results/Programming.dch",
+"Testing": "res://dialogic/characters/results/Testing.dch"
 }
 directories/dtl_directory={
 "Event_API lenta": "res://dialogic/timelines/events/Event_API lenta.dtl",

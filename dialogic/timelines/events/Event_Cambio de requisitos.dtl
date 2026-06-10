@@ -11,6 +11,7 @@ Elizabeth: "¿Cuán diferente es al diseño actual?"
 	Elizabeth: "Reutilizamos lo que podemos."
 	Resultado: Se adapta la funcionalidad sin pérdida de trabajo.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Ana (Ana Feliz)
 	update Elizabeth (Elizabeth Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Elizabeth: "¿Cuán diferente es al diseño actual?"
 	Elizabeth: "Así asegurándonos que sea correcto."
 	Resultado: Tiempo perdido, proyecto atrasado.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"
