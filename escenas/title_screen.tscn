@@ -2,9 +2,74 @@
 
 [ext_resource type="Script" uid="uid://xs5hyd001pl3" path="res://scripts/TitleScreen.gd" id="1_mdb8c"]
 [ext_resource type="Texture2D" uid="uid://duaq543o0s1b1" path="res://assets/backgrounds/Imagen_Pantalla_Inicio.png" id="2_f0cb6"]
-[ext_resource type="Texture2D" uid="uid://b43nucv4ximx3" path="res://assets/textures/BtnEntiende.png" id="3_v2n76"]
-[ext_resource type="Texture2D" uid="uid://babssnx56u3ef" path="res://assets/textures/BtnJUGAR.png" id="4_2n8fu"]
-[ext_resource type="Texture2D" uid="uid://bti5yinics7f8" path="res://assets/textures/BtnConoce.png" id="5_41gyd"]
+[ext_resource type="FontFile" uid="uid://c7b8ig7kk1b4s" path="res://assets/fonts/balatro.otf" id="3_f0cb6"]
+[ext_resource type="StyleBox" uid="uid://d4e0jw73mqxah" path="res://styles/ButtonGreen.tres" id="4_v2n76"]
+[ext_resource type="StyleBox" uid="uid://c3yoxit57pk72" path="res://styles/YellowButton.tres" id="5_2n8fu"]
+[ext_resource type="StyleBox" uid="uid://35pekhvhkly7" path="res://styles/ButtonRed.tres" id="6_41gyd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfdjk"]
+bg_color = Color(0.21690106, 0.7769951, 0.54826057, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4c0n"]
+bg_color = Color(0.14706147, 0.53133774, 0.37413877, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abqth"]
+bg_color = Color(0.2509804, 0.5019608, 0.75686276, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1tyi"]
+bg_color = Color(0.2509804, 0.5019608, 0.75686276, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfnfj"]
+bg_color = Color(0.18431373, 0.36862746, 0.5568628, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34x6m"]
+bg_color = Color(1, 0.65875685, 0.31430316, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl3t4"]
+bg_color = Color(0.8509804, 0.39607844, 0.36862746, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qgx"]
+bg_color = Color(0.5137255, 0.1882353, 0.1764706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
 [node name="TitleScreen" type="Control" unique_id=1452506757]
 layout_mode = 3
@@ -15,10 +80,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mdb8c")
 
-[node name="Fondo" type="TextureRect" parent="." unique_id=1363456826]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=298583412]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1363456826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_f0cb6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=406371342]
@@ -34,17 +107,55 @@ offset_right = 299.0
 offset_bottom = -121.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 8
 
-[node name="EntiendeButton" type="TextureButton" parent="HBoxContainer" unique_id=145957147]
+[node name="PlayButton" type="Button" parent="HBoxContainer" unique_id=1244760160]
+custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
-texture_normal = ExtResource("3_v2n76")
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_f0cb6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_v2n76")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rfdjk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p4c0n")
+text = "JUGAR"
 
-[node name="StartButton" type="TextureButton" parent="HBoxContainer" unique_id=1002765652]
+[node name="TutorialButton" type="Button" parent="HBoxContainer" unique_id=1444049353]
+custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
-texture_normal = ExtResource("4_2n8fu")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_f0cb6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_abqth")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v1tyi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfnfj")
+text = "TUTORIAL"
 
-[node name="ConoceButton" type="TextureButton" parent="HBoxContainer" unique_id=521290307]
+[node name="CreditsButton" type="Button" parent="HBoxContainer" unique_id=356138100]
+custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
-texture_normal = ExtResource("5_41gyd")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_f0cb6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_2n8fu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34x6m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfnfj")
+text = "CREDITOS"
 
-[connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_texture_button_pressed"]
+[node name="ExitButton" type="Button" parent="HBoxContainer" unique_id=142028668]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_f0cb6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("6_41gyd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rl3t4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6qgx")
+text = "SALIR"
+
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
