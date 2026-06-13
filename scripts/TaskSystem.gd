@@ -2,6 +2,8 @@ extends Node
 
 #Aquí está la logica con la que se calcula una tarea dado un personaje y su tipo de tarea
 
+const ENERGY_PER_TASK := 10
+
 func calculate_task(character, task_type):
 	var base = 5
 	var multiplier = 1.0
@@ -11,7 +13,7 @@ func calculate_task(character, task_type):
 	elif task_type == character.weakness:
 		multiplier = 0.5
 
-	if character.energy < 30:
+	if character.energy < ENERGY_PER_TASK:
 		multiplier *= 0.5
 	
 	print(character.name, " energía: ", character.energy)
@@ -46,14 +48,14 @@ func resolve_all(characters):
 
 		if c.assigned_task == "rest":
 			# Rest no contribuye puntos al proyecto, pero restaura energía
-			c.set_energy(c.energy + 20)  # Emitir señal para actualizar UI al instante
+			c.set_energy(c.energy + (ENERGY_PER_TASK * 2))  # Emitir señal para actualizar UI al instante
 			c.task_modifier = 0
 			summary_lines.append("%s: descansó y recuperó energía" % c.name)
 			continue
 
 		var value = calculate_task(c, c.assigned_task)
 		totals[c.assigned_task] += value
-		c.set_energy(c.energy - 10)
+		c.set_energy(c.energy - ENERGY_PER_TASK)
 		c.task_modifier = 0
 		var task_label = _translate_task_label(c.assigned_task)
 		summary_lines.append("%s: +%d %s" % [c.name, value, task_label])

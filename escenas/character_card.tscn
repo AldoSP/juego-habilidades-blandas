@@ -34,4 +34,5 @@ text = "Ana"
 [node name="EnergyBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=986384206]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-value = 100.0
+max_value = 3.0
+value = 3.0

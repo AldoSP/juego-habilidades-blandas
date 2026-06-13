@@ -1,5 +1,8 @@
 extends Control
 
+const ENERGY_UNIT := 10
+const DISPLAY_ENERGY_MAX := 3
+
 var character = null
 
 func _ready():
@@ -20,4 +23,6 @@ func update_ui():
 		portrait = character.get_sprite("")
 	icon.texture = portrait
 	$HBoxContainer/VBoxContainer/NameLabel.text = character.name
-	$HBoxContainer/VBoxContainer/EnergyBar.value = character.energy
+	var energy_bar = $HBoxContainer/VBoxContainer/EnergyBar
+	energy_bar.max_value = DISPLAY_ENERGY_MAX
+	energy_bar.value = mini(int(character.energy / ENERGY_UNIT), DISPLAY_ENERGY_MAX)
