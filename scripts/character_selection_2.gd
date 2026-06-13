@@ -6,7 +6,7 @@ const MAIN_GAME_SCENE := "res://escenas/main_game.tscn"
 const SKILL_LABELS := {
 	"programming": "Programación",
 	"design": "Diseño",
-	"testing": "Testing"
+	"testing": "Pruebas"
 }
 
 @onready var limit_warning = $MainMargin/PanelContainer/MainHBox/RightContainer/MarginContainer/RightPanel/LimitWarning

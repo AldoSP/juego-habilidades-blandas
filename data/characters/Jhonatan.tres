@@ -18,5 +18,5 @@ sprites = {
 "Portrait": ExtResource("5_portrait"),
 "Preocupado": ExtResource("4_worried")
 }
-description = "Jhonatan es fuerte en testing y débil en programación."
+description = "Jhonatan es fuerte en pruebas y débil en programación."
 metadata/_custom_type_script = "uid://bforictr3xiw7"

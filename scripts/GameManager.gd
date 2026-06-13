@@ -186,7 +186,7 @@ func calculate_tasks():
 				event_lines.append("Diseño: %s%d" % [sign_design, abs(event_day_deltas["design"])])
 			if event_day_deltas["testing"] != 0:
 				var sign_test = "+" if event_day_deltas["testing"] > 0 else "-"
-				event_lines.append("Testing: %s%d" % [sign_test, abs(event_day_deltas["testing"])])
+				event_lines.append("Pruebas: %s%d" % [sign_test, abs(event_day_deltas["testing"])])
 		var display_results = {
 			"programming": results["programming"] + event_day_deltas["programming"],
 			"design": results["design"] + event_day_deltas["design"],
@@ -206,9 +206,9 @@ func calculate_tasks():
 	"""Finaliza el día"""
 	print("\nFin del día ", current_day)
 	print("Estado del proyecto:")
-	print("  Programming: ", project.programming)
-	print("  Design: ", project.design)
-	print("  Testing: ", project.testing)
+	print("  Programación: ", project.programming)
+	print("  Diseño: ", project.design)
+	print("  Pruebas: ", project.testing)
 	
 	current_day += 1
 
@@ -218,9 +218,9 @@ func calculate_tasks():
 	if current_day > max_days:
 		print("\n=== FIN DEL JUEGO ===")
 		print("Proyecto final:")
-		print("  Programming: ", project.programming)
-		print("  Design: ", project.design)
-		print("  Testing: ", project.testing)
+		print("  Programación: ", project.programming)
+		print("  Diseño: ", project.design)
+		print("  Pruebas: ", project.testing)
 		
 		# Mostrar pantalla de fin de juego
 		if ui:

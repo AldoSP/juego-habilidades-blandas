@@ -28,7 +28,7 @@ func _ready():
 func set_results(programming: int, design: int, testing: int):
 	programming_label.text = "Programación: %d" % programming
 	design_label.text = "Diseño: %d" % design
-	testing_label.text = "Testing: %d" % testing
+	testing_label.text = "Pruebas: %d" % testing
 
 
 func set_summary(summary_lines: Array[String]):

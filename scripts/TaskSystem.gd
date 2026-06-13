@@ -28,7 +28,7 @@ func _translate_task_label(task_type: String) -> String:
 		"design":
 			return "Diseño"
 		"testing":
-			return "Testing"
+			return "Pruebas"
 		_:
 			return task_type
 

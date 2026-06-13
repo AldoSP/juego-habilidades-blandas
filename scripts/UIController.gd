@@ -27,10 +27,10 @@ var character_card_scene = preload("res://escenas/character_card.tscn")
 var assignment_board_scene = preload("res://escenas/assignment_board.tscn")
 
 const ASSIGNMENT_CATEGORIES = [
-	{ "id": "programming", "label": "Programming" },
-	{ "id": "design", "label": "Design" },
-	{ "id": "testing", "label": "Testing" },
-	{ "id": "rest", "label": "Rest" }
+	{ "id": "programming", "label": "Programación" },
+	{ "id": "design", "label": "Diseño" },
+	{ "id": "testing", "label": "Pruebas" },
+	{ "id": "rest", "label": "Descanso" }
 ]
 
 # Referencia a los paneles
@@ -221,7 +221,7 @@ func show_game_over(final_stats):
 	title.text = "¡FIN DEL JUEGO!"
 	prog_label.text = "Programación: %d" % final_stats["programming"]
 	design_label.text = "Diseño: %d" % final_stats["design"]
-	testing_label.text = "Testing: %d" % final_stats["testing"]
+	testing_label.text = "Pruebas: %d" % final_stats["testing"]
 	
 	_show_game_over_panel(true)
 
