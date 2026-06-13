@@ -5,6 +5,8 @@ signal continue_pressed
 @onready var programming_label = $MarginContainer/VBoxContainer/ProgrammingLabel
 @onready var design_label = $MarginContainer/VBoxContainer/DesignLabel
 @onready var testing_label = $MarginContainer/VBoxContainer/TestingLabel
+@onready var event_summary_text = $MarginContainer/VBoxContainer/EventSummaryText
+@onready var event_separator = $MarginContainer/VBoxContainer/HSeparatorEvent
 @onready var summary_text = $MarginContainer/VBoxContainer/SummaryText
 @onready var continue_button = $MarginContainer/VBoxContainer/ContinueButton
 
@@ -20,6 +22,7 @@ func _ready():
 
 	# Default text so scene works standalone
 	set_results(0, 0, 0)
+	set_event_summary([])
 
 
 func set_results(programming: int, design: int, testing: int):
@@ -37,6 +40,17 @@ func set_summary(summary_lines: Array[String]):
 		return
 
 	_play_typewriter(summary_lines)
+
+func set_event_summary(event_lines: Array[String]):
+	if event_lines.is_empty():
+		event_summary_text.visible = false
+		event_separator.visible = false
+		event_summary_text.text = ""
+		return
+
+	event_summary_text.visible = true
+	event_separator.visible = true
+	event_summary_text.text = "\n".join(event_lines)
 
 
 func _play_typewriter(summary_lines: Array[String]) -> void:

@@ -11,6 +11,7 @@ David: "¿Rediseñamos o solo agregamos media queries?"
 	David: "Así la experiencia es óptima en todos los dispositivos."
 	Resultado: El sitio funciona perfectamente en móvil y desktop.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update David (David Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ David: "¿Rediseñamos o solo agregamos media queries?"
 	David: "Así no gastamos mucho tiempo."
 	Resultado: El sitio sigue siendo incómodo en el móvil.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

@@ -11,6 +11,7 @@ Christian: "Tomar tiempo en refactor puede retrasar nuevas funcionalidades."
 	Christian: "Así reducimos complejidad sin paralizar features."
 	Resultado: El mantenimiento futuro es más fácil y rápido.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Christian (Christian Feliz)
 	update David (David Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Christian: "Tomar tiempo en refactor puede retrasar nuevas funcionalidades."
 	Christian: "Si funciona, mejor no lo tocamos."
 	Resultado: Cada nuevo feature toma más tiempo de lo esperado.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

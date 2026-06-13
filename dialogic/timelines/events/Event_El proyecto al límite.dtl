@@ -11,6 +11,7 @@ David: "Si hacemos eso, otros romperán cosas accidentalmente."
 	David: "Así la base es sólida."
 	Resultado: Se entrega con pruebas estables.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update David (David Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ David: "Si hacemos eso, otros romperán cosas accidentalmente."
 	David: "Es un detalle, lo solucionaremos luego."
 	Resultado: Bugs en producción por falta de cobertura.
 	do EventAPI.modify_project_progress("testing",-2)
+	join Testing (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

@@ -13,6 +13,7 @@ Elizabeth: "Sin tests, el código es arriesgado."
 	Erick: "Así es un punto medio entre velocidad y calidad."
 	Resultado: Los bugs se detectan temprano y el código es más robusto.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update Erick (Erick Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -21,4 +22,5 @@ Elizabeth: "Sin tests, el código es arriesgado."
 	Erick: "Es más rápido sin la restricción de tests."
 	Resultado: Deuda técnica de tests no escritos acumulados.
 	do EventAPI.modify_project_progress("testing",-1)
+	join Testing (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

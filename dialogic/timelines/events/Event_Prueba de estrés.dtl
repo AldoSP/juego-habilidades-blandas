@@ -11,6 +11,7 @@ Jessica: "¿El servidor aguanta 10x el tráfico normal?"
 	Jessica: "Así identificamos problemas a tiempo."
 	Resultado: El servidor se escala sin caídas durante picos.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update Jessica (Jessica Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jessica: "¿El servidor aguanta 10x el tráfico normal?"
 	Jessica: "Probablemente funcione."
 	Resultado: El sistema cae durante Black Friday.
 	do EventAPI.modify_project_progress("testing",-2)
+	join Testing (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

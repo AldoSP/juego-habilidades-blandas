@@ -11,6 +11,7 @@ Jessica: "¿Consolidamos o mejoramos la diferencia?"
 	Jessica: "Así el flujo es evidente."
 	Resultado: Los usuarios navegan intuitivamente.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Jessica (Jessica Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jessica: "¿Consolidamos o mejoramos la diferencia?"
 	Jessica: "La mayoría entiende."
 	Resultado: El soporte recibe preguntas constantemente sobre navegación.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

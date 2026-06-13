@@ -11,6 +11,7 @@ Jessica: "Cada feature sin tests es deuda técnica."
 	Jessica: "Así la base es confiable."
 	Resultado: Bugs futuros se detectan automáticamente.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update Jessica (Jessica Feliz)
 	update Jhonatan (Jhonatan Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jessica: "Cada feature sin tests es deuda técnica."
 	Jessica: "Confiar en QA manual es suficiente."
 	Resultado: Bugs en producción por falta de cobertura.
 	do EventAPI.modify_project_progress("testing",-1)
+	join Testing (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

@@ -11,6 +11,7 @@ Christian: "¿Es un bug real o no entender qué hace la funcionalidad?"
 	Christian: "Así prevenimos malentendidos futuros."
 	Resultado: Los usuarios entienden la funcionalidad correctamente.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Ana (Ana Feliz)
 	update Christian (Christian Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Christian: "¿Es un bug real o no entender qué hace la funcionalidad?"
 	Christian: "No es nuestro problema."
 	Resultado: Más usuarios se frustran, reputación daña.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

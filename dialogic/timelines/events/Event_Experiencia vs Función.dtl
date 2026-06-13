@@ -11,6 +11,7 @@ Ana: "¿Qué es más importante?"
 	Ana: "La simplicidad es una característica también."
 	Resultado: Los usuarios aman la interfaz limpia y simple.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Ana (Ana Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Ana: "¿Qué es más importante?"
 	Ana: "Más features = mejor producto."
 	Resultado: La interfaz es abrumadora, los usuarios se van.
 	do EventAPI.modify_project_progress("design",-2)
+	join Design (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

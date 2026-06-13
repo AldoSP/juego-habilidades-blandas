@@ -11,6 +11,7 @@ Elizabeth: "¿Qué feedback específico dieron?"
 	Elizabeth: "Así no partimos de cero, solo ajustamos."
 	Resultado: La segunda versión incorpora feedback y se aprueba.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Elizabeth: "¿Qué feedback específico dieron?"
 	Elizabeth: "Esperamos que esta vez funcione."
 	Resultado: El nuevo diseño nuevamente no cumple expectativas.
 	do EventAPI.modify_project_progress("design",-2)
+	join Design (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

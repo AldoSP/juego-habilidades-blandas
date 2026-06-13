@@ -1,0 +1,58 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "plus1",
+&"description": "",
+&"display_name": "Programming",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"minus1": {
+"export_overrides": {
+"image": "\"res://assets/sprites/event_results/minus1_programming.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -200),
+"scale": 0.5,
+"scene": ""
+},
+"minus2": {
+"export_overrides": {
+"image": "\"res://assets/sprites/event_results/minus2_programming.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -200),
+"scale": 0.5,
+"scene": ""
+},
+"plus1": {
+"export_overrides": {
+"image": "\"res://assets/sprites/event_results/plus1_programming.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -200),
+"scale": 0.5,
+"scene": ""
+},
+"plus2": {
+"export_overrides": {
+"image": "\"res://assets/sprites/event_results/plus2_programming.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -200),
+"scale": 0.5,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

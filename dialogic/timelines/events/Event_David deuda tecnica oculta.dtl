@@ -8,7 +8,9 @@ David: Si nadie lo toca hoy, tal vez no pase nada.
 	Narrator: Luego nadie entendio el modulo y perdimos tiempo corrigiendo.\
 	-2 Testing, -1 Energia.
 	do EventAPI.modify_active_character_energy(-1)
+	join Energy (minus1) center
 	do EventAPI.modify_project_progress("testing", -2)
+	join Testing (minus2) center
 - Pedirle refactor minimo y comentarios antes de seguir
 	David (David Preocupado): Ok, me tomo un rato extra.
 	David (David Feliz): Ahora el equipo puede mantenerlo sin romper todo.

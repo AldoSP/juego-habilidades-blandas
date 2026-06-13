@@ -11,6 +11,7 @@ Erick: "¿Es un test flaky o un verdadero problema?"
 	Erick: "Tests flaky destruyen la confianza."
 	Resultado: Los tests son confiables y sirven como safety net.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update David (David Feliz)
 	update Erick (Erick Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Erick: "¿Es un test flaky o un verdadero problema?"
 	Erick: "Es extraño pero probablemente sea timing."
 	Resultado: Un día el test falla y causa falso positivo/negativo en CI.
 	do EventAPI.modify_project_progress("testing",-1)
+	join Testing (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

@@ -11,6 +11,7 @@ Erick: "¿Revisamos el código o lo vemos en el próximo sprint?"
 	Erick: "Así priorizamos exactamente qué optimizar."
 	Resultado: Se optimiza la consulta y los endpoints responden en 200ms.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Erick (Erick Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Erick: "¿Revisamos el código o lo vemos en el próximo sprint?"
 	Erick: "A veces los problemas desaparecen."
 	Resultado: Usuarios reportan lentitud, reputación se daña.
 	do EventAPI.modify_project_progress("programming",-2)
+	join Programming (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

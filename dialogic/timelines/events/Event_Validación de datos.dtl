@@ -11,6 +11,7 @@ Jessica: "¿Afectaría el performance?"
 	Jessica: "Así un cambio en validación afecta todo el sistema."
 	Resultado: Consistencia en validación y mantenimiento simplificado.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update David (David Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jessica: "¿Afectaría el performance?"
 	Jessica: "Evitamos dependencias entre componentes."
 	Resultado: Una validación falla en un módulo pero funciona en otro.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

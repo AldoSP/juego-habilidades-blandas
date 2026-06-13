@@ -11,6 +11,7 @@ David: "¿Cuánto tiempo toma un hotfix?"
 	David: "La estabilidad en producción es lo primero."
 	Resultado: El bug se soluciona rápidamente, los usuarios no sufren.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Christian (Christian Feliz)
 	update David (David Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ David: "¿Cuánto tiempo toma un hotfix?"
 	David: "Continuamos con lo que estábamos."
 	Resultado: Más usuarios afectados, reputación dañada.
 	do EventAPI.modify_project_progress("programming",-2)
+	join Programming (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

@@ -11,6 +11,7 @@ Elizabeth: "¿Incorporamos los cambios?"
 	Elizabeth: "Así priorizamos inteligentemente."
 	Resultado: Se incorporan cambios críticos sin grandes retrasos.
 	do EventAPI.modify_project_progress("design",2)
+	join Design (plus2) center
 	update Elizabeth (Elizabeth Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Elizabeth: "¿Incorporamos los cambios?"
 	Elizabeth: "Mejor asegurar que sea perfecto."
 	Resultado: El cliente se enoja por el retraso.
 	do EventAPI.modify_project_progress("design",-1)
+	join Design (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

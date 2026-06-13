@@ -11,6 +11,7 @@ Erick: "¿Es realista ese escenario?"
 	Erick: "Los usuarios hacen cosas inesperadas."
 	Resultado: El sistema maneja casos extremos sin problemas.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update Erick (Erick Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Erick: "¿Es realista ese escenario?"
 	Erick: "Esos casos son tan raros que podemos ignorarlos."
 	Resultado: Un usuario arriba con el edge case y causa bug.
 	do EventAPI.modify_project_progress("testing",-1)
+	join Testing (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

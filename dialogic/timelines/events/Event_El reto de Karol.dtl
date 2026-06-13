@@ -11,7 +11,9 @@ Jhonatan: "¿Cuánto afecta eso al código actual?"
 	Jhonatan: "Así sabremos si es refactor o reescritura total."
 	Resultado: La decisión es informada y el cambio es eficiente.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	do EventAPI.modify_project_progress("design",1)
+	join Design (plus1) center
 	update Jhonatan (Jhonatan Feliz)
 	update Karol (Karol Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -20,4 +22,5 @@ Jhonatan: "¿Cuánto afecta eso al código actual?"
 	Jhonatan: "Claro, lo hacemos rápido."
 	Resultado: El código queda frágil y el mantenimiento futuro es difícil.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"

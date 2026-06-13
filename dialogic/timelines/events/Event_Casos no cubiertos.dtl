@@ -11,6 +11,7 @@ David: "¿Cuán probable es que ocurra en producción?"
 	David: "Así un usuario no puede romper el sistema."
 	Resultado: La aplicación maneja inputs inesperados sin errores.
 	do EventAPI.modify_project_progress("testing",2)
+	join Testing (plus2) center
 	update David (David Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ David: "¿Cuán probable es que ocurra en producción?"
 	David: "No harán cosas extrañas."
 	Resultado: Un usuario arriba con datos inválidos y causa crash.
 	do EventAPI.modify_project_progress("testing",-2)
+	join Testing (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

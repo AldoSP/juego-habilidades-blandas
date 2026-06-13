@@ -11,7 +11,9 @@ Elizabeth: "Si mostramos algo inestable, puede afectar la confianza."
 	Elizabeth: "El cliente verá que hay orden y plan."
 	Resultado: El cliente aprecia la transparencia y la progresión.
 	do EventAPI.modify_project_progress("programming",1)
+	join Programming (plus1) center
 	do EventAPI.modify_project_progress("testing",1)
+	join Testing (plus1) center
 	update Ana (Ana Feliz)
 	update Elizabeth (Elizabeth Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -20,4 +22,5 @@ Elizabeth: "Si mostramos algo inestable, puede afectar la confianza."
 	Elizabeth: "Esperamos que no lo noten."
 	Resultado: El cliente detecta bugs y cuestiona la calidad.
 	do EventAPI.modify_project_progress("testing",-2)
+	join Testing (minus2) center
 	audio "res://assets/sfx/Failure.mp3"

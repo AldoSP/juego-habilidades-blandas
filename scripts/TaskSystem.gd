@@ -21,6 +21,17 @@ func calculate_task(character, task_type):
 		score = 0
 	return score
 
+func _translate_task_label(task_type: String) -> String:
+	match task_type:
+		"programming":
+			return "Programación"
+		"design":
+			return "Diseño"
+		"testing":
+			return "Testing"
+		_:
+			return task_type
+
 func resolve_all(characters):
 	var totals = {
 		"programming": 0,
@@ -44,6 +55,7 @@ func resolve_all(characters):
 		totals[c.assigned_task] += value
 		c.set_energy(c.energy - 10)
 		c.task_modifier = 0
-		summary_lines.append("%s: +%d %s" % [c.name, value, c.assigned_task])
+		var task_label = _translate_task_label(c.assigned_task)
+		summary_lines.append("%s: +%d %s" % [c.name, value, task_label])
 
 	return {"totals": totals, "summary": summary_lines}

@@ -11,6 +11,7 @@ Jessica: "¿Afecta la funcionalidad?"
 	Jessica: "Podrían esconder problemas mayores."
 	Resultado: Se descubre que el error afecta funcionalidad en ciertos navegadores.
 	do EventAPI.modify_project_progress("programming",2)
+	join Programming (plus2) center
 	update Christian (Christian Feliz)
 	update Jessica (Jessica Feliz)
 	audio "res://assets/sfx/Success.mp3"
@@ -19,4 +20,5 @@ Jessica: "¿Afecta la funcionalidad?"
 	Jessica: "Es un warning, no es crítico."
 	Resultado: El error se propaga y causa crashes en producción.
 	do EventAPI.modify_project_progress("programming",-1)
+	join Programming (minus1) center
 	audio "res://assets/sfx/Failure.mp3"
