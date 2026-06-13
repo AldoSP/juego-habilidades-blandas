@@ -219,8 +219,8 @@ func show_game_over(final_stats):
 	var testing_label = game_over_panel.get_node("TestingFinal")
 	
 	title.text = "¡FIN DEL JUEGO!"
-	prog_label.text = "Programming: %d" % final_stats["programming"]
-	design_label.text = "Design: %d" % final_stats["design"]
+	prog_label.text = "Programación: %d" % final_stats["programming"]
+	design_label.text = "Diseño: %d" % final_stats["design"]
 	testing_label.text = "Testing: %d" % final_stats["testing"]
 	
 	_show_game_over_panel(true)

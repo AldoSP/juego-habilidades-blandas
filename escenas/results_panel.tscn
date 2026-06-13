@@ -34,17 +34,17 @@ layout_mode = 2
 
 [node name="ProgrammingLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1769035864]
 layout_mode = 2
-text = "ProgramingLabel"
+text = "Programación"
 fit_content = true
 
 [node name="DesignLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=670723526]
 layout_mode = 2
-text = "DesignLabel"
+text = "Diseño"
 fit_content = true
 
 [node name="TestingLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1091559043]
 layout_mode = 2
-text = "TestingLabel"
+text = "Testing"
 fit_content = true
 
 [node name="HSeparatorEvent" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=196837421]
@@ -52,6 +52,7 @@ layout_mode = 2
 
 [node name="EventSummaryText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=987654321]
 layout_mode = 2
+text = "Eventos del día"
 fit_content = true
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=41296015]
@@ -64,11 +65,11 @@ fit_content = true
 
 [node name="SummaryText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=480223243]
 layout_mode = 2
-text = "SummaryText"
+text = "No hubo eventos hoy."
 fit_content = true
 
 [node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=751196926]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Continue"
+text = "Continuar"

@@ -180,10 +180,10 @@ func calculate_tasks():
 			event_lines.append("Eventos:")
 			if event_day_deltas["programming"] != 0:
 				var sign_prog = "+" if event_day_deltas["programming"] > 0 else "-"
-				event_lines.append("Programming: %s%d" % [sign_prog, abs(event_day_deltas["programming"])])
+				event_lines.append("Programación: %s%d" % [sign_prog, abs(event_day_deltas["programming"])])
 			if event_day_deltas["design"] != 0:
 				var sign_design = "+" if event_day_deltas["design"] > 0 else "-"
-				event_lines.append("Design: %s%d" % [sign_design, abs(event_day_deltas["design"])])
+				event_lines.append("Diseño: %s%d" % [sign_design, abs(event_day_deltas["design"])])
 			if event_day_deltas["testing"] != 0:
 				var sign_test = "+" if event_day_deltas["testing"] > 0 else "-"
 				event_lines.append("Testing: %s%d" % [sign_test, abs(event_day_deltas["testing"])])
