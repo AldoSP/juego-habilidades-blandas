@@ -47,6 +47,9 @@ layout_mode = 2
 text = "TestingLabel"
 fit_content = true
 
+[node name="HSeparatorEvent" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=196837421]
+layout_mode = 2
+
 [node name="EventSummaryText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=987654321]
 layout_mode = 2
 fit_content = true

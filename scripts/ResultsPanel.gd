@@ -6,7 +6,7 @@ signal continue_pressed
 @onready var design_label = $MarginContainer/VBoxContainer/DesignLabel
 @onready var testing_label = $MarginContainer/VBoxContainer/TestingLabel
 @onready var event_summary_text = $MarginContainer/VBoxContainer/EventSummaryText
-@onready var event_separator = $MarginContainer/VBoxContainer/HSeparator2
+@onready var event_separator = $MarginContainer/VBoxContainer/HSeparatorEvent
 @onready var summary_text = $MarginContainer/VBoxContainer/SummaryText
 @onready var continue_button = $MarginContainer/VBoxContainer/ContinueButton
 
@@ -26,8 +26,8 @@ func _ready():
 
 
 func set_results(programming: int, design: int, testing: int):
-	programming_label.text = "Programación: %d" % programming
-	design_label.text = "Diseño: %d" % design
+	programming_label.text = "Programming: %d" % programming
+	design_label.text = "Design: %d" % design
 	testing_label.text = "Testing: %d" % testing
 
 

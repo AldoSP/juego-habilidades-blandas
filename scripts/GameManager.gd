@@ -187,7 +187,12 @@ func calculate_tasks():
 			if event_day_deltas["testing"] != 0:
 				var sign_test = "+" if event_day_deltas["testing"] > 0 else "-"
 				event_lines.append("Testing: %s%d" % [sign_test, abs(event_day_deltas["testing"])])
-		ui.show_results(results, summary_lines, event_lines)
+		var display_results = {
+			"programming": results["programming"] + event_day_deltas["programming"],
+			"design": results["design"] + event_day_deltas["design"],
+			"testing": results["testing"] + event_day_deltas["testing"]
+		}
+		ui.show_results(display_results, summary_lines, event_lines)
 		event_day_deltas["programming"] = 0
 		event_day_deltas["design"] = 0
 		event_day_deltas["testing"] = 0
