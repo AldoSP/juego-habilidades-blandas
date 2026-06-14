@@ -114,7 +114,7 @@ func process_events():
 		return
 
 	eligible_characters.shuffle()
-	var target_events := 1 + (randi() % 2) # Entre 1 y 2 eventos por día.
+	var target_events := 1 # Máximo 1 evento por día.
 
 	for c in eligible_characters:
 		if pending_events.size() >= target_events:
