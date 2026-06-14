@@ -100,6 +100,12 @@ func process_events():
 	"""Genera y procesa los eventos del día"""
 	pending_events = []
 
+	# Skip events on day 1 for presentation purposes
+	if current_day == 1:
+		print("[Eventos] Día 1: Sin eventos para demostración")
+		calculate_tasks()
+		return
+
 	var eligible_characters: Array = []
 	for c in team.characters:
 		c.task_modifier = 0
